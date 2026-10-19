@@ -1,0 +1,72 @@
+name: Publish website and Android apps
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
+      - name: Put app pages inside the Android apps
+        run: |
+          SITE="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          for app in fresh services; do
+            mkdir -p android/app/src/$app/assets
+            rm -rf android/app/src/$app/assets/www
+            cp -r site/$app android/app/src/$app/assets/www
+          done
+          sed -i "s#otherApp:\"../services/\"#otherApp:\"$SITE/services/\"#" android/app/src/fresh/assets/www/index.html
+          sed -i "s#otherApp:\"../fresh/\"#otherApp:\"$SITE/fresh/\"#" android/app/src/services/assets/www/index.html
+
+      - name: Build Android apps
+        run: gradle -p android assembleFreshDebug assembleServicesDebug
+
+      - name: Add apps to the website
+        run: |
+          mkdir -p site/apps
+          cp android/app/build/outputs/apk/fresh/debug/app-fresh-debug.apk site/apps/meenthulli-fresh.apk
+          cp android/app/build/outputs/apk/services/debug/app-services-debug.apk site/apps/meenthulli-home-services.apk
+
+      - name: Update the download release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete android-apps --yes --cleanup-tag || true
+          gh release create android-apps site/apps/*.apk --title "Meenthulli Android apps" --notes "Download the .apk on your Android phone and tap it to install."
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

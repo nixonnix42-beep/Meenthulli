@@ -1,0 +1,16 @@
+id,category,name_en,name_ta,unit_en,unit_ta,price,emoji,fresh,available
+tc,coconut,Tender coconut,இளநீர்,each,ஒன்று,40,🥥,yes,yes
+co,coconut,Coconut,தேங்காய்,each,ஒன்று,30,🥥,no,yes
+cc,coconut,Grated coconut,துருவிய தேங்காய்,200 g,200 கி,35,🥥,no,yes
+so,veg,Small onion,சின்ன வெங்காயம்,kg,கிலோ,60,🧅,yes,yes
+bo,veg,Big onion,பெரிய வெங்காயம்,kg,கிலோ,35,🧅,no,yes
+ds,veg,Drumstick,முருங்கைக்காய்,5 pcs,5 எண்ணம்,25,🥢,no,yes
+mk,greens,Murungai keerai,முருங்கை கீரை,bunch,கட்டு,20,🌿,yes,yes
+ak,greens,Arai keerai,அரைக் கீரை,bunch,கட்டு,15,🥬,no,yes
+pk,greens,Ponnanganni keerai,பொன்னாங்கண்ணி,bunch,கட்டு,15,🥬,no,yes
+cl,greens,Curry leaves,கறிவேப்பிலை,bunch,கட்டு,10,🌱,no,yes
+mi,healthy,Millet mix,சிறுதானிய கலவை,kg,கிலோ,120,🌾,no,yes
+rg,healthy,Ragi flour,கேழ்வரகு மாவு,kg,கிலோ,80,🌾,no,yes
+ho,healthy,Forest honey,மலைத்தேன்,500 g,500 கி,280,🍯,yes,yes
+oil,healthy,Chekku coconut oil,செக்கு தேங்காய் எண்ணெய்,litre,லிட்டர்,320,🫙,no,yes
+pb,healthy,Palm jaggery,கருப்பட்டி,500 g,500 கி,180,🟫,no,yes

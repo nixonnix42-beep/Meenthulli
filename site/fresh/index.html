@@ -1,0 +1,443 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Fresh coconuts, onions, greens and healthy foods delivered in Sankarankovil, Tenkasi."><link rel="manifest" href="manifest.json"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Meenthulli Fresh"><style>:root{padding-top:env(safe-area-inset-top,0px)}[hidden]{display:none!important}img{max-width:100%}</style>
+<title>Meenthulli Fresh</title>
+
+<meta name="theme-color" content="#24692a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500;600;700;800&family=Mukta+Malar:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: phone-app shell. Sticky green top bar, one screen at a time, fixed bottom tab bar; centred 520px column on wide screens */
+:root{
+  --bg:#eef3e8; --app:#f8faf4; --surface:#ffffff; --fg:#17240f; --muted:#5d6c55; --line:#e0e8d6;
+  --leaf:#24692a; --leaf-2:#3b8d3f; --leaf-ink:#ffffff; --turmeric:#eaa616; --turmeric-ink:#2a1d00;
+  --chip:#e8f1de; --danger:#b3261e;
+  --t-coco:#f3ead9; --t-onion:#f6e1e6; --t-green:#dff0d6; --t-health:#f8ecd0; --t-svc:#e3ecf6;
+  --shadow:0 6px 18px rgba(30,60,20,.10);
+  --display:"Baloo Thambi 2","Mukta Malar",system-ui,sans-serif;
+  --body:"Mukta Malar",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --nav-h:64px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0b100a; --app:#111810; --surface:#1a2318; --fg:#e8efe2; --muted:#a2b199; --line:#2a3826;
+  --leaf:#1d5422; --leaf-2:#5fb562; --leaf-ink:#f2f8ee; --turmeric:#f2b733; --turmeric-ink:#231800;
+  --chip:#22301f; --danger:#f2867e;
+  --t-coco:#2b261c; --t-onion:#2e2125; --t-green:#1f2e1b; --t-health:#2e2817; --t-svc:#1c2530;
+  --shadow:0 6px 18px rgba(0,0,0,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b100a; --app:#111810; --surface:#1a2318; --fg:#e8efe2; --muted:#a2b199; --line:#2a3826;
+  --leaf:#1d5422; --leaf-2:#5fb562; --leaf-ink:#f2f8ee; --turmeric:#f2b733; --turmeric-ink:#231800;
+  --chip:#22301f; --danger:#f2867e;
+  --t-coco:#2b261c; --t-onion:#2e2125; --t-green:#1f2e1b; --t-health:#2e2817; --t-svc:#1c2530;
+  --shadow:0 6px 18px rgba(0,0,0,.35); color-scheme:dark}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--leaf)}
+.app{max-width:520px;margin:0 auto;min-height:100vh;background:var(--app);position:relative;padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 16px)}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--turmeric);outline-offset:2px}
+.gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--leaf);color:var(--leaf-ink);padding-block:10px;display:flex;align-items:center;gap:10px}
+.logo{width:38px;height:38px;border-radius:12px;background:var(--leaf-ink);display:grid;place-items:center;flex:none}
+.logo svg{width:26px;height:26px}
+.brand{flex:1;min-width:0}
+.brand b{font-family:var(--display);font-weight:800;font-size:1.25rem;display:block;line-height:1.1}
+.brand small{opacity:.85;font-size:.8rem}
+.iconbtn{border:0;background:rgba(255,255,255,.16);color:inherit;border-radius:12px;height:38px;min-width:38px;padding:0 10px;display:grid;place-items:center;font-weight:700;text-decoration:none;font-size:.9rem}
+.iconbtn svg{width:20px;height:20px}
+
+/* views */
+.view{display:grid;gap:22px;padding-block:16px}
+.view[hidden]{display:none!important}
+.sec{display:grid;gap:12px}
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.sec-h h2{font-size:1.3rem}
+.link{border:0;background:none;color:var(--leaf-2);font-weight:700;padding:0}
+
+/* hero */
+.hero{border-radius:20px;padding:18px;background:var(--leaf);color:var(--leaf-ink);display:grid;gap:6px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-30px;bottom:-40px;width:160px;height:160px;border-radius:50%;background:var(--leaf-2);opacity:.45}
+.hero .k{font-family:var(--display);color:var(--turmeric);font-weight:700}
+.hero h1{font-size:1.6rem;font-weight:800;position:relative;z-index:1;max-width:16ch}
+.hero p{margin:0;opacity:.9;font-size:.95rem;position:relative;z-index:1;max-width:30ch}
+.hero .go{justify-self:start;margin-top:6px;position:relative;z-index:1;border:0;background:var(--turmeric);color:var(--turmeric-ink);font-weight:800;border-radius:12px;padding:9px 16px}
+.search{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 12px;height:46px}
+.search svg{width:20px;height:20px;color:var(--muted);flex:none}
+.search input{border:0;background:none;outline:none;flex:1;min-width:0;font:inherit;color:var(--fg);height:100%}
+
+/* strip of promises */
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.strip div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 8px;text-align:center;font-size:.8rem;color:var(--muted);line-height:1.3}
+.strip b{display:block;color:var(--fg);font-family:var(--display);font-size:.95rem}
+
+/* categories */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cat{border:0;background:none;padding:0;display:grid;gap:6px;justify-items:center;font-size:.82rem;font-weight:600;text-align:center;line-height:1.2}
+.cat .bub{width:100%;aspect-ratio:1;max-width:84px;border-radius:22px;display:grid;place-items:center;font-size:2rem}
+
+/* product cards */
+.hscroll{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px;margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.hscroll::-webkit-scrollbar{display:none}
+.hscroll .pc{flex:0 0 150px;scroll-snap-align:start}
+.pgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pc{background:var(--surface);border-radius:18px;padding:10px;display:flex;flex-direction:column;gap:6px;box-shadow:var(--shadow);min-width:0}
+.pc .art{border-radius:14px;aspect-ratio:4/3;display:grid;place-items:center;font-size:2.6rem;position:relative}
+.tag{position:absolute;top:6px;left:6px;background:var(--surface);color:var(--leaf-2);font-size:.7rem;font-weight:700;border-radius:999px;padding:1px 8px}
+.pc h4{font-size:1rem;font-weight:700}
+.pc .ta{font-size:.8rem;color:var(--muted);line-height:1.2;margin-top:-4px}
+.pc .row{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:auto}
+.pc .pr{font-weight:700;font-variant-numeric:tabular-nums}
+.pc .pr span{display:block;font-weight:400;font-size:.75rem;color:var(--muted);margin-top:-3px}
+.addb{border:0;background:var(--leaf-2);color:#fff;font-weight:800;border-radius:10px;height:34px;padding:0 12px}
+.step{display:flex;align-items:center;background:var(--leaf-2);color:#fff;border-radius:10px;height:34px}
+.step button{border:0;background:none;color:#fff;width:30px;height:34px;font-weight:800;font-size:1.1rem}
+.step output{min-width:18px;text-align:center;font-weight:800;font-variant-numeric:tabular-nums}
+
+.chips{display:flex;gap:8px;overflow-x:auto;margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-weight:600;font-size:.9rem}
+.chips button[aria-pressed="true"]{background:var(--leaf);border-color:var(--leaf);color:var(--leaf-ink)}
+.empty{text-align:center;color:var(--muted);padding:30px 10px}
+
+/* services */
+.svc{background:var(--surface);border-radius:18px;padding:14px;display:grid;grid-template-columns:64px 1fr;gap:12px;box-shadow:var(--shadow)}
+.svc .art{border-radius:16px;background:var(--t-svc);display:grid;place-items:center;font-size:1.9rem;aspect-ratio:1}
+.svc h3{font-size:1.1rem}
+.svc .ta{font-size:.82rem;color:var(--muted)}
+.svc p{margin:4px 0 8px;font-size:.9rem;color:var(--muted)}
+.svc ul{margin:0 0 10px;padding-left:18px;font-size:.88rem}
+.btn{border:0;border-radius:12px;font-weight:800;padding:10px 16px;background:var(--leaf);color:var(--leaf-ink);text-align:center;text-decoration:none;display:inline-block}
+.btn.alt{background:var(--turmeric);color:var(--turmeric-ink)}
+.btn.ghost{background:var(--chip);color:var(--fg)}
+.btn.block{display:block;width:100%}
+.svcmini{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.svcmini button{border:0;background:var(--t-svc);border-radius:16px;padding:12px 6px;display:grid;gap:4px;justify-items:center;font-weight:600;font-size:.82rem;line-height:1.2}
+.svcmini span{font-size:1.6rem}
+
+.promo{display:flex;align-items:center;gap:12px;background:var(--t-svc);border-radius:18px;padding:14px;text-decoration:none;color:var(--fg)}
+.promo .pi{font-size:1.8rem}
+.promo b{display:block;font-family:var(--display);font-size:1.05rem}
+.promo span span{font-size:.85rem;color:var(--muted)}
+.promo>span:last-child{margin-left:auto;font-size:1.6rem;color:var(--muted)}
+/* cart */
+.line{display:grid;grid-template-columns:52px 1fr auto;gap:10px;align-items:center;background:var(--surface);border-radius:16px;padding:10px;box-shadow:var(--shadow)}
+.line .art{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;font-size:1.6rem}
+.line h4{font-size:.98rem}
+.line small{color:var(--muted);font-variant-numeric:tabular-nums}
+.card{background:var(--surface);border-radius:18px;padding:14px;display:grid;gap:10px;box-shadow:var(--shadow)}
+.sum{display:flex;justify-content:space-between;font-variant-numeric:tabular-nums}
+.sum.tot{font-weight:800;font-size:1.1rem;border-top:1px dashed var(--line);padding-top:8px}
+.hint{font-size:.82rem;color:var(--muted)}
+.ok{color:var(--leaf-2);font-weight:700}
+label{display:grid;gap:4px;font-weight:600;font-size:.9rem}
+input,select,textarea{font:inherit;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--app);color:var(--fg);width:100%;min-width:0}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg label{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:10px;font-weight:600;font-size:.88rem;background:var(--app)}
+.seg input{width:auto;accent-color:var(--leaf-2)}
+.err{color:var(--danger);font-size:.85rem;font-weight:600}
+
+/* more */
+.list{background:var(--surface);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.list .it{display:flex;gap:12px;align-items:center;padding:14px;border-bottom:1px solid var(--line)}
+.list .it:last-child{border-bottom:0}
+.list .it .ic{width:38px;height:38px;border-radius:12px;background:var(--chip);display:grid;place-items:center;flex:none;font-size:1.1rem}
+.list .it div{min-width:0}
+.list .it b{display:block}
+.list .it span{color:var(--muted);font-size:.88rem}
+.sel{user-select:all;font-variant-numeric:tabular-nums}
+.order{background:var(--surface);border-radius:16px;padding:12px;box-shadow:var(--shadow);display:grid;gap:4px;font-size:.9rem}
+.order b{font-variant-numeric:tabular-nums}
+
+/* bottom nav */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:center;pointer-events:none}
+.nav .bar{pointer-events:auto;width:100%;max-width:520px;background:var(--surface);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.nav button{border:0;background:none;height:var(--nav-h);display:grid;place-items:center;align-content:center;gap:2px;font-size:.72rem;font-weight:600;color:var(--muted);position:relative}
+.nav button svg{width:24px;height:24px}
+.nav button[aria-current="page"]{color:var(--leaf-2)}
+.badge{position:absolute;top:8px;left:calc(50% + 4px);background:var(--turmeric);color:var(--turmeric-ink);border-radius:999px;font-size:.68rem;font-weight:800;min-width:18px;height:18px;display:grid;place-items:center;padding:0 4px}
+
+/* floating cart pill */
+.pill{position:fixed;left:0;right:0;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 10px);z-index:19;display:flex;justify-content:center;pointer-events:none;padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.pill button{pointer-events:auto;width:100%;max-width:488px;border:0;border-radius:16px;background:var(--leaf);color:var(--leaf-ink);display:flex;justify-content:space-between;align-items:center;padding:12px 16px;font-weight:700;box-shadow:var(--shadow)}
+.pill button small{display:block;font-weight:500;opacity:.85;font-size:.78rem;text-align:left}
+
+/* sheet */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:40;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--app);width:100%;max-width:520px;border-radius:22px 22px 0 0;max-height:88vh;overflow:auto;padding-top:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px));display:grid;gap:12px}
+.sheet .grab{width:44px;height:5px;border-radius:9px;background:var(--line);justify-self:center}
+.msg{white-space:pre-wrap;font-size:.85rem;background:var(--chip);border-radius:12px;padding:10px;margin:0;max-height:180px;overflow:auto}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 74px);background:var(--fg);color:var(--app);padding:8px 16px;border-radius:999px;font-weight:600;font-size:.9rem;z-index:50}
+@media (prefers-reduced-motion:no-preference){
+  .scrim:not([hidden]) .sheet{animation:up .22s ease-out}
+  @keyframes up{from{transform:translateY(40px);opacity:.6}to{transform:none;opacity:1}}
+  .addb:active,.btn:active,.cat:active{transform:scale(.96)}
+}
+</style></head><body>
+
+<div class="app" id="app">
+  <header class="top gut">
+    <div class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 28C8 24 5 16 9 7c8 0 15 5 15 13 0 3-1 6-3 8" fill="#3b8d3f"/><path d="M16 28c1-7 0-13-5-19" stroke="#ffffff" stroke-width="1.6" fill="none" stroke-linecap="round"/><circle cx="24" cy="9" r="3.2" fill="#eaa616"/></svg></div>
+    <div class="brand"><b data-t="brand"></b><small data-t="place"></small></div>
+    <button class="iconbtn" id="lang" type="button" aria-label="Change language">தமிழ்</button>
+    <a class="iconbtn" id="callTop" href="tel:+919043232447" aria-label="Call shop"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
+  </header>
+
+  <!-- HOME -->
+  <main class="view gut" id="v-home">
+    <div class="hero">
+      <div class="k" data-t="heroK"></div>
+      <h1 data-t="heroH"></h1>
+      <p data-t="heroP"></p>
+      <button class="go" type="button" data-goto="shop" data-t="shopNow"></button>
+    </div>
+    <label class="search" for="q1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q1" type="search" data-ph="search"></label>
+    <div class="strip"><div><b data-t="s1b"></b><span data-t="s1"></span></div><div><b data-t="s2b"></b><span data-t="s2"></span></div><div><b data-t="s3b"></b><span data-t="s3"></span></div></div>
+    <section class="sec"><div class="sec-h"><h2 data-t="cats"></h2></div><div class="cats" id="cats"></div></section>
+    <section class="sec"><div class="sec-h"><h2 data-t="fresh"></h2><button class="link" type="button" data-goto="shop" data-t="seeAll"></button></div><div class="hscroll" id="popular"></div></section>
+    <a class="promo" id="promo" target="_blank" rel="noopener"><span class="pi" aria-hidden="true">🛠️</span><span><b data-t="promoH"></b><span data-t="promoP"></span></span><span aria-hidden="true">›</span></a>
+  </main>
+
+  <!-- SHOP -->
+  <main class="view gut" id="v-shop" hidden>
+    <label class="search" for="q2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q2" type="search" data-ph="search"></label>
+    <div class="chips" id="chips" role="group" aria-label="Category"></div>
+    <div class="pgrid" id="pgrid"></div>
+    <p class="hint" data-t="samplePrices"></p>
+  </main>
+
+  <!-- CART -->
+  <main class="view gut" id="v-cart" hidden>
+    <div class="sec-h"><h2 data-t="cartTitle"></h2></div>
+    <div id="cartBody" class="sec"></div>
+  </main>
+
+  <!-- MORE -->
+  <main class="view gut" id="v-more" hidden>
+    <div class="sec-h"><h2 data-t="contact"></h2></div>
+    <div class="list">
+      <div class="it"><div class="ic" aria-hidden="true">📞</div><div><b data-t="callWa"></b><span class="sel" id="phoneLine"></span></div></div>
+      <div class="it"><div class="ic" aria-hidden="true">📍</div><div><b data-t="addrT"></b><span data-t="addr"></span></div></div>
+      <div class="it"><div class="ic" aria-hidden="true">👤</div><div><b data-t="ownerT"></b><span id="ownerLine"></span></div></div>
+      <div class="it"><div class="ic" aria-hidden="true">✉️</div><div><b data-t="emailT"></b><span class="sel" id="emailLine"></span></div></div>
+      <div class="it"><div class="ic" aria-hidden="true">🕖</div><div><b data-t="timeT"></b><span data-t="time"></span></div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <a class="btn" href="tel:+919043232447" data-t="callNow"></a>
+      <a class="btn alt" id="waHello" target="_blank" rel="noopener" data-t="chatWa"></a>
+    </div>
+    <button class="btn ghost block" id="installBtn" type="button" hidden data-t="install"></button>
+    <section class="sec"><div class="sec-h"><h2 data-t="myOrders"></h2></div><div id="orders" class="sec"></div></section>
+    <section class="sec"><div class="sec-h"><h2 data-t="about"></h2></div><p style="margin:0" data-t="aboutP"></p></section>
+  </main>
+
+  <div class="pill" id="pill" hidden><button type="button" data-goto="cart"><span><small id="pillN"></small><span id="pillT"></span></span><span data-t="viewCart"></span></button></div>
+
+  <nav class="nav" aria-label="Main"><div class="bar">
+    <button type="button" data-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span data-t="nHome"></span></button>
+    <button type="button" data-tab="shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21c-5-2-8-7-6-14 6 0 10 4 10 9"/><path d="M12 21c0-5-1-8-4-11"/><path d="M14 10c1-4 4-6 7-6 0 4-2 7-6 8"/></svg><span data-t="nShop"></span></button>
+    <button type="button" data-tab="cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 4h2l2.4 11h11L21 7H6.2"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg><span data-t="nCart"></span><span class="badge" id="badge" hidden></span></button>
+    <button type="button" data-tab="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><span data-t="nMore"></span></button>
+  </div></nav>
+
+  <div class="scrim" id="scrim" hidden><div class="sheet gut" id="sheet" role="dialog" aria-modal="true"></div></div>
+  <div class="toast" id="toast" hidden></div>
+</div>
+
+<script>
+/* ===== OWNER SETTINGS: change these lines any time ===== */
+const SHOP={
+  owner:"Nixon",
+  phone:"919043232447",            // WhatsApp number with 91 in front
+  phoneShow:"+91 90432 32447",
+  email:"nixon.nix42@gmail.com",
+  freeAbove:300, fee:20,           // free delivery above ₹300, else ₹20
+  sheetCSV:"",                     // paste your Google Sheet "Publish to web" CSV link here to edit prices from your phone
+  otherApp:"../services/" // link to the Home Services app
+};
+/* ======================================================== */
+const T={
+en:{brand:"Meenthulli Fresh",promoH:"Need home services?",promoP:"Kitchen, electrical and painting work. Open Meenthulli Home Services.",ownerT:"Owner",emailT:"Email",place:"Sankarankovil, Tenkasi",heroK:"Fresh every morning",heroH:"Farm fresh food at your door",heroP:"Coconuts, onions, greens and healthy foods from local farms.",shopNow:"Shop now",search:"Search coconut, keerai, honey…",s1b:"Same day",s1:"delivery",s2b:"Cash / UPI",s2:"on delivery",s3b:"Free",s3:"above ₹300",cats:"Categories",fresh:"Fresh today",seeAll:"See all",homeSvc:"Home services",samplePrices:"Prices are samples for now.",svcTitle:"Home services",svcSub:"Free site visit and quote in Sankarankovil and nearby villages.",book:"Book free visit",cartTitle:"Your cart",empty:"Your cart is empty.",emptyBtn:"Start shopping",subtotal:"Items total",delivery:"Delivery",free:"Free",total:"To pay",addMore:n=>`Add ₹${n} more for free delivery`,details:"Delivery details",name:"Name",phone:"Phone",address:"House no, street, village",slot:"Delivery time",morning:"Morning 7–10",evening:"Evening 5–8",pay:"Payment",cod:"Cash",upi:"UPI (GPay, PhonePe)",note:"Note for shop (optional)",place2:"Place order on WhatsApp",fill:"Please fill name, 10-digit phone and address.",contact:"Contact us",callWa:"Call or WhatsApp",addrT:"Shop",addr:"Sankarankovil, Tenkasi district, Tamil Nadu",timeT:"Open",time:"Mon to Sat, 7 am to 8 pm",callNow:"Call now",chatWa:"WhatsApp",install:"Install app on this phone",myOrders:"My orders",noOrders:"No orders yet. Your orders on this phone will show here.",about:"About Meenthulli Fresh",aboutP:"We bring fresh coconuts, onions, greens and healthy foods from farms around Sankarankovil straight to your home.",viewCart:"View cart →",items:n=>`${n} item${n>1?"s":""}`,nHome:"Home",nShop:"Shop",nSvc:"Services",nCart:"Cart",nMore:"Account",add:"Add",all:"All",added:"Added to cart",bookT:"Book a free visit",svcPick:"Service",area:"Village / area",date:"Preferred date",work:"What work do you need?",send:"Send on WhatsApp",sentT:"Almost done",sentP:"Tap the button to send your message to Meenthulli on WhatsApp. We will call you back to confirm.",openWa:"Open WhatsApp",close:"Close",orderOn:"Order on",notFound:"Nothing found. Try another word."},
+ta:{brand:"மீன்துள்ளி ஃப்ரெஷ்",promoH:"வீட்டு சேவைகள் வேண்டுமா?",promoP:"கிச்சன், மின் வேலை, பெயிண்டிங். மீன்துள்ளி ஹோம் சர்வீசஸ் திறக்கவும்.",ownerT:"உரிமையாளர்",emailT:"மின்னஞ்சல்",place:"சங்கரன்கோவில், தென்காசி",heroK:"தினமும் காலையில் புதிதாக",heroH:"தோட்டத்து உணவு உங்கள் வீட்டு வாசலில்",heroP:"தேங்காய், வெங்காயம், கீரை மற்றும் ஆரோக்கிய உணவுகள்.",shopNow:"வாங்க",search:"தேங்காய், கீரை, தேன் தேடுங்கள்…",s1b:"அதே நாள்",s1:"டெலிவரி",s2b:"பணம் / UPI",s2:"டெலிவரியில்",s3b:"இலவசம்",s3:"₹300க்கு மேல்",cats:"வகைகள்",fresh:"இன்று புதிது",seeAll:"அனைத்தும்",homeSvc:"வீட்டு சேவைகள்",samplePrices:"விலைகள் தற்போது மாதிரி மட்டுமே.",svcTitle:"வீட்டு சேவைகள்",svcSub:"சங்கரன்கோவில் மற்றும் அருகிலுள்ள ஊர்களில் இலவச வருகை மற்றும் விலை மதிப்பீடு.",book:"இலவச வருகை பதிவு",cartTitle:"உங்கள் கூடை",empty:"கூடை காலியாக உள்ளது.",emptyBtn:"வாங்கத் தொடங்குங்கள்",subtotal:"பொருட்கள் மொத்தம்",delivery:"டெலிவரி",free:"இலவசம்",total:"செலுத்த வேண்டியது",addMore:n=>`இலவச டெலிவரிக்கு இன்னும் ₹${n} சேர்க்கவும்`,details:"டெலிவரி விவரம்",name:"பெயர்",phone:"தொலைபேசி",address:"வீட்டு எண், தெரு, ஊர்",slot:"டெலிவரி நேரம்",morning:"காலை 7–10",evening:"மாலை 5–8",pay:"கட்டணம்",cod:"பணம்",upi:"UPI (GPay, PhonePe)",note:"கடைக்கு குறிப்பு (விருப்பம்)",place2:"WhatsApp-ல் ஆர்டர் செய்க",fill:"பெயர், 10 இலக்க எண், முகவரி நிரப்பவும்.",contact:"தொடர்புக்கு",callWa:"அழைக்க / WhatsApp",addrT:"கடை",addr:"சங்கரன்கோவில், தென்காசி மாவட்டம், தமிழ்நாடு",timeT:"திறந்திருக்கும் நேரம்",time:"திங்கள் முதல் சனி, காலை 7 – இரவு 8",callNow:"அழைக்க",chatWa:"WhatsApp",install:"இந்த போனில் ஆப் நிறுவவும்",myOrders:"என் ஆர்டர்கள்",noOrders:"இன்னும் ஆர்டர் இல்லை.",about:"மீன்துள்ளி பற்றி",aboutP:"சங்கரன்கோவில் சுற்றியுள்ள தோட்டங்களில் இருந்து புதிய தேங்காய், வெங்காயம், கீரை மற்றும் ஆரோக்கிய உணவுகளை உங்கள் வீட்டுக்கே கொண்டு வருகிறோம்.",viewCart:"கூடை →",items:n=>`${n} பொருட்கள்`,nHome:"முகப்பு",nShop:"கடை",nSvc:"சேவைகள்",nCart:"கூடை",nMore:"கணக்கு",add:"சேர்",all:"அனைத்தும்",added:"கூடையில் சேர்க்கப்பட்டது",bookT:"இலவச வருகை பதிவு",svcPick:"சேவை",area:"ஊர் / பகுதி",date:"விருப்பமான தேதி",work:"என்ன வேலை வேண்டும்?",send:"WhatsApp-ல் அனுப்பு",sentT:"கிட்டத்தட்ட முடிந்தது",sentP:"பொத்தானை அழுத்தி WhatsApp-ல் மீன்துள்ளிக்கு அனுப்புங்கள். உறுதிப்படுத்த நாங்கள் அழைப்போம்.",openWa:"WhatsApp திற",close:"மூடு",orderOn:"ஆர்டர்",notFound:"எதுவும் கிடைக்கவில்லை."}
+};
+const CATS=[
+ {id:"coconut",ico:"🥥",tint:"--t-coco",en:"Coconut",ta:"தேங்காய்"},
+ {id:"veg",ico:"🧅",tint:"--t-onion",en:"Onions & veg",ta:"வெங்காயம்"},
+ {id:"greens",ico:"🌿",tint:"--t-green",en:"Greens",ta:"கீரைகள்"},
+ {id:"healthy",ico:"🌾",tint:"--t-health",en:"Healthy foods",ta:"ஆரோக்கியம்"}
+];
+let P=[
+ {id:"tc",cat:"coconut",ico:"🥥",en:"Tender coconut",ta:"இளநீர்",unit:"each",uta:"ஒன்று",price:40,tag:1},
+ {id:"co",cat:"coconut",ico:"🥥",en:"Coconut",ta:"தேங்காய்",unit:"each",uta:"ஒன்று",price:30},
+ {id:"cc",cat:"coconut",ico:"🥥",en:"Grated coconut",ta:"துருவிய தேங்காய்",unit:"200 g",uta:"200 கி",price:35},
+ {id:"so",cat:"veg",ico:"🧅",en:"Small onion",ta:"சின்ன வெங்காயம்",unit:"kg",uta:"கிலோ",price:60,tag:1},
+ {id:"bo",cat:"veg",ico:"🧅",en:"Big onion",ta:"பெரிய வெங்காயம்",unit:"kg",uta:"கிலோ",price:35},
+ {id:"ds",cat:"veg",ico:"🥢",en:"Drumstick",ta:"முருங்கைக்காய்",unit:"5 pcs",uta:"5 எண்ணம்",price:25},
+ {id:"mk",cat:"greens",ico:"🌿",en:"Murungai keerai",ta:"முருங்கை கீரை",unit:"bunch",uta:"கட்டு",price:20,tag:1},
+ {id:"ak",cat:"greens",ico:"🥬",en:"Arai keerai",ta:"அரைக் கீரை",unit:"bunch",uta:"கட்டு",price:15},
+ {id:"pk",cat:"greens",ico:"🥬",en:"Ponnanganni keerai",ta:"பொன்னாங்கண்ணி",unit:"bunch",uta:"கட்டு",price:15},
+ {id:"cl",cat:"greens",ico:"🌱",en:"Curry leaves",ta:"கறிவேப்பிலை",unit:"bunch",uta:"கட்டு",price:10},
+ {id:"mi",cat:"healthy",ico:"🌾",en:"Millet mix",ta:"சிறுதானிய கலவை",unit:"kg",uta:"கிலோ",price:120},
+ {id:"rg",cat:"healthy",ico:"🌾",en:"Ragi flour",ta:"கேழ்வரகு மாவு",unit:"kg",uta:"கிலோ",price:80},
+ {id:"ho",cat:"healthy",ico:"🍯",en:"Forest honey",ta:"மலைத்தேன்",unit:"500 g",uta:"500 கி",price:280,tag:1},
+ {id:"oil",cat:"healthy",ico:"🫙",en:"Chekku coconut oil",ta:"செக்கு தேங்காய் எண்ணெய்",unit:"litre",uta:"லிட்டர்",price:320},
+ {id:"pb",cat:"healthy",ico:"🟫",en:"Palm jaggery",ta:"கருப்பட்டி",unit:"500 g",uta:"500 கி",price:180}
+];
+const store={get(k,d){try{const v=localStorage.getItem("mt_"+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem("mt_"+k,JSON.stringify(v))}catch(e){}}};
+let lang=store.get("lang","en"), cart=store.get("cart",null), cat="all", query="", tab="home";
+if(!cart){cart={tc:4,mk:2,so:1}} // example cart so the screen is not empty on first look
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const t=k=>T[lang][k];
+const nm=o=>lang==="ta"?o.ta:o.en;
+const unit=p=>lang==="ta"?p.uta:p.unit;
+const tint=c=>`var(${CATS.find(x=>x.id===c).tint})`;
+const wa=m=>"https://wa.me/"+SHOP.phone+"?text="+encodeURIComponent(m);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function stepper(p){
+  const q=cart[p.id]||0;
+  return q?`<div class="step"><button type="button" data-d="-1" data-id="${p.id}" aria-label="Less">−</button><output>${q}</output><button type="button" data-d="1" data-id="${p.id}" aria-label="More">+</button></div>`
+          :`<button class="addb" type="button" data-d="1" data-id="${p.id}">${t("add")}</button>`;
+}
+function card(p){
+  return `<div class="pc"><div class="art" style="background:${tint(p.cat)}">${p.tag?`<span class="tag">${lang==="ta"?"புதிது":"Fresh"}</span>`:""}<span aria-hidden="true">${p.ico}</span></div>
+  <h4>${nm(p)}</h4><div class="ta">${lang==="ta"?p.en:p.ta}</div>
+  <div class="row"><div class="pr">₹${p.price}<span>/ ${unit(p)}</span></div><div data-slot="${p.id}">${stepper(p)}</div></div></div>`;
+}
+function renderHome(){
+  $("#cats").innerHTML=CATS.map(c=>`<button class="cat" type="button" data-cat="${c.id}"><span class="bub" style="background:var(${c.tint})" aria-hidden="true">${c.ico}</span>${nm(c)}</button>`).join("");
+  $("#popular").innerHTML=P.filter(p=>p.tag).map(card).join("");
+}
+function renderShop(){
+  $("#chips").innerHTML=[{id:"all",en:t("all"),ta:t("all")},...CATS].map(c=>`<button type="button" data-chip="${c.id}" aria-pressed="${cat===c.id}">${nm(c)}</button>`).join("");
+  const q=query.toLowerCase();
+  const list=P.filter(p=>(cat==="all"||p.cat===cat)&&(!q||(p.en+" "+p.ta).toLowerCase().includes(q)));
+  $("#pgrid").innerHTML=list.length?list.map(card).join(""):`<div class="empty" style="grid-column:1/-1">${t("notFound")}</div>`;
+}
+function totals(){
+  const items=P.filter(p=>cart[p.id]>0);
+  const sub=items.reduce((s,p)=>s+p.price*cart[p.id],0);
+  const fee=sub===0||sub>=SHOP.freeAbove?0:SHOP.fee;
+  return {items,sub,fee,total:sub+fee,count:items.reduce((s,p)=>s+cart[p.id],0)};
+}
+function renderCart(){
+  const {items,sub,fee,total}=totals();
+  if(!items.length){$("#cartBody").innerHTML=`<div class="empty"><div style="font-size:3rem" aria-hidden="true">🧺</div><p>${t("empty")}</p><button class="btn" type="button" data-goto="shop">${t("emptyBtn")}</button></div>`;return}
+  const d=store.get("addr",{name:"",phone:"",address:"",slot:"morning",pay:"cod"});
+  $("#cartBody").innerHTML=items.map(p=>`<div class="line"><div class="art" style="background:${tint(p.cat)}" aria-hidden="true">${p.ico}</div><div><h4>${nm(p)}</h4><small>₹${p.price} / ${unit(p)} · ₹${p.price*cart[p.id]}</small></div><div data-slot="${p.id}">${stepper(p)}</div></div>`).join("")+
+  `<div class="card"><div class="sum"><span>${t("subtotal")}</span><span>₹${sub}</span></div>
+   <div class="sum"><span>${t("delivery")}</span><span class="${fee?"":"ok"}">${fee?"₹"+fee:t("free")}</span></div>
+   ${fee?`<div class="hint">${t("addMore")(SHOP.freeAbove-sub)}</div>`:""}
+   <div class="sum tot"><span>${t("total")}</span><span>₹${total}</span></div></div>
+  <form class="card" id="checkout" novalidate>
+   <h3>${t("details")}</h3>
+   <label for="c-name">${t("name")}<input id="c-name" autocomplete="name" value="${esc(d.name)}"></label>
+   <label for="c-phone">${t("phone")}<input id="c-phone" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel" value="${esc(d.phone)}"></label>
+   <label for="c-addr">${t("address")}<textarea id="c-addr" rows="2" autocomplete="street-address">${esc(d.address)}</textarea></label>
+   <div><b style="font-size:.9rem">${t("slot")}</b><div class="seg" style="margin-top:4px"><label><input type="radio" name="slot" id="slot-m" value="morning" ${d.slot!=="evening"?"checked":""}>${t("morning")}</label><label><input type="radio" name="slot" id="slot-e" value="evening" ${d.slot==="evening"?"checked":""}>${t("evening")}</label></div></div>
+   <div><b style="font-size:.9rem">${t("pay")}</b><div class="seg" style="margin-top:4px"><label><input type="radio" name="pay" id="pay-c" value="cod" ${d.pay!=="upi"?"checked":""}>${t("cod")}</label><label><input type="radio" name="pay" id="pay-u" value="upi" ${d.pay==="upi"?"checked":""}>${t("upi")}</label></div></div>
+   <label for="c-note">${t("note")}<input id="c-note"></label>
+   <div class="err" id="c-err" hidden></div>
+   <button class="btn alt block" type="submit">${t("place2")} · ₹${total}</button>
+  </form>`;
+}
+function renderOrders(){
+  const o=store.get("orders",[]);
+  $("#orders").innerHTML=o.length?o.slice().reverse().map(x=>`<div class="order"><div style="display:flex;justify-content:space-between"><b>${esc(x.when)}</b><b>₹${x.total}</b></div><span class="hint">${esc(x.items)}</span></div>`).join(""):`<p class="hint" style="margin:0">${t("noOrders")}</p>`;
+}
+function refreshBadges(){
+  const {count,total}=totals();
+  $("#badge").hidden=!count;$("#badge").textContent=count;
+  $("#pill").hidden=!count||tab==="cart"||tab==="more";
+  $("#pillN").textContent=t("items")(count);$("#pillT").textContent="₹"+total;
+  store.set("cart",cart);
+}
+function applyLang(){
+  document.documentElement.lang=lang;
+  $$("[data-t]").forEach(e=>{const v=t(e.dataset.t);if(typeof v==="string")e.textContent=v});
+  $$("[data-ph]").forEach(e=>e.placeholder=t(e.dataset.ph));
+  $("#lang").textContent=lang==="en"?"தமிழ்":"EN";
+  $("#ownerLine").textContent=SHOP.owner;$("#emailLine").textContent=SHOP.email;$("#phoneLine").textContent=SHOP.phoneShow;
+  $("#promo").href=SHOP.otherApp;
+  $$("a[href^='tel:']").forEach(a=>a.href="tel:+"+SHOP.phone);
+  $("#waHello").href=wa(lang==="ta"?"வணக்கம் மீன்துள்ளி!":"Vanakkam Meenthulli!");
+  renderAll();
+}
+function renderAll(){renderHome();renderShop();renderCart();renderOrders();refreshBadges()}
+function go(v){
+  tab=v;
+  $$(".view").forEach(e=>e.hidden=e.id!=="v-"+v);
+  $$(".nav button").forEach(b=>{if(b.dataset.tab===v)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});
+  if(v==="cart")renderCart();if(v==="more")renderOrders();
+  refreshBadges();window.scrollTo(0,0);
+}
+let toastT;
+function toast(m){const e=$("#toast");e.textContent=m;e.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>e.hidden=true,1400)}
+function sheet(html){$("#sheet").innerHTML=`<div class="grab"></div>`+html;$("#scrim").hidden=false;const f=$("#sheet").querySelector("input,button");f&&f.focus()}
+function closeSheet(){$("#scrim").hidden=true}
+function sentSheet(msg){
+  sheet(`<h3>${t("sentT")}</h3><p class="hint" style="margin:0">${t("sentP")}</p><pre class="msg">${esc(msg)}</pre>
+   <a class="btn alt block" href="${wa(msg)}" target="_blank" rel="noopener">${t("openWa")}</a>
+   <p class="hint" style="margin:0;text-align:center">${SHOP.phoneShow}</p>
+   <button class="btn ghost block" type="button" data-close>${t("close")}</button>`);
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest("button,a");
+  if(e.target.id==="scrim"){closeSheet();return}
+  if(!b)return;
+  if(b.dataset.tab)return go(b.dataset.tab);
+  if(b.dataset.goto)return go(b.dataset.goto);
+  if(b.dataset.cat){cat=b.dataset.cat;renderShop();return go("shop")}
+  if(b.dataset.chip){cat=b.dataset.chip;return renderShop()}
+  if(b.hasAttribute("data-close"))return closeSheet();
+  if(b.dataset.d){
+    const id=b.dataset.id, was=cart[id]||0;
+    cart[id]=Math.max(0,was+Number(b.dataset.d));
+    if(!cart[id])delete cart[id];
+    if(!was)toast(t("added"));
+    const p=P.find(x=>x.id===id);
+    $$(`[data-slot="${id}"]`).forEach(s=>s.innerHTML=stepper(p));
+    if(tab==="cart")renderCart();
+    refreshBadges();
+  }
+});
+$("#lang").onclick=()=>{lang=lang==="en"?"ta":"en";store.set("lang",lang);applyLang()};
+["#q1","#q2"].forEach(s=>$(s).addEventListener("input",e=>{query=e.target.value;$("#q1").value=$("#q2").value=query;renderShop();if(tab!=="shop"){go("shop");$("#q2").focus()}}));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheet()});
+document.addEventListener("submit",e=>{
+  e.preventDefault();
+  const v=id=>(document.getElementById(id)?.value||"").trim();
+  if(e.target.id==="checkout"){
+    const name=v("c-name"),phone=v("c-phone").replace(/\D/g,""),address=v("c-addr");
+    const slot=document.querySelector('[name=slot]:checked').value,pay=document.querySelector('[name=pay]:checked').value;
+    if(!name||phone.length!==10||!address){const er=$("#c-err");er.textContent=t("fill");er.hidden=false;return}
+    store.set("addr",{name,phone,address,slot,pay});
+    const {items,sub,fee,total}=totals();
+    const msg=`Vanakkam Meenthulli Fresh! New order 🛒\n\n`+items.map(p=>`• ${p.en} (${p.ta}) × ${cart[p.id]} ${p.unit} = ₹${p.price*cart[p.id]}`).join("\n")+
+      `\n\nItems: ₹${sub}\nDelivery: ${fee?"₹"+fee:"Free"}\nTotal: ₹${total}\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\nTime: ${slot==="evening"?"Evening 5–8":"Morning 7–10"}\nPayment: ${pay==="upi"?"UPI":"Cash"} on delivery`+(v("c-note")?`\nNote: ${v("c-note")}`:"");
+    const o=store.get("orders",[]);
+    o.push({when:new Date().toLocaleString("en-IN",{day:"numeric",month:"short",hour:"numeric",minute:"2-digit"}),total,items:items.map(p=>`${nm(p)} × ${cart[p.id]}`).join(", ")});
+    store.set("orders",o.slice(-20));
+    cart={};refreshBadges();renderCart();renderShop();renderHome();
+    sentSheet(msg);
+  }
+});
+// install button, works when the site is hosted as an app
+let deferred;
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferred=e;$("#installBtn").hidden=false});
+$("#installBtn").onclick=async()=>{if(!deferred)return;deferred.prompt();await deferred.userChoice;deferred=null;$("#installBtn").hidden=true};
+try{if("serviceWorker" in navigator&&document.querySelector('link[rel="manifest"]'))navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}
+// Load products from Google Sheet if set (columns: id,category,name_en,name_ta,unit_en,unit_ta,price,emoji,fresh,available)
+function parseCSV(txt){const rows=[];let r=[],c="",q=false;for(let i=0;i<txt.length;i++){const ch=txt[i];if(q){if(ch==='"'){if(txt[i+1]==='"'){c+='"';i++}else q=false}else c+=ch}else if(ch==='"')q=true;else if(ch===","){r.push(c);c=""}else if(ch==="\n"||ch==="\r"){if(ch==="\r"&&txt[i+1]==="\n")i++;r.push(c);rows.push(r);r=[];c=""}else c+=ch}if(c||r.length){r.push(c);rows.push(r)}return rows}
+async function loadSheet(){
+  if(!SHOP.sheetCSV)return;
+  try{
+    const rows=parseCSV(await (await fetch(SHOP.sheetCSV,{cache:"no-store"})).text());
+    const h=rows.shift().map(x=>x.trim().toLowerCase());const g=(r,k)=>(r[h.indexOf(k)]||"").trim();
+    const list=rows.filter(r=>g(r,"name_en")&&!/^(no|n|0)$/i.test(g(r,"available"))).map((r,i)=>({id:g(r,"id")||"s"+i,cat:CATS.some(c=>c.id===g(r,"category"))?g(r,"category"):"healthy",en:g(r,"name_en"),ta:g(r,"name_ta")||g(r,"name_en"),unit:g(r,"unit_en")||"each",uta:g(r,"unit_ta")||g(r,"unit_en")||"ஒன்று",price:Number(g(r,"price"))||0,ico:g(r,"emoji")||"🛒",tag:/^(yes|y|1)$/i.test(g(r,"fresh"))}));
+    if(list.length){P.length=0;P.push(...list);Object.keys(cart).forEach(k=>{if(!P.some(p=>p.id===k))delete cart[k]});renderAll()}
+  }catch(e){}
+}
+applyLang();go("home");loadSheet();
+</script>
+</body></html>
