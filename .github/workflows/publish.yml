@@ -25,7 +25,7 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.7'
+          gradle-version: '8.9'
 
       - name: Put app pages inside the Android apps
         run: |
@@ -39,20 +39,25 @@ jobs:
           sed -i "s#otherApp:\"../fresh/\"#otherApp:\"$SITE/fresh/\"#" android/app/src/services/assets/www/index.html
 
       - name: Build Android apps
-        run: gradle -p android assembleFreshDebug assembleServicesDebug
+        env:
+          VERSION_CODE: ${{ github.run_number }}
+        run: gradle -p android assembleFreshDebug assembleServicesDebug bundleFreshRelease bundleServicesRelease
 
       - name: Add apps to the website
         run: |
           mkdir -p site/apps
           cp android/app/build/outputs/apk/fresh/debug/app-fresh-debug.apk site/apps/meenthulli-fresh.apk
           cp android/app/build/outputs/apk/services/debug/app-services-debug.apk site/apps/meenthulli-home-services.apk
+          mkdir -p playstore
+          cp android/app/build/outputs/bundle/freshRelease/app-fresh-release.aab playstore/meenthulli-fresh-unsigned.aab
+          cp android/app/build/outputs/bundle/servicesRelease/app-services-release.aab playstore/meenthulli-home-services-unsigned.aab
 
       - name: Update the download release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release delete android-apps --yes --cleanup-tag || true
-          gh release create android-apps site/apps/*.apk --title "Meenthulli Android apps" --notes "Download the .apk on your Android phone and tap it to install."
+          gh release create android-apps site/apps/*.apk playstore/*.aab --title "Meenthulli Android apps" --notes "Download the .apk on your Android phone and tap it to install."
 
       - name: Publish website to the gh-pages branch
         run: |

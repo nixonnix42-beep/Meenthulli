@@ -31,6 +31,13 @@ public class MainActivity extends Activity {
                 return true;
             }
         });
+        // Android 15 draws apps behind the status and navigation bars; keep the page clear of them.
+        if (android.os.Build.VERSION.SDK_INT >= 30) web.setOnApplyWindowInsetsListener((v, insets) -> {
+            android.graphics.Insets bars = insets.getInsets(android.view.WindowInsets.Type.systemBars());
+            v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
+            return insets;
+        });
+        web.setBackgroundColor(getResources().getColor(R.color.brand, getTheme()));
         setContentView(web);
         if (savedInstanceState != null) web.restoreState(savedInstanceState);
         else web.loadUrl("file:///android_asset/www/index.html");
