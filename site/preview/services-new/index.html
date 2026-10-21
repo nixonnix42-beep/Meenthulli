@@ -209,10 +209,54 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .wbox .btn{font-size:1.2rem;padding:18px}
 .wbox .btn.ta{font-family:"Mukta Malar",sans-serif;font-size:1.35rem}
 .wbox .btn.ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+/* animations: only when the phone allows motion */
 @media (prefers-reduced-motion:no-preference){
-  .scrim:not([hidden]) .sheet{animation:up .25s ease-out}
   @keyframes up{from{transform:translateY(30px);opacity:.4}to{transform:none;opacity:1}}
-  .tile{transition:transform .15s}.tile:active{transform:scale(.97)}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  @keyframes pop{from{opacity:0;transform:scale(.82) translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-18px,22px) scale(1.08)}}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(58,208,122,.6)}100%{box-shadow:0 0 0 10px rgba(58,208,122,0)}}
+  @keyframes ring{0%{box-shadow:0 0 0 0 rgba(255,200,58,.65),0 8px 22px rgba(255,200,58,.45)}100%{box-shadow:0 0 0 16px rgba(255,200,58,0),0 8px 22px rgba(255,200,58,.45)}}
+  @keyframes bolt{0%,86%,100%{opacity:1;transform:none}89%{opacity:.25;transform:scale(.92)}93%{opacity:1;transform:scale(1.08)}}
+  @keyframes drip{0%,55%{transform:translateY(0);opacity:1}100%{transform:translateY(6px);opacity:0}}
+  @keyframes roll{0%,100%{transform:translateX(0)}50%{transform:translateX(-3px)}}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+  @keyframes viewIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @keyframes shine{0%{transform:translateX(-120%) skewX(-20deg)}60%,100%{transform:translateX(320%) skewX(-20deg)}}
+  @keyframes zero{0%{transform:scale(.4) rotate(-12deg);opacity:0}70%{transform:scale(1.12) rotate(3deg);opacity:1}100%{transform:none}}
+
+  .scrim:not([hidden]) .sheet{animation:up .3s cubic-bezier(.2,.8,.3,1)}
+  main.view:not([hidden]){animation:viewIn .4s cubic-bezier(.2,.7,.2,1)}
+  .hero>*:not(.top){opacity:0}
+  .play .hero>*:not(.top){opacity:1;animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .hero .open{animation-delay:.05s}.hero h1{animation-delay:.14s}.hero .lead{animation-delay:.24s}.hero .chips{animation-delay:.32s}.hero .cta{animation-delay:.42s}
+  .hero::after{animation:float 9s ease-in-out infinite}
+  .hero .open i{animation:pulse 1.6s ease-out infinite}
+  .hero .btn.y{position:relative;overflow:hidden}
+  .hero .btn.y::after{content:"";position:absolute;top:0;bottom:0;left:0;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);animation:shine 3.2s ease-in-out 1.2s infinite}
+  .tile{opacity:0}
+  .play .tile{opacity:1;animation:pop .6s cubic-bezier(.2,.8,.3,1.15) backwards;transition:transform .15s}
+  .tile:nth-child(2){animation-delay:.08s}.tile:nth-child(3){animation-delay:.16s}.tile:nth-child(4){animation-delay:.24s}
+  .tile:active,.btn:active,.pick label:active,.seg label:active{transform:scale(.96)}
+  .btn,.pick label,.seg label{transition:transform .12s,background-color .2s,border-color .2s}
+  .tile.kitchen .ic svg,.svc .hd.kitchen .ic svg,.pick .pi.kitchen svg{animation:bob 3s ease-in-out infinite}
+  .tile.electric .ic svg,.svc .hd.electric .ic svg,.pick .pi.electric svg{animation:bolt 3.4s ease-in-out infinite}
+  .tile.plumb .ic svg path:nth-child(3),.svc .hd.plumb .ic svg path:nth-child(3),.pick .pi.plumb svg path:nth-child(3){transform-box:fill-box;animation:drip 1.8s ease-in infinite}
+  .tile.paint .ic svg,.svc .hd.paint .ic svg,.pick .pi.paint svg{animation:roll 2.4s ease-in-out infinite}
+  .tile .go{transition:transform .2s}.tile:hover .go{transform:translateX(3px)}
+  .nav .bk .ring{animation:ring 2.2s ease-out infinite}
+  .nav [aria-current="page"] svg{animation:pop .35s cubic-bezier(.2,.8,.3,1.3)}
+  .offer.in .n{animation:zero .7s cubic-bezier(.2,.8,.3,1.2) .15s both}
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  .steps.rv div,.prom.rv div{opacity:0;transform:translateX(-14px);transition:opacity .5s ease,transform .5s ease}
+  .steps.rv.in div,.prom.rv.in div{opacity:1;transform:none}
+  .steps.rv.in div:nth-child(2),.prom.rv.in div:nth-child(2){transition-delay:.12s}
+  .steps.rv.in div:nth-child(3),.prom.rv.in div:nth-child(3){transition-delay:.24s}
+  .prom.rv.in div:nth-child(4){transition-delay:.36s}
+  .welcome:not([hidden]) .wbox>*{animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+  .welcome:not([hidden]) .logo{animation:pop .6s cubic-bezier(.2,.8,.3,1.3) both}
+  .wbox>*:nth-child(2){animation-delay:.1s}.wbox>*:nth-child(3){animation-delay:.18s}.wbox>*:nth-child(4){animation-delay:.26s}.wbox>*:nth-child(5){animation-delay:.34s}.wbox>*:nth-child(6){animation-delay:.42s}
 }
 </style></head><body>
 
@@ -236,22 +280,22 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="gut view" style="padding-top:0">
       <section class="sec"><div class="sh"><h2 data-t="what"></h2><button class="more" type="button" data-goto="services"><span data-t="seeP"></span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg></button></div><div class="tiles" id="tiles"></div></section>
 
-      <div class="offer"><div class="n">₹0</div><div><b id="offerLine"></b><span data-t="offerSub"></span></div></div>
+      <div class="offer rv"><div class="n">₹0</div><div><b id="offerLine"></b><span data-t="offerSub"></span></div></div>
 
       <section class="sec"><div class="sh"><h2 data-t="how"></h2></div>
-        <div class="steps"><div><i>1</i><p><b data-t="h1"></b><span data-t="h1p"></span></p></div><div><i>2</i><p><b data-t="h2"></b><span data-t="h2p"></span></p></div><div><i>3</i><p><b data-t="h3"></b><span data-t="h3p"></span></p></div></div></section>
+        <div class="steps rv"><div><i>1</i><p><b data-t="h1"></b><span data-t="h1p"></span></p></div><div><i>2</i><p><b data-t="h2"></b><span data-t="h2p"></span></p></div><div><i>3</i><p><b data-t="h3"></b><span data-t="h3p"></span></p></div></div></section>
 
       <section class="sec"><div class="sh"><h2 data-t="whyT"></h2></div>
-        <div class="prom">
+        <div class="prom rv">
           <div><svg viewBox="0 0 24 24" fill="none" stroke="var(--kitchen)" stroke-width="2"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><b data-t="w1"></b><span data-t="w1p"></span></div>
           <div><svg viewBox="0 0 24 24" fill="none" stroke="var(--plumb)" stroke-width="2"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h5"/></svg><b data-t="w2"></b><span data-t="w2p"></span></div>
           <div><svg viewBox="0 0 24 24" fill="none" stroke="var(--electric)" stroke-width="2"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg><b data-t="w3"></b><span data-t="w3p"></span></div>
           <div><svg viewBox="0 0 24 24" fill="none" stroke="var(--paint)" stroke-width="2"><path d="M5 20h14M7 20V9l5-5 5 5v11"/><path d="M10 14h4"/></svg><b data-t="w4"></b><span data-t="w4p"></span></div>
         </div></section>
 
-      <section class="share"><span class="tag" style="color:var(--yellow)" data-t="shareK"></span><h3 id="shareH"></h3><p data-t="shareP"></p><button class="btn y block" type="button" data-share><span data-t="shareBtn"></span></button></section>
+      <section class="share rv"><span class="tag" style="color:var(--yellow)" data-t="shareK"></span><h3 id="shareH"></h3><p data-t="shareP"></p><button class="btn y block" type="button" data-share><span data-t="shareBtn"></span></button></section>
 
-      <a class="other" id="promo" target="_blank" rel="noopener"><span class="dot" aria-hidden="true">🥥</span><span><b data-t="promoH"></b><span data-t="promoP"></span></span></a>
+      <a class="other rv" id="promo" target="_blank" rel="noopener"><span class="dot" aria-hidden="true">🥥</span><span><b data-t="promoH"></b><span data-t="promoP"></span></span></a>
     </div>
   </main>
 
@@ -265,14 +309,14 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   <main class="view gut" id="v-book" hidden>
     <section class="ph"><span class="tag" data-t="bookK"></span><h2 data-t="bookT"></h2><p data-t="bookSub"></p></section>
     <form class="form" id="book" novalidate>
-      <div class="card"><span class="lbl" data-t="svcPick"></span><div class="pick" id="pick" role="radiogroup"></div>
+      <div class="card rv"><span class="lbl" data-t="svcPick"></span><div class="pick" id="pick" role="radiogroup"></div>
         <label class="fld" for="b-work"><span data-t="work"></span><select id="b-work"></select></label></div>
-      <div class="card">
+      <div class="card rv">
         <label class="fld" for="b-name"><span data-t="name"></span><input id="b-name" autocomplete="name"></label>
         <label class="fld" for="b-phone"><span data-t="phone"></span><input id="b-phone" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel"></label>
         <label class="fld" for="b-area"><span data-t="area"></span><input id="b-area" value="Sankarankovil"></label>
       </div>
-      <div class="card">
+      <div class="card rv">
         <label class="fld" for="b-date"><span data-t="date"></span><input id="b-date" type="date"></label>
         <div><span class="lbl" data-t="when"></span><div class="seg"><label><input type="radio" name="tm" value="Morning" checked><span data-t="morning"></span></label><label><input type="radio" name="tm" value="Afternoon"><span data-t="noon"></span></label><label><input type="radio" name="tm" value="Evening"><span data-t="evening"></span></label></div></div>
         <label class="fld" for="b-note"><span data-t="note"></span><textarea id="b-note" rows="2"></textarea></label>
@@ -297,7 +341,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     <button class="btn ghost block" id="installBtn" type="button" hidden data-t="install"></button>
     <section class="sec"><h2 style="font-size:1.4rem" data-t="myReq"></h2><div class="list" id="reqs"></div></section>
     <section class="sec"><h2 style="font-size:1.4rem" data-t="setT"></h2>
-      <div class="card">
+      <div class="card rv">
         <div><span class="lbl" data-t="setLang"></span><div class="seg two-c"><label><input type="radio" name="s-lang" value="en">English</label><label><input type="radio" name="s-lang" value="ta">தமிழ்</label></div></div>
         <div><span class="lbl" data-t="setLook"></span><div class="seg"><label><input type="radio" name="s-theme" value="auto"><span data-t="lookAuto"></span></label><label><input type="radio" name="s-theme" value="light"><span data-t="lookLight"></span></label><label><input type="radio" name="s-theme" value="dark"><span data-t="lookDark"></span></label></div></div>
         <button class="btn ghost block" type="button" id="clearMe" data-t="clearMe"></button>
@@ -371,17 +415,21 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",
 
 function render(){
   $("#tiles").innerHTML=SVC.map(s=>`<button class="tile ${s.id}" type="button" data-svc="${s.id}" style="${bg(s.id)}"><span class="ic">${ICO[s.id]}</span><span class="go">${ARR}</span><span><b>${nm(s)}</b><small>${t("fromL")} ${s.from}</small></span></button>`).join("");
-  $("#svclist").innerHTML=SVC.map(s=>`<article class="svc" id="s-${s.id}"><div class="hd ${s.id}" style="${bg(s.id)}"><span class="ic">${ICO[s.id]}</span><div><h3>${nm(s)}</h3><small>${t("fromL")} ${s.from}</small></div></div>
+  $("#svclist").innerHTML=SVC.map(s=>`<article class="svc rv" id="s-${s.id}"><div class="hd ${s.id}" style="${bg(s.id)}"><span class="ic">${ICO[s.id]}</span><div><h3>${nm(s)}</h3><small>${t("fromL")} ${s.from}</small></div></div>
    <ul>${s.items.map(x=>`<li><span>${lang==="ta"?x[1]:x[0]}</span><span>${x[2]}</span></li>`).join("")}</ul>
    <div class="ft"><button class="btn y block" type="button" data-bookfor="${s.id}"><span>${t("book")}</span>${ARR}</button></div></article>`).join("");
   $("#pick").innerHTML=SVC.map(s=>`<label><input type="radio" name="svc" value="${s.id}" ${s.id===picked?"checked":""}><span class="pi ${s.id}" style="background:var(--${s.id})">${ICO[s.id]}</span>${nm(s)}</label>`).join("");
   fillWork();
   const r=store.get("reqs",[]);
   $("#reqs").innerHTML=r.length?r.slice().reverse().map(x=>`<div class="req"><b>${esc(x.svc)}</b><span>${esc(x.work)} · ${esc(x.when)}</span></div>`).join(""):`<p class="note" style="padding:14px 0">${t("noReq")}</p>`;
+  reveal();
   const d=store.get("me",{});
   if(d.name&&!$("#b-name").value)$("#b-name").value=d.name;
   if(d.phone&&!$("#b-phone").value)$("#b-phone").value=d.phone;
 }
+/* show sections with a soft slide when they scroll into view */
+const io="IntersectionObserver" in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12}):null;
+function reveal(){$$(".rv:not(.in)").forEach(el=>io?io.observe(el):el.classList.add("in"))}
 function fillWork(){
   const s=SVC.find(x=>x.id===picked);
   $("#b-work").innerHTML=s.items.map((i,n)=>`<option value="${n}">${lang==="ta"?i[1]:i[0]}</option>`).join("")+`<option value="other">${t("other")}</option>`;
@@ -438,8 +486,8 @@ window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferred=e;
 $("#installBtn").onclick=async()=>{if(!deferred)return;deferred.prompt();await deferred.userChoice;deferred=null;$("#installBtn").hidden=true};
 try{if("serviceWorker" in navigator&&document.querySelector('link[rel="manifest"]'))navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}
 const firstOpen=store.get("lang",null)===null;
-$$("[data-wl]").forEach(b=>b.onclick=()=>{lang=b.dataset.wl;store.set("lang",lang);applyLang();$("#welcome").hidden=true});
+$$("[data-wl]").forEach(b=>b.onclick=()=>{lang=b.dataset.wl;store.set("lang",lang);applyLang();$("#welcome").hidden=true;$("#v-home").classList.add("play")});
 applyLang();go("home");
-if(firstOpen)$("#welcome").hidden=false;
+if(firstOpen)$("#welcome").hidden=false;else $("#v-home").classList.add("play");
 </script>
 </body></html>
