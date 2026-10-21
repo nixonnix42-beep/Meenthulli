@@ -204,6 +204,36 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
   @keyframes up{from{transform:translateY(30px);opacity:.4}to{transform:none;opacity:1}}
 }
 @media (min-width:700px){.app{border-inline:1px solid var(--rule)}}
+
+.how{display:grid}
+.how div{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:start;padding:16px 0;border-top:1px solid var(--rule)}
+.how div:last-child{border-bottom:1px solid var(--rule)}
+.how i{width:40px;height:40px;border-radius:50%;background:var(--forest);color:var(--on-dark);display:grid;place-items:center;font-style:normal;font-family:var(--serif);font-size:1.2rem;font-weight:600}
+.how b{display:block;font-family:var(--serif);font-size:1.25rem;font-weight:600;line-height:1.2}
+.how span{color:var(--ink-2);font-size:.95rem}
+.pays{display:grid;gap:8px}
+.pays div{display:flex;flex-wrap:wrap;gap:8px}
+.pays div span{border:1px solid var(--rule);border-radius:999px;padding:6px 14px;font-weight:600;font-size:.9rem;background:var(--card)}
+/* easy mode: bigger text, WhatsApp button, first-open language choice */
+body{font-size:17px}
+.eyebrow{font-size:.8rem}
+.nav button{font-size:.74rem;letter-spacing:.02em}
+.hint,.note{font-size:.92rem}
+.fld>span,.lbl,.rows b{font-size:.8rem}
+.fab{position:fixed;right:max(20px,calc(50% - 240px));bottom:calc(env(safe-area-inset-bottom,0px) + var(--nav-h) + 28px);z-index:19;display:none;align-items:center;gap:8px;background:#1f8f4e;color:#fff;text-decoration:none;border-radius:999px;width:58px;height:58px;justify-content:center;box-shadow:0 10px 26px rgba(31,143,78,.35)}
+.fab svg{width:30px;height:30px}
+.fab span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+body[data-tab=home] .fab,body[data-tab=services] .fab,body[data-tab=shop] .fab{display:flex}
+body.has-cart .fab{display:none!important}
+.welcome{position:fixed;inset:0;z-index:60;background:var(--paper);display:grid;place-items:center;padding:24px}
+.wbox{width:100%;max-width:380px;display:grid;gap:14px;text-align:center;justify-items:center}
+.wbox .mark{width:72px;height:72px}
+.wbox .mark svg{width:40px;height:40px}
+.wbox h2{font-size:2.6rem;line-height:1.2}
+.wbox p{color:var(--ink-2)}
+.wbox .q{margin-top:10px;font-weight:500;color:var(--ink)}
+.wbox .btn{font-size:1.15rem;padding:18px 22px}
+.wbox .btn.ta{font-family:"Mukta Malar",sans-serif;font-size:1.3rem;font-weight:600}
 </style></head><body>
 
 <div class="app" id="app">
@@ -227,6 +257,10 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
     <div class="strip"><div><b data-t="s1b"></b><span data-t="s1"></span></div><div><b data-t="s2b"></b><span data-t="s2"></span></div><div><b data-t="s3b"></b><span data-t="s3"></span></div></div>
     <section class="sec"><div class="sh"><h2 data-t="cats"></h2><span class="num">01</span></div><div class="cats" id="cats"></div></section>
     <section class="sec"><div class="sh"><h2 data-t="fresh"></h2><button class="link" type="button" data-goto="shop" data-t="seeAll"></button></div><div class="rail" id="popular"></div></section>
+    <section class="sec"><div class="sh"><h2 data-t="howT"></h2><span class="num">02</span></div>
+      <div class="how"><div><i>1</i><p><b data-t="how1"></b><span data-t="how1p"></span></p></div><div><i>2</i><p><b data-t="how2"></b><span data-t="how2p"></span></p></div><div><i>3</i><p><b data-t="how3"></b><span data-t="how3p"></span></p></div></div>
+      <div class="pays"><span class="lbl" data-t="payT"></span><div><span>Cash</span><span>GPay</span><span>PhonePe</span><span>UPI</span></div></div>
+    </section>
     <section class="band"><div class="eyebrow" style="color:var(--terra-2)" data-t="shareK"></div><h3 id="shareH"></h3><p data-t="shareP"></p><button class="btn terra block" type="button" data-share data-t="shareBtn"></button></section>
     <a class="other" id="promo" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9H4z"/><path d="M10 20v-5h4v5"/></svg></span><span><b data-t="promoH"></b><span data-t="promoP"></span></span><span class="arr" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
   </main>
@@ -283,6 +317,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
     <button type="button" data-tab="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><span data-t="nMore"></span></button>
   </div></nav>
 
+  <a class="fab" id="fab" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg><span data-t="fabT"></span></a>
+  <div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-label="Choose language" hidden><div class="wbox"><div class="mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 27C9 23 6 15 10 7c8 0 14 5 14 13 0 3-1 5-3 7" fill="#7fb069"/><path d="M16 27c1-7 0-12-5-18" stroke="#1f3a2a" stroke-width="1.6" fill="none" stroke-linecap="round"/><circle cx="24" cy="9" r="3" fill="#e08a5e"/></svg></div><h2>வணக்கம்!</h2><p>Welcome to Meenthulli</p><p class="q">உங்கள் மொழியைத் தேர்ந்தெடுக்கவும்<br>Choose your language</p><button class="btn block ta" type="button" data-wl="ta">தமிழ்</button><button class="btn line block" type="button" data-wl="en">English</button></div></div>
   <div class="scrim" id="scrim" hidden><div class="sheet gut" id="sheet" role="dialog" aria-modal="true"></div></div>
   <div class="toast" id="toast" hidden></div>
 </div>
@@ -302,8 +338,8 @@ const T={
 en:{brand:"Meenthulli Fresh",promoH:"Need home services?",promoP:"Kitchen, electrical, plumbing and painting work. Open Meenthulli Home Services.",ownerT:"Owner",emailT:"Email",place:"Sankarankovil, Tenkasi",heroK:"Fresh every morning",heroH:"Farm fresh food at your door",heroP:"Coconuts, onions, greens and healthy foods from local farms.",shopNow:"Shop now",search:"Search coconut, keerai, honey…",s1b:"Same day",s1:"delivery",s2b:"Cash / UPI",s2:"on delivery",s3b:"Free",s3:"above ₹300",cats:"Categories",fresh:"Fresh today",seeAll:"See all",homeSvc:"Home services",samplePrices:"Prices are samples for now.",svcTitle:"Home services",svcSub:"Free site visit and quote in Sankarankovil and nearby villages.",book:"Book free visit",cartTitle:"Your cart",empty:"Your cart is empty.",emptyBtn:"Start shopping",subtotal:"Items total",delivery:"Delivery",free:"Free",total:"To pay",addMore:n=>`Add ₹${n} more for free delivery`,details:"Delivery details",name:"Name",phone:"Phone",address:"House no, street, village",slot:"Delivery time",morning:"Morning 7–10",evening:"Evening 5–8",pay:"Payment",cod:"Cash",upi:"UPI (GPay, PhonePe)",note:"Note for shop (optional)",place2:"Place order on WhatsApp",fill:"Please fill name, 10-digit phone and address.",contact:"Contact us",callWa:"Call or WhatsApp",addrT:"Shop",addr:"Sankarankovil, Tenkasi district, Tamil Nadu",timeT:"Open",time:"Mon to Sat, 7 am to 8 pm",callNow:"Call now",chatWa:"WhatsApp",install:"Install app on this phone",myOrders:"My orders",noOrders:"No orders yet. Your orders on this phone will show here.",about:"About Meenthulli Fresh",shareT:"Love fresh keerai and coconuts?",shareP:"Send Meenthulli Fresh to your family and friends on WhatsApp.",shareBtn:"Share with friends",shareMsg:"Meenthulli Fresh, Sankarankovil: fresh coconuts, onions, keerai and healthy foods. Order on WhatsApp, free delivery above ₹300. Open the app:",aboutP:"We bring fresh coconuts, onions, greens and healthy foods from farms around Sankarankovil straight to your home.",viewCart:"View cart →",items:n=>`${n} item${n>1?"s":""}`,nHome:"Home",nShop:"Shop",nSvc:"Services",nCart:"Cart",nMore:"Account",add:"Add",all:"All",added:"Added to cart",bookT:"Book a free visit",svcPick:"Service",area:"Village / area",date:"Preferred date",work:"What work do you need?",send:"Send on WhatsApp",sentT:"Almost done",sentP:"Tap the button to send your message to Meenthulli on WhatsApp. We will call you back to confirm.",openWa:"Open WhatsApp",close:"Close",orderOn:"Order on",notFound:"Nothing found. Try another word."},
 ta:{brand:"மீன்துள்ளி ஃப்ரெஷ்",promoH:"வீட்டு சேவைகள் வேண்டுமா?",promoP:"கிச்சன், மின் வேலை, பிளம்பிங், பெயிண்டிங். மீன்துள்ளி ஹோம் சர்வீசஸ் திறக்கவும்.",ownerT:"உரிமையாளர்",emailT:"மின்னஞ்சல்",place:"சங்கரன்கோவில், தென்காசி",heroK:"தினமும் காலையில் புதிதாக",heroH:"தோட்டத்து உணவு உங்கள் வீட்டு வாசலில்",heroP:"தேங்காய், வெங்காயம், கீரை மற்றும் ஆரோக்கிய உணவுகள்.",shopNow:"வாங்க",search:"தேங்காய், கீரை, தேன் தேடுங்கள்…",s1b:"அதே நாள்",s1:"டெலிவரி",s2b:"பணம் / UPI",s2:"டெலிவரியில்",s3b:"இலவசம்",s3:"₹300க்கு மேல்",cats:"வகைகள்",fresh:"இன்று புதிது",seeAll:"அனைத்தும்",homeSvc:"வீட்டு சேவைகள்",samplePrices:"விலைகள் தற்போது மாதிரி மட்டுமே.",svcTitle:"வீட்டு சேவைகள்",svcSub:"சங்கரன்கோவில் மற்றும் அருகிலுள்ள ஊர்களில் இலவச வருகை மற்றும் விலை மதிப்பீடு.",book:"இலவச வருகை பதிவு",cartTitle:"உங்கள் கூடை",empty:"கூடை காலியாக உள்ளது.",emptyBtn:"வாங்கத் தொடங்குங்கள்",subtotal:"பொருட்கள் மொத்தம்",delivery:"டெலிவரி",free:"இலவசம்",total:"செலுத்த வேண்டியது",addMore:n=>`இலவச டெலிவரிக்கு இன்னும் ₹${n} சேர்க்கவும்`,details:"டெலிவரி விவரம்",name:"பெயர்",phone:"தொலைபேசி",address:"வீட்டு எண், தெரு, ஊர்",slot:"டெலிவரி நேரம்",morning:"காலை 7–10",evening:"மாலை 5–8",pay:"கட்டணம்",cod:"பணம்",upi:"UPI (GPay, PhonePe)",note:"கடைக்கு குறிப்பு (விருப்பம்)",place2:"WhatsApp-ல் ஆர்டர் செய்க",fill:"பெயர், 10 இலக்க எண், முகவரி நிரப்பவும்.",contact:"தொடர்புக்கு",callWa:"அழைக்க / WhatsApp",addrT:"கடை",addr:"சங்கரன்கோவில், தென்காசி மாவட்டம், தமிழ்நாடு",timeT:"திறந்திருக்கும் நேரம்",time:"திங்கள் முதல் சனி, காலை 7 – இரவு 8",callNow:"அழைக்க",chatWa:"WhatsApp",install:"இந்த போனில் ஆப் நிறுவவும்",myOrders:"என் ஆர்டர்கள்",noOrders:"இன்னும் ஆர்டர் இல்லை.",about:"மீன்துள்ளி பற்றி",shareT:"புதிய கீரை, தேங்காய் பிடிக்குமா?",shareP:"மீன்துள்ளி ஃப்ரெஷை குடும்பத்தினர், நண்பர்களுக்கு WhatsApp-ல் அனுப்புங்கள்.",shareBtn:"நண்பர்களுக்கு பகிர்",shareMsg:"மீன்துள்ளி ஃப்ரெஷ், சங்கரன்கோவில்: புதிய தேங்காய், வெங்காயம், கீரை, ஆரோக்கிய உணவு. WhatsApp-ல் ஆர்டர், ₹300க்கு மேல் இலவச டெலிவரி. ஆப் திறக்க:",aboutP:"சங்கரன்கோவில் சுற்றியுள்ள தோட்டங்களில் இருந்து புதிய தேங்காய், வெங்காயம், கீரை மற்றும் ஆரோக்கிய உணவுகளை உங்கள் வீட்டுக்கே கொண்டு வருகிறோம்.",viewCart:"கூடை →",items:n=>`${n} பொருட்கள்`,nHome:"முகப்பு",nShop:"கடை",nSvc:"சேவைகள்",nCart:"கூடை",nMore:"கணக்கு",add:"சேர்",all:"அனைத்தும்",added:"கூடையில் சேர்க்கப்பட்டது",bookT:"இலவச வருகை பதிவு",svcPick:"சேவை",area:"ஊர் / பகுதி",date:"விருப்பமான தேதி",work:"என்ன வேலை வேண்டும்?",send:"WhatsApp-ல் அனுப்பு",sentT:"கிட்டத்தட்ட முடிந்தது",sentP:"பொத்தானை அழுத்தி WhatsApp-ல் மீன்துள்ளிக்கு அனுப்புங்கள். உறுதிப்படுத்த நாங்கள் அழைப்போம்.",openWa:"WhatsApp திற",close:"மூடு",orderOn:"ஆர்டர்",notFound:"எதுவும் கிடைக்கவில்லை."}
 };
-Object.assign(T.en,{wordSub:"Fresh · Market",badge:"Picked this morning",heroHtml:"From the farm, <em>to your door.</em>",orderWa:"Order on WhatsApp",shopK:"The market",shopT:"Shop",cartK:"Your basket",moreK:"Meenthulli Fresh",shareK:"Tell a friend",shareHtml:"Love fresh keerai <em>and coconuts?</em>",items0:"items",setK:"Settings",setT:"App settings",setLang:"Language",setLook:"Look",lookAuto:"Auto",lookLight:"Light",lookDark:"Dark",clearMe:"Clear my saved details",cleared:"Done. Your address, basket and orders are removed from this phone.",cnt:n=>`${n} items`});
-Object.assign(T.ta,{wordSub:"ஃப்ரெஷ் · சந்தை",badge:"இன்று காலை பறித்தது",heroHtml:"தோட்டத்திலிருந்து, <em>உங்கள் வாசலுக்கு.</em>",orderWa:"WhatsApp-ல் ஆர்டர்",shopK:"சந்தை",shopT:"கடை",cartK:"உங்கள் கூடை",moreK:"மீன்துள்ளி ஃப்ரெஷ்",shareK:"நண்பருக்கு சொல்லுங்கள்",shareHtml:"புதிய கீரை, <em>தேங்காய் பிடிக்குமா?</em>",setK:"அமைப்புகள்",setT:"ஆப் அமைப்புகள்",setLang:"மொழி",setLook:"தோற்றம்",lookAuto:"தானாக",lookLight:"வெளிச்சம்",lookDark:"இருள்",clearMe:"என் சேமித்த விவரங்களை அழி",cleared:"முடிந்தது. உங்கள் முகவரி, கூடை, ஆர்டர்கள் இந்த போனிலிருந்து நீக்கப்பட்டன.",cnt:n=>`${n} பொருட்கள்`});
+Object.assign(T.en,{wordSub:"Fresh · Market",badge:"Picked this morning",heroHtml:"From the farm, <em>to your door.</em>",orderWa:"Order on WhatsApp",shopK:"The market",shopT:"Shop",cartK:"Your basket",moreK:"Meenthulli Fresh",shareK:"Tell a friend",shareHtml:"Love fresh keerai <em>and coconuts?</em>",items0:"items",setK:"Settings",setT:"App settings",setLang:"Language",setLook:"Look",lookAuto:"Auto",lookLight:"Light",lookDark:"Dark",clearMe:"Clear my saved details",cleared:"Done. Your address, basket and orders are removed from this phone.",cnt:n=>`${n} items`,fabT:"Ask on WhatsApp",howT:"Easy to order",how1:"Choose",how1p:"Pick coconuts, keerai or anything you need.",how2:"Add to basket",how2p:"Tap Add. Change the amount with + and −.",how3:"Send on WhatsApp",how3p:"We bring it to your home.",payT:"Pay on delivery"});
+Object.assign(T.ta,{wordSub:"ஃப்ரெஷ் · சந்தை",badge:"இன்று காலை பறித்தது",heroHtml:"தோட்டத்திலிருந்து, <em>உங்கள் வாசலுக்கு.</em>",orderWa:"WhatsApp-ல் ஆர்டர்",shopK:"சந்தை",shopT:"கடை",cartK:"உங்கள் கூடை",moreK:"மீன்துள்ளி ஃப்ரெஷ்",shareK:"நண்பருக்கு சொல்லுங்கள்",shareHtml:"புதிய கீரை, <em>தேங்காய் பிடிக்குமா?</em>",setK:"அமைப்புகள்",setT:"ஆப் அமைப்புகள்",setLang:"மொழி",setLook:"தோற்றம்",lookAuto:"தானாக",lookLight:"வெளிச்சம்",lookDark:"இருள்",clearMe:"என் சேமித்த விவரங்களை அழி",cleared:"முடிந்தது. உங்கள் முகவரி, கூடை, ஆர்டர்கள் இந்த போனிலிருந்து நீக்கப்பட்டன.",cnt:n=>`${n} பொருட்கள்`,fabT:"WhatsApp-ல் கேளுங்கள்",howT:"எளிதாக ஆர்டர் செய்ய",how1:"தேர்வு செய்யுங்கள்",how1p:"தேங்காய், கீரை அல்லது தேவையானதை தேர்ந்தெடுங்கள்.",how2:"கூடையில் சேர்",how2p:"சேர் அழுத்துங்கள். + − மூலம் அளவை மாற்றலாம்.",how3:"WhatsApp-ல் அனுப்புங்கள்",how3p:"உங்கள் வீட்டுக்கே கொண்டு வருவோம்.",payT:"டெலிவரியில் பணம் செலுத்துங்கள்"});
 const CATS=[
  {id:"coconut",ico:"🥥",tint:"--t-coco",en:"Coconut",ta:"தேங்காய்"},
  {id:"veg",ico:"🧅",tint:"--t-onion",en:"Onions & veg",ta:"வெங்காயம்"},
@@ -413,6 +449,7 @@ function renderOrders(){
 }
 function refreshBadges(){
   const {count,total}=totals();
+  document.body.classList.toggle("has-cart",!!count);
   $("#badge").hidden=!count;$("#badge").textContent=count;
   $("#pill").hidden=!count||tab==="cart"||tab==="more";
   $("#pillN").textContent=t("items")(count);$("#pillT").textContent="₹"+total;
@@ -429,12 +466,12 @@ function applyLang(){
   $("#promo").href=SHOP.otherApp;
   $$("a[href^='tel:']").forEach(a=>a.href="tel:+"+SHOP.phone);
   const hi=wa(lang==="ta"?"வணக்கம் மீன்துள்ளி!":"Vanakkam Meenthulli!");
-  $("#waHello").href=hi;$("#waHero").href=hi;
+  $("#waHello").href=hi;$("#waHero").href=hi;$("#fab").href=hi;
   renderAll();
 }
 function renderAll(){renderHome();renderShop();renderCart();renderOrders();refreshBadges()}
 function go(v){
-  tab=v;
+  tab=v;document.body.dataset.tab=v;
   $$(".view").forEach(e=>e.hidden=e.id!=="v-"+v);
   $$(".nav button").forEach(b=>{if(b.dataset.tab===v)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});
   if(v==="cart")renderCart();if(v==="more")renderOrders();
@@ -513,6 +550,9 @@ async function loadSheet(){
     if(list.length){P.length=0;P.push(...list);Object.keys(cart).forEach(k=>{if(!P.some(p=>p.id===k))delete cart[k]});renderAll()}
   }catch(e){}
 }
+const firstOpen=store.get("lang",null)===null;
+$$("[data-wl]").forEach(b=>b.onclick=()=>{lang=b.dataset.wl;store.set("lang",lang);applyLang();$("#welcome").hidden=true});
 applyLang();go("home");loadSheet();
+if(firstOpen)$("#welcome").hidden=false;
 </script>
 </body></html>

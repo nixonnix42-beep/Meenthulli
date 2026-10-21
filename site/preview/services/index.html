@@ -203,6 +203,27 @@ html,body{overflow-x:clip}
   @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
   .btn:active,.scard:active{transform:scale(.98)}
 }
+
+/* easy mode: bigger text, WhatsApp button, first-open language choice */
+body{font-size:17px}
+.eyebrow{font-size:.8rem}
+.nav button{font-size:.74rem;letter-spacing:.02em}
+.hint,.note{font-size:.92rem}
+.fld>span,.lbl,.rows b{font-size:.8rem}
+.fab{position:fixed;right:max(20px,calc(50% - 240px));bottom:calc(env(safe-area-inset-bottom,0px) + var(--nav-h) + 28px);z-index:19;display:none;align-items:center;gap:8px;background:#1f8f4e;color:#fff;text-decoration:none;border-radius:999px;width:58px;height:58px;justify-content:center;box-shadow:0 10px 26px rgba(31,143,78,.35)}
+.fab svg{width:30px;height:30px}
+.fab span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+body[data-tab=home] .fab,body[data-tab=services] .fab,body[data-tab=shop] .fab{display:flex}
+body.has-cart .fab{display:none!important}
+.welcome{position:fixed;inset:0;z-index:60;background:var(--paper);display:grid;place-items:center;padding:24px}
+.wbox{width:100%;max-width:380px;display:grid;gap:14px;text-align:center;justify-items:center}
+.wbox .mark{width:72px;height:72px}
+.wbox .mark svg{width:40px;height:40px}
+.wbox h2{font-size:2.6rem;line-height:1.2}
+.wbox p{color:var(--ink-2)}
+.wbox .q{margin-top:10px;font-weight:500;color:var(--ink)}
+.wbox .btn{font-size:1.15rem;padding:18px 22px}
+.wbox .btn.ta{font-family:"Mukta Malar",sans-serif;font-size:1.3rem;font-weight:600}
 </style></head><body>
 
 <div class="app">
@@ -294,6 +315,8 @@ html,body{overflow-x:clip}
     <button type="button" data-tab="book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span data-t="nBook"></span></button>
     <button type="button" data-tab="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><span data-t="nMore"></span></button>
   </div></nav>
+  <a class="fab" id="fab" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg><span data-t="fabT"></span></a>
+  <div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-label="Choose language" hidden><div class="wbox"><div class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#d8b47a" stroke-width="1.6" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9H4z"/><path d="M10 20v-5h4v5"/></svg></div><h2>வணக்கம்!</h2><p>Welcome to Meenthulli</p><p class="q">உங்கள் மொழியைத் தேர்ந்தெடுக்கவும்<br>Choose your language</p><button class="btn block ta" type="button" data-wl="ta">தமிழ்</button><button class="btn line block" type="button" data-wl="en">English</button></div></div>
   <div class="scrim" id="scrim" hidden><div class="sheet gut" id="sheet" role="dialog" aria-modal="true"></div></div>
 </div>
 
@@ -327,8 +350,8 @@ const T={
 en:{brand:"Meenthulli Home Services",place:"Sankarankovil, Tenkasi",heroK:"Trusted local team",heroH:"Kitchen, electrical, plumbing and painting work at your home",heroP:"Free site visit and clear quote before we start.",bookNow:"Book free visit",callNow:"Call now",what:"What we do",how:"How it works",h1:"Book a visit",h1p:"Choose the work and a date. It takes one minute.",h2:"We visit and measure",h2p:"Free visit in Sankarankovil and nearby villages.",h3:"Get a clear price",h3p:"Work starts only after you agree to the price.",whyT:"Why Meenthulli",w1:"Local team",w1p:"From Sankarankovil, easy to reach.",w2:"Fair price",w2p:"Written quote, no hidden charges.",w3:"Good material",w3p:"Branded wires, pipes, paints and boards.",w4:"Clean work",w4p:"We clean up after the job.",promoH:"Want fresh foods?",promoP:"Coconuts, onions, greens. Open Meenthulli Fresh.",nHome:"Home",nSvc:"Services",nBook:"Book",nMore:"Account",priceNote:"Prices are samples. Final price after a free site visit.",from:"From",book:"Book this",bookT:"Book a free visit",bookSub:"We will call you to confirm the time.",svcPick:"Service",work:"Type of work",name:"Name",phone:"Phone",area:"Village / area",date:"Preferred date",when:"Preferred time",morning:"Morning",noon:"Afternoon",evening:"Evening",note:"Anything else? (size, problem)",send:"Send booking on WhatsApp",fill:"Please fill name and 10-digit phone.",contact:"Contact",ownerT:"Owner",callWa:"Call or WhatsApp",emailT:"Email",areaT:"Service area",areaV:"Sankarankovil and nearby villages, Tenkasi district",timeT:"Working hours",time:"Mon to Sat, 8 am to 7 pm",install:"Install app on this phone",myReq:"My bookings",noReq:"No bookings yet. Bookings you send from this phone show here.",sentT:"Almost done",sentP:"Tap the button to send your booking on WhatsApp. We will call you back to confirm.",openWa:"Open WhatsApp",close:"Close",other:"Other work",offerSub:"No charge to come and measure.",shareT:"Know someone building or repairing a home?",shareP:"Send them Meenthulli Home Services on WhatsApp.",shareBtn:"Share with friends",shareMsg:"Meenthulli Home Services, Sankarankovil: modular kitchen, electrical, plumbing and painting work. Free site visit. Open the app:"},
 ta:{brand:"மீன்துள்ளி ஹோம் சர்வீசஸ்",place:"சங்கரன்கோவில், தென்காசி",heroK:"நம்பகமான உள்ளூர் குழு",heroH:"கிச்சன், மின் வேலை, பிளம்பிங், பெயிண்டிங் உங்கள் வீட்டில்",heroP:"இலவச வருகை, வேலைக்கு முன் தெளிவான விலை.",bookNow:"இலவச வருகை பதிவு",callNow:"அழைக்க",what:"எங்கள் சேவைகள்",how:"எப்படி வேலை செய்கிறது",h1:"வருகை பதிவு",h1p:"வேலையும் தேதியும் தேர்வு செய்யுங்கள்.",h2:"நாங்கள் வந்து அளவு எடுப்போம்",h2p:"சங்கரன்கோவில் மற்றும் அருகிலுள்ள ஊர்களில் இலவசம்.",h3:"தெளிவான விலை",h3p:"நீங்கள் ஒப்புக்கொண்ட பிறகே வேலை தொடங்கும்.",whyT:"ஏன் மீன்துள்ளி",w1:"உள்ளூர் குழு",w1p:"சங்கரன்கோவிலிலேயே உள்ளோம்.",w2:"நியாய விலை",w2p:"எழுத்து மதிப்பீடு, மறைமுக கட்டணம் இல்லை.",w3:"தரமான பொருள்",w3p:"பிராண்ட் வயர், பைப், பெயிண்ட், பலகை.",w4:"சுத்தமான வேலை",w4p:"வேலை முடிந்ததும் சுத்தம் செய்வோம்.",promoH:"புதிய உணவு வேண்டுமா?",promoP:"தேங்காய், வெங்காயம், கீரை. மீன்துள்ளி ஃப்ரெஷ் திறக்கவும்.",nHome:"முகப்பு",nSvc:"சேவைகள்",nBook:"பதிவு",nMore:"கணக்கு",priceNote:"விலைகள் மாதிரி மட்டுமே. இலவச வருகைக்குப் பின் இறுதி விலை.",from:"தொடக்கம்",book:"பதிவு செய்",bookT:"இலவச வருகை பதிவு",bookSub:"நேரத்தை உறுதிப்படுத்த நாங்கள் அழைப்போம்.",svcPick:"சேவை",work:"வேலை வகை",name:"பெயர்",phone:"தொலைபேசி",area:"ஊர் / பகுதி",date:"விருப்பமான தேதி",when:"விருப்பமான நேரம்",morning:"காலை",noon:"மதியம்",evening:"மாலை",note:"வேறு ஏதாவது? (அளவு, பிரச்சனை)",send:"WhatsApp-ல் பதிவு அனுப்பு",fill:"பெயர் மற்றும் 10 இலக்க எண் நிரப்பவும்.",contact:"தொடர்புக்கு",ownerT:"உரிமையாளர்",callWa:"அழைக்க / WhatsApp",emailT:"மின்னஞ்சல்",areaT:"சேவை பகுதி",areaV:"சங்கரன்கோவில் மற்றும் அருகிலுள்ள ஊர்கள், தென்காசி மாவட்டம்",timeT:"வேலை நேரம்",time:"திங்கள் முதல் சனி, காலை 8 – மாலை 7",install:"இந்த போனில் ஆப் நிறுவவும்",myReq:"என் பதிவுகள்",noReq:"இன்னும் பதிவு இல்லை.",sentT:"கிட்டத்தட்ட முடிந்தது",sentP:"பொத்தானை அழுத்தி WhatsApp-ல் அனுப்புங்கள். உறுதிப்படுத்த அழைப்போம்.",openWa:"WhatsApp திற",close:"மூடு",other:"வேறு வேலை",offerSub:"அளவு எடுக்க வர கட்டணம் இல்லை.",shareT:"வீடு கட்டும் அல்லது பழுது பார்க்கும் நண்பர் இருக்கிறாரா?",shareP:"மீன்துள்ளி ஹோம் சர்வீசஸை WhatsApp-ல் அனுப்புங்கள்.",shareBtn:"நண்பர்களுக்கு பகிர்",shareMsg:"மீன்துள்ளி ஹோம் சர்வீசஸ், சங்கரன்கோவில்: கிச்சன், மின் வேலை, பிளம்பிங், பெயிண்டிங். இலவச வருகை. ஆப் திறக்க:"}
 };
-Object.assign(T.en,{wordSub:"Home Services",badge:"Booking open this week",heroHtml:"Beautiful homes, <em>made by hand.</em>",heroP:"Modular kitchens, electrical, plumbing and painting by one trusted local team in Sankarankovil.",offerSub:"No charge to come, measure and give a written quote.",what:"Our services",how:"How it works",whyT:"Our promise",priceK:"Price list",bookK:"Free site visit",moreK:"Meenthulli Home",shareK:"Tell a friend",shareHtml:"Know someone building <em>a new home?</em>",shareP:"Send them Meenthulli Home Services on WhatsApp.",shareBtn:"Share with friends",shareMsg:"Meenthulli Home Services, Sankarankovil: modular kitchen, electrical, plumbing and painting work. Free site visit. Open the app:",fromL:"From",view:"View",setK:"Settings",setT:"App settings",setLang:"Language",setLook:"Look",lookAuto:"Auto",lookLight:"Light",lookDark:"Dark",clearMe:"Clear my saved details",cleared:"Done. Your name, phone and bookings are removed from this phone."});
-Object.assign(T.ta,{wordSub:"ஹோம் சர்வீசஸ்",badge:"இந்த வாரம் பதிவு திறந்துள்ளது",heroHtml:"அழகான வீடு, <em>கைவண்ணத்தில்.</em>",heroP:"மாடுலர் கிச்சன், மின் வேலை, பிளம்பிங், பெயிண்டிங். சங்கரன்கோவிலின் நம்பகமான உள்ளூர் குழு.",offerSub:"வந்து அளவு எடுத்து எழுத்து மதிப்பீடு தர கட்டணம் இல்லை.",what:"எங்கள் சேவைகள்",how:"எப்படி வேலை செய்கிறது",whyT:"எங்கள் உறுதி",priceK:"விலை பட்டியல்",bookK:"இலவச வருகை",moreK:"மீன்துள்ளி ஹோம்",shareK:"நண்பருக்கு சொல்லுங்கள்",shareHtml:"புதிய வீடு கட்டும் <em>நண்பர் இருக்கிறாரா?</em>",shareP:"மீன்துள்ளி ஹோம் சர்வீசஸை WhatsApp-ல் அனுப்புங்கள்.",shareBtn:"நண்பர்களுக்கு பகிர்",shareMsg:"மீன்துள்ளி ஹோம் சர்வீசஸ், சங்கரன்கோவில்: கிச்சன், மின் வேலை, பிளம்பிங், பெயிண்டிங். இலவச வருகை. ஆப் திறக்க:",fromL:"தொடக்கம்",view:"பார்க்க",setK:"அமைப்புகள்",setT:"ஆப் அமைப்புகள்",setLang:"மொழி",setLook:"தோற்றம்",lookAuto:"தானாக",lookLight:"வெளிச்சம்",lookDark:"இருள்",clearMe:"என் சேமித்த விவரங்களை அழி",cleared:"முடிந்தது. உங்கள் பெயர், போன், பதிவுகள் இந்த போனிலிருந்து நீக்கப்பட்டன."});
+Object.assign(T.en,{wordSub:"Home Services",badge:"Booking open this week",heroHtml:"Beautiful homes, <em>made by hand.</em>",heroP:"Modular kitchens, electrical, plumbing and painting by one trusted local team in Sankarankovil.",offerSub:"No charge to come, measure and give a written quote.",what:"Our services",how:"How it works",whyT:"Our promise",priceK:"Price list",bookK:"Free site visit",moreK:"Meenthulli Home",shareK:"Tell a friend",shareHtml:"Know someone building <em>a new home?</em>",shareP:"Send them Meenthulli Home Services on WhatsApp.",shareBtn:"Share with friends",shareMsg:"Meenthulli Home Services, Sankarankovil: modular kitchen, electrical, plumbing and painting work. Free site visit. Open the app:",fromL:"From",view:"View",fabT:"Ask on WhatsApp",setK:"Settings",setT:"App settings",setLang:"Language",setLook:"Look",lookAuto:"Auto",lookLight:"Light",lookDark:"Dark",clearMe:"Clear my saved details",cleared:"Done. Your name, phone and bookings are removed from this phone."});
+Object.assign(T.ta,{wordSub:"ஹோம் சர்வீசஸ்",badge:"இந்த வாரம் பதிவு திறந்துள்ளது",heroHtml:"அழகான வீடு, <em>கைவண்ணத்தில்.</em>",heroP:"மாடுலர் கிச்சன், மின் வேலை, பிளம்பிங், பெயிண்டிங். சங்கரன்கோவிலின் நம்பகமான உள்ளூர் குழு.",offerSub:"வந்து அளவு எடுத்து எழுத்து மதிப்பீடு தர கட்டணம் இல்லை.",what:"எங்கள் சேவைகள்",how:"எப்படி வேலை செய்கிறது",whyT:"எங்கள் உறுதி",priceK:"விலை பட்டியல்",bookK:"இலவச வருகை",moreK:"மீன்துள்ளி ஹோம்",shareK:"நண்பருக்கு சொல்லுங்கள்",shareHtml:"புதிய வீடு கட்டும் <em>நண்பர் இருக்கிறாரா?</em>",shareP:"மீன்துள்ளி ஹோம் சர்வீசஸை WhatsApp-ல் அனுப்புங்கள்.",shareBtn:"நண்பர்களுக்கு பகிர்",shareMsg:"மீன்துள்ளி ஹோம் சர்வீசஸ், சங்கரன்கோவில்: கிச்சன், மின் வேலை, பிளம்பிங், பெயிண்டிங். இலவச வருகை. ஆப் திறக்க:",fromL:"தொடக்கம்",view:"பார்க்க",fabT:"WhatsApp-ல் கேளுங்கள்",setK:"அமைப்புகள்",setT:"ஆப் அமைப்புகள்",setLang:"மொழி",setLook:"தோற்றம்",lookAuto:"தானாக",lookLight:"வெளிச்சம்",lookDark:"இருள்",clearMe:"என் சேமித்த விவரங்களை அழி",cleared:"முடிந்தது. உங்கள் பெயர், போன், பதிவுகள் இந்த போனிலிருந்து நீக்கப்பட்டன."});
 
 /* Drawings used until real photos are added */
 const SCN={
@@ -376,12 +399,12 @@ function applyLang(){
   $$("[name=s-lang]").forEach(i=>i.checked=i.value===lang);
   $("#ownerLine").textContent=SHOP.owner;$("#phoneLine").textContent=SHOP.phoneShow;$("#emailLine").textContent=SHOP.email;
   $$("a[href^='tel:']").forEach(a=>a.href="tel:+"+SHOP.phone);
-  $("#waHello").href=wa("Vanakkam Meenthulli Home Services!");
+  $("#waHello").href=wa("Vanakkam Meenthulli Home Services!");$("#fab").href=$("#waHello").href;
   $("#promo").href=SHOP.otherApp;
   $("#offerLine").textContent=lang==="ta"?SHOP.offerTa:SHOP.offerEn;
   render();
 }
-function go(v){tab=v;$$(".view[id^='v-']").forEach(e=>e.hidden=e.id!=="v-"+v);$$(".nav button").forEach(b=>{if(b.dataset.tab===v)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});window.scrollTo(0,0)}
+function go(v){tab=v;document.body.dataset.tab=v;$$(".view[id^='v-']").forEach(e=>e.hidden=e.id!=="v-"+v);$$(".nav button").forEach(b=>{if(b.dataset.tab===v)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});window.scrollTo(0,0)}
 function sheet(h){$("#sheet").innerHTML=`<div class="grab"></div>`+h;$("#scrim").hidden=false;$("#sheet a,#sheet button")?.focus()}
 document.addEventListener("click",e=>{
   if(e.target.id==="scrim"){$("#scrim").hidden=true;return}
@@ -419,6 +442,9 @@ let deferred;
 window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferred=e;$("#installBtn").hidden=false});
 $("#installBtn").onclick=async()=>{if(!deferred)return;deferred.prompt();await deferred.userChoice;deferred=null;$("#installBtn").hidden=true};
 try{if("serviceWorker" in navigator&&document.querySelector('link[rel="manifest"]'))navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}
+const firstOpen=store.get("lang",null)===null;
+$$("[data-wl]").forEach(b=>b.onclick=()=>{lang=b.dataset.wl;store.set("lang",lang);applyLang();$("#welcome").hidden=true});
 applyLang();go("home");
+if(firstOpen)$("#welcome").hidden=false;
 </script>
 </body></html>
