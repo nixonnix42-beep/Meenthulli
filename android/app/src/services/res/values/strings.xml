@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Meenthulli Home</string>
-    <color name="brand">#F5F1EA</color>
+    <color name="brand">#121316</color>
+    <bool name="light_status">false</bool>
 </resources>

@@ -7,8 +7,8 @@
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#f4efe4",
-  "theme_color": "#f4efe4",
+  "background_color": "#f2f4ee",
+  "theme_color": "#14361f",
   "lang": "ta-IN",
   "categories": ["food"],
   "icons": [

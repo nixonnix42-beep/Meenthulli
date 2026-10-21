@@ -1,322 +1,382 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Modular kitchen, electrical, plumbing and painting work in Sankarankovil, Tenkasi. Free site visit."><link rel="manifest" href="manifest.json"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Meenthulli Home"><style>:root{padding-top:env(safe-area-inset-top,0px)}[hidden]{display:none!important}img{max-width:100%}</style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Modular kitchen, electrical, plumbing and painting work in Sankarankovil, Tenkasi. Free site visit."><link rel="manifest" href="manifest.json"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Meenthulli Home"><style>[hidden]{display:none!important}img{max-width:100%}</style>
 <title>Meenthulli Home Services</title>
 <meta property="og:title" content="Meenthulli Home Services · Sankarankovil">
 <meta property="og:description" content="Modular kitchen, electrical, plumbing and painting work. Free site visit and written quote.">
-<meta property="og:image" content="https://nixonnix42-beep.github.io/Meenthulli/graphics/home-services-design-11-pastel.png">
+<meta property="og:image" content="https://nixonnix42-beep.github.io/Meenthulli/graphics/home-services-design-6-bold.png">
 <meta property="og:url" content="https://nixonnix42-beep.github.io/Meenthulli/services/">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#f5f1ea">
+<meta name="theme-color" content="#121316">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&family=Mukta+Malar:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Mukta+Malar:wght@400;500;600;700;800&display=swap">
 <style>
-/* Layout: "atelier" app. Full-bleed illustrated hero, swipeable portrait service cards, editorial numbered sections, hairline rules, floating pill nav */
+/* Layout: "nordic bold" app. Dark hero, big colour tiles per service, white cards, bottom tab bar with a raised Book button */
 :root{
-  --paper:#f5f1ea; --paper-2:#ece6dc; --card:#fffdf9; --ink:#1c2333; --ink-2:#4b5468; --mute:#8a8f9c; --rule:#ddd5c8;
-  --navy:#1c2333; --gold:#b48a4a; --gold-2:#d8b47a; --on-dark:#f5f1ea;
-  --k:#efe1cf; --e:#f3e8c4; --p:#d9e9e5; --w:#dfe3ee;
-  --serif:"Cormorant Garamond","Mukta Malar",Georgia,serif;
-  --sans:"Jost","Mukta Malar",system-ui,sans-serif;
-  --nav-h:64px;
+  --bg:#f3f2ee; --card:#ffffff; --ink:#121316; --ink-2:#4a4d55; --mute:#7c808a; --line:#e4e2dc;
+  --dark:#121316; --on-dark:#ffffff; --yellow:#ffc83a; --on-yellow:#121316;
+  --kitchen:#e2734a; --electric:#f2b417; --plumb:#2f74d0; --paint:#2a9a68;
+  --font:"Plus Jakarta Sans","Mukta Malar",system-ui,sans-serif;
+  --nav-h:68px; --r:22px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#12141a; --paper-2:#1a1d25; --card:#1c2029; --ink:#efe9df; --ink-2:#c3c0b8; --mute:#8f939d; --rule:#2c313c;
-  --navy:#0b0d12; --gold:#d8b47a; --gold-2:#e8cc9c; --on-dark:#f5f1ea;
-  --k:#2c251d; --e:#2c2818; --p:#182a28; --w:#1d2230; color-scheme:dark}}
+  --bg:#0d0e10; --card:#1a1c20; --ink:#f1f1ef; --ink-2:#c4c6cc; --mute:#8d919b; --line:#2a2d33;
+  --dark:#1a1c20; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --paper:#12141a; --paper-2:#1a1d25; --card:#1c2029; --ink:#efe9df; --ink-2:#c3c0b8; --mute:#8f939d; --rule:#2c313c;
-  --navy:#0b0d12; --gold:#d8b47a; --gold-2:#e8cc9c; --on-dark:#f5f1ea;
-  --k:#2c251d; --e:#2c2818; --p:#182a28; --w:#1d2230; color-scheme:dark}
+  --bg:#0d0e10; --card:#1a1c20; --ink:#f1f1ef; --ink-2:#c4c6cc; --mute:#8d919b; --line:#2a2d33;
+  --dark:#1a1c20; color-scheme:dark}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
-.app{max-width:520px;margin:0 auto;min-height:100vh;position:relative;padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 34px)}
-h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;margin:0;letter-spacing:-.01em;text-wrap:balance}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.5}
+.app{max-width:520px;margin:0 auto;min-height:100vh;position:relative;padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 28px)}
+h1,h2,h3{font-weight:800;line-height:1.1;margin:0;letter-spacing:-.025em;text-wrap:balance;overflow-wrap:anywhere}
+:lang(ta) h1,:lang(ta) h2,:lang(ta) h3{letter-spacing:0;line-height:1.3}
 p{margin:0}
 button{font:inherit;color:inherit;cursor:pointer}
-button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.gut{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-.eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:600}
-:lang(ta) .eyebrow{letter-spacing:.02em;text-transform:none;font-size:.85rem}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.gut{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.tag{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+:lang(ta) .tag{letter-spacing:0;text-transform:none;font-size:.9rem}
 
-/* top bar */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:12px;padding-block:12px;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(12px)}
-.mark{width:36px;height:36px;border-radius:50%;background:var(--navy);display:grid;place-items:center;flex:none}
-.mark svg{width:20px;height:20px}
-.word{flex:1;min-width:0;line-height:1}
-.word b{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:.01em;display:block}
-.word small{font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mute)}
-:lang(ta) .word small{letter-spacing:.02em;text-transform:none;font-size:.75rem}
-.tbtn{border:1px solid var(--rule);background:none;border-radius:999px;height:36px;min-width:36px;padding:0 12px;display:grid;place-items:center;font-size:.85rem;font-weight:500;color:var(--ink);text-decoration:none}
-.tbtn svg{width:17px;height:17px}
-
-.view{display:grid;gap:44px;padding-block:6px 10px}
-.view[hidden]{display:none!important}
-
-/* hero */
-.hero{display:grid;gap:22px}
-.hero .pic{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/4.3;background:var(--k)}
-.hero .pic svg,.hero .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero .badge{position:absolute;left:16px;bottom:16px;background:var(--card);border-radius:999px;padding:8px 14px 8px 10px;display:flex;align-items:center;gap:8px;font-size:.82rem;font-weight:500;box-shadow:0 8px 24px rgba(28,35,51,.12)}
-.hero .badge i{width:8px;height:8px;border-radius:50%;background:#3a9d5d;display:block}
-.hero h1{font-size:2.9rem}
-.hero h1 em{font-style:italic;color:var(--gold);font-weight:500}
-:lang(ta) .hero h1{font-size:2.15rem;line-height:1.2}
-:lang(ta) h2{font-size:1.6rem;line-height:1.25}
-h1,h2,h3{overflow-wrap:anywhere}
-html,body{overflow-x:clip}
-.hero .lead{color:var(--ink-2);font-size:1.02rem;max-width:34ch}
-.cta{display:flex;gap:10px;flex-wrap:wrap}
-.btn{border:0;border-radius:999px;padding:14px 22px;font-weight:500;font-size:.95rem;letter-spacing:.02em;background:var(--navy);color:var(--on-dark);text-decoration:none;display:inline-flex;align-items:center;gap:10px;justify-content:center}
-.btn svg{width:16px;height:16px}
-.btn.line{background:none;color:var(--ink);border:1px solid var(--ink)}
-.btn.gold{background:var(--gold);color:#1c1406}
-.btn.wa{background:#1f8f4e;color:#fff}
+/* hero (dark) */
+.hero{background:#121316;color:#fff;padding-top:calc(env(safe-area-inset-top,0px) + 14px);padding-bottom:28px;border-radius:0 0 32px 32px;display:grid;gap:22px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-70px;top:60px;width:220px;height:220px;border-radius:50%;background:var(--yellow);opacity:.13}
+.top{display:flex;align-items:center;gap:10px;position:relative;z-index:1}
+.logo{width:40px;height:40px;border-radius:12px;background:var(--yellow);display:grid;place-items:center;flex:none}
+.logo svg{width:22px;height:22px}
+.word{flex:1;min-width:0;line-height:1.15}
+.word b{display:block;font-weight:800;font-size:1.1rem}
+.word small{font-size:.78rem;color:#b9bcc4}
+.tbtn{border:1px solid rgba(255,255,255,.22);background:none;color:#fff;border-radius:999px;height:40px;min-width:40px;padding:0 14px;display:grid;place-items:center;font-size:.9rem;font-weight:600;text-decoration:none}
+.tbtn svg{width:18px;height:18px}
+.hero .open{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;color:#d7d9de;position:relative;z-index:1}
+.hero .open i{width:8px;height:8px;border-radius:50%;background:#3ad07a;box-shadow:0 0 0 4px rgba(58,208,122,.2)}
+.hero h1{font-size:2.7rem;position:relative;z-index:1}
+.hero h1 em{font-style:normal;color:var(--yellow)}
+:lang(ta) .hero h1{font-size:2.05rem}
+.hero .lead{color:#c9ccd3;font-size:1rem;position:relative;z-index:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;position:relative;z-index:1}
+.chips span{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border-radius:999px;padding:7px 12px;font-size:.85rem;font-weight:600}
+.chips svg{width:15px;height:15px;color:var(--yellow)}
+.cta{display:grid;grid-template-columns:1.4fr 1fr;gap:10px;position:relative;z-index:1}
+.btn{border:0;border-radius:16px;padding:16px 18px;font-weight:700;font-size:1rem;background:var(--ink);color:var(--bg);text-decoration:none;display:inline-flex;align-items:center;gap:10px;justify-content:center;text-align:center}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.y{background:var(--yellow);color:var(--on-yellow)}
+.btn.ghost{background:none;color:inherit;border:1.5px solid currentColor}
+.hero .btn.ghost{color:#fff;border-color:rgba(255,255,255,.35)}
+.btn.wa{background:#1f9d55;color:#fff}
 .btn.block{display:flex;width:100%}
 
+.view{display:grid;gap:30px;padding-top:24px}
+.view.first{padding-top:0}
+.sec{display:grid;gap:14px}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:10px}
+.sh h2{font-size:1.55rem}
+.sh .more{border:0;background:none;color:var(--ink-2);font-weight:700;font-size:.9rem;padding:0;display:flex;align-items:center;gap:4px}
+.sh .more svg{width:14px;height:14px}
+
+/* service tiles */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{border:0;border-radius:var(--r);padding:16px;min-height:178px;color:#fff;text-align:left;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;background-size:cover;background-position:center}
+.tile .ic{width:54px;height:54px;border-radius:16px;background:rgba(255,255,255,.2);display:grid;place-items:center}
+.tile .ic svg{width:32px;height:32px}
+.tile b{font-size:1.15rem;font-weight:800;line-height:1.2;display:block}
+.tile small{font-size:.85rem;font-weight:600;opacity:.92}
+.tile.electric{color:#1d1503}
+.tile.electric .ic{background:rgba(0,0,0,.08)}
+.tile .go{position:absolute;right:14px;top:16px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center}
+.tile.electric .go{background:rgba(0,0,0,.08)}
+.tile .go svg{width:14px;height:14px}
+
 /* offer */
-.offer{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:16px 0;border-block:1px solid var(--rule)}
-.offer .n{font-family:var(--serif);font-style:italic;font-size:2.4rem;color:var(--gold);line-height:1}
-.offer b{font-family:var(--serif);font-size:1.3rem;font-weight:600;display:block;line-height:1.1}
-.offer span{font-size:.88rem;color:var(--mute)}
-
-/* section head */
-.sh{display:flex;align-items:end;justify-content:space-between;gap:12px}
-.sh h2{font-size:2.1rem}
-.sh .num{font-family:var(--serif);font-style:italic;color:var(--mute);font-size:1.1rem}
-.sec{display:grid;gap:18px}
-
-/* service carousel */
-.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1*max(20px,env(safe-area-inset-left,0px)));padding-inline:max(20px,env(safe-area-inset-left,0px));padding-bottom:6px;scrollbar-width:none;scroll-padding-inline:20px}
-.rail::-webkit-scrollbar{display:none}
-.scard{flex:0 0 74%;scroll-snap-align:start;border:0;padding:0;background:none;text-align:left;display:grid;gap:12px}
-.scard .pic{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5}
-.scard .pic svg,.scard .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.scard .no{position:absolute;top:14px;left:16px;font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--ink)}
-.scard h3{font-size:1.6rem}
-.scard .meta{display:flex;justify-content:space-between;align-items:center;font-size:.88rem;color:var(--mute)}
-.scard .meta b{color:var(--ink);font-weight:500}
-.scard .arr{width:34px;height:34px;border-radius:50%;border:1px solid var(--rule);display:grid;place-items:center;color:var(--ink)}
-.scard .arr svg{width:14px;height:14px}
+.offer{background:var(--yellow);color:var(--on-yellow);border-radius:var(--r);padding:18px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
+.offer .n{font-size:2.3rem;font-weight:800;line-height:1;letter-spacing:-.03em}
+.offer b{display:block;font-weight:800;font-size:1.05rem;line-height:1.25}
+.offer span{font-size:.9rem;opacity:.8}
 
 /* steps */
-.steps{display:grid}
-.steps div{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:16px 0;border-top:1px solid var(--rule)}
-.steps div:last-child{border-bottom:1px solid var(--rule)}
-.steps i{font-family:var(--serif);font-style:italic;font-size:1.9rem;color:var(--gold);line-height:1}
-.steps b{font-family:var(--serif);font-size:1.3rem;font-weight:600;display:block;line-height:1.15}
-.steps span{color:var(--ink-2);font-size:.92rem}
+.steps{display:grid;gap:0;background:var(--card);border-radius:var(--r);padding:6px 16px}
+.steps div{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:14px 0;position:relative}
+.steps div+div{border-top:1px solid var(--line)}
+.steps i{width:40px;height:40px;border-radius:12px;background:var(--ink);color:var(--bg);font-style:normal;font-weight:800;display:grid;place-items:center;font-size:1.05rem}
+.steps b{display:block;font-weight:800;font-size:1.05rem;line-height:1.3}
+.steps span{font-size:.92rem;color:var(--ink-2)}
 
 /* promises */
-.prom{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule)}
-.prom div{padding:16px 14px 16px 0;border-bottom:1px solid var(--rule)}
-.prom div:nth-child(odd){border-right:1px solid var(--rule)}
-.prom div:nth-child(even){padding-left:14px}
-.prom svg{width:26px;height:26px;color:var(--gold);margin-bottom:8px}
-.prom b{display:block;font-family:var(--serif);font-size:1.2rem;font-weight:600;line-height:1.1}
-.prom span{font-size:.85rem;color:var(--mute)}
+.prom{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.prom div{background:var(--card);border-radius:18px;padding:16px}
+.prom svg{width:28px;height:28px;margin-bottom:10px;padding:5px;border-radius:9px;background:var(--bg)}
+.prom b{display:block;font-weight:800;font-size:1rem;line-height:1.25}
+.prom span{font-size:.86rem;color:var(--mute)}
 
-/* share band */
-.band{background:var(--navy);color:var(--on-dark);border-radius:28px;padding:26px 22px;display:grid;gap:12px;position:relative;overflow:hidden}
-.band h3{font-size:1.9rem;color:var(--on-dark)}
-.band h3 em{font-style:italic;color:var(--gold-2);font-weight:500}
-.band p{color:#c9c6bf;font-size:.94rem}
-.band::after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(216,180,122,.35)}
+/* share */
+.share{background:#121316;color:#fff;border-radius:var(--r);padding:22px 18px;display:grid;gap:12px}
+:root[data-theme="dark"] .share{background:var(--card)}
+.share h3{font-size:1.4rem}
+.share h3 em{font-style:normal;color:var(--yellow)}
+.share p{color:#c9ccd3;font-size:.94rem}
+.other{display:flex;align-items:center;gap:14px;background:var(--card);border-radius:var(--r);padding:16px;text-decoration:none;color:var(--ink)}
+.other .dot{width:50px;height:50px;border-radius:14px;background:#dcebd2;display:grid;place-items:center;font-size:1.6rem;flex:none}
+.other b{display:block;font-weight:800;line-height:1.25}
+.other span{font-size:.88rem;color:var(--mute)}
 
-.other{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);padding:18px 0;border-block:1px solid var(--rule)}
-.other .dot{width:52px;height:52px;border-radius:50%;background:#dfe9d6;display:grid;place-items:center;font-size:1.6rem;flex:none}
-.other b{font-family:var(--serif);font-size:1.3rem;font-weight:600;display:block;line-height:1.1}
-.other span{font-size:.86rem;color:var(--mute)}
-.other .arr{margin-left:auto}
+/* our work showcase */
+.works{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1*max(18px,env(safe-area-inset-left,0px)));padding-inline:max(18px,env(safe-area-inset-left,0px));scroll-padding-inline:18px;scrollbar-width:none}
+.works::-webkit-scrollbar{display:none}
+.work{flex:0 0 86%;scroll-snap-align:start;background:var(--card);border-radius:var(--r);overflow:hidden;display:grid;align-content:start}
+.work .sc,.svc .sc{aspect-ratio:400/260;overflow:hidden}
+.work .wb{padding:16px;display:grid;gap:8px}
+.work h3{font-size:1.3rem}
+.work p{color:var(--ink-2);font-size:.95rem}
+.work .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:4px}
+.work .row small{font-weight:700;font-size:.9rem}
+.work .btn{padding:12px 18px;white-space:nowrap;flex:none}
+.dots{display:flex;gap:6px;justify-content:center}
+.dots i{width:8px;height:8px;border-radius:9px;background:var(--line);transition:width .3s,background .3s}
+.dots i.on{width:24px;background:var(--ink)}
+
+/* page head */
+.ph{display:grid;gap:6px;padding-top:calc(env(safe-area-inset-top,0px) + 18px)}
+.ph .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.ph h2{font-size:2.1rem}
+.ph p{color:var(--ink-2);font-size:.95rem}
+.ph .tbtn{color:var(--ink);border-color:var(--line)}
 
 /* services page */
-.svc{display:grid;gap:16px;scroll-margin-top:80px}
-.svc .pic{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:16/11}
-.svc .pic svg,.svc .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.svc .head{display:flex;justify-content:space-between;align-items:end;gap:10px}
-.svc h3{font-size:2rem}
-.svc .ta{font-size:.9rem;color:var(--mute)}
-.svc .from{text-align:right;font-size:.78rem;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
-.svc .from b{display:block;font-family:var(--serif);font-size:1.35rem;letter-spacing:0;text-transform:none;color:var(--gold);font-weight:600}
-.svc ul{list-style:none;margin:0;padding:0}
-.svc li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--rule);font-size:.95rem}
-.svc li span:last-child{color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
-.note{font-size:.85rem;color:var(--mute)}
-.ttl{font-size:2.6rem}
+.svc{background:var(--card);border-radius:var(--r);overflow:hidden;scroll-margin-top:16px}
+.svc .hd{display:flex;align-items:center;gap:14px;padding:18px;color:#fff;background-size:cover;background-position:center}
+.svc .hd.electric{color:#1d1503}
+.svc .hd .ic{width:52px;height:52px;border-radius:15px;background:rgba(255,255,255,.2);display:grid;place-items:center;flex:none}
+.svc .hd.electric .ic{background:rgba(0,0,0,.08)}
+.svc .hd .ic svg{width:30px;height:30px}
+.svc .hd h3{font-size:1.3rem}
+.svc .hd small{display:block;font-weight:600;opacity:.9;font-size:.88rem}
+.svc ul{list-style:none;margin:0;padding:4px 18px}
+.svc li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;font-size:.96rem}
+.svc li+li{border-top:1px solid var(--line)}
+.svc li span:last-child{font-weight:700;white-space:nowrap}
+.svc .ft{padding:0 18px 18px}
 
 /* booking */
-.form{display:grid;gap:22px}
-.pick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.pick label{display:grid;gap:6px;justify-items:center;text-align:center;font-size:.78rem;cursor:pointer}
-.pick .pi{width:100%;aspect-ratio:1;border-radius:18px;overflow:hidden;position:relative;border:2px solid transparent}
-.pick .pi svg{position:absolute;inset:0;width:100%;height:100%}
+.form{display:grid;gap:16px}
+.card{background:var(--card);border-radius:var(--r);padding:18px;display:grid;gap:16px}
+.lbl,.fld>span{font-size:.9rem;font-weight:700;color:var(--ink-2)}
+.pick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pick label{display:flex;align-items:center;gap:10px;border:2px solid var(--line);border-radius:16px;padding:10px;cursor:pointer;font-weight:700;font-size:.92rem;line-height:1.25}
+.pick .pi{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#fff;flex:none}
+.pick .pi.electric{color:#1d1503}
+.pick .pi svg{width:24px;height:24px}
 .pick input{position:absolute;opacity:0;pointer-events:none}
-.pick label:has(input:checked) .pi{border-color:var(--ink)}
-.pick label:has(input:checked){font-weight:600}
-.pick label:has(input:focus-visible) .pi{outline:2px solid var(--gold);outline-offset:2px}
-.fld{display:grid;gap:2px}
-.fld>span,.lbl{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);font-weight:500}
-:lang(ta) .fld>span,:lang(ta) .lbl{letter-spacing:.02em;text-transform:none;font-size:.85rem}
-.fld input,.fld select,.fld textarea{font:inherit;font-size:1.05rem;border:0;border-bottom:1px solid var(--ink-2);background:none;color:var(--ink);padding:8px 0;border-radius:0;width:100%;min-width:0}
-.fld select{appearance:none;background:linear-gradient(45deg,transparent 50%,var(--ink) 50%) right 6px center/6px 6px no-repeat,linear-gradient(-45deg,transparent 50%,var(--ink) 50%) right 0 center/6px 6px no-repeat}
+.pick label:has(input:checked){border-color:var(--ink);background:var(--bg)}
+.pick label:has(input:focus-visible){outline:3px solid var(--yellow)}
+.fld{display:grid;gap:6px}
+.fld input,.fld select,.fld textarea{font:inherit;font-size:1.05rem;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);padding:13px 14px;border-radius:14px;width:100%;min-width:0;appearance:none}
+.fld select{background:var(--bg) linear-gradient(45deg,transparent 50%,var(--ink) 50%) right 20px center/6px 6px no-repeat,linear-gradient(-45deg,transparent 50%,var(--ink) 50%) right 14px center/6px 6px no-repeat;background-color:var(--bg)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
 .seg.two-c{grid-template-columns:1fr 1fr}
-.set .lbl{margin-top:18px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);font-weight:500}
-.set .btn{margin-top:22px}
-.set .small{font-size:.85rem;margin:10px 0 0;color:var(--mute)}
-:lang(ta) .set .lbl{letter-spacing:.02em;text-transform:none;font-size:.85rem}
-.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
-.seg label{display:grid;place-items:center;border:1px solid var(--rule);border-radius:999px;padding:10px 4px;font-size:.88rem;cursor:pointer}
+.seg label{display:grid;place-items:center;text-align:center;border:1.5px solid var(--line);border-radius:14px;padding:12px 4px;font-size:.92rem;font-weight:600;cursor:pointer}
 .seg input{position:absolute;opacity:0;pointer-events:none}
-.seg label:has(input:checked){background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.err{color:#b3261e;font-size:.88rem;font-weight:500}
+.seg label:has(input:checked){background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.err{color:#d0342c;font-size:.92rem;font-weight:700}
+.note{font-size:.9rem;color:var(--mute)}
 
 /* account */
-.rows{display:grid}
-.rows div{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start;padding:14px 0;border-top:1px solid var(--rule)}
-.rows div:last-child{border-bottom:1px solid var(--rule)}
-.rows svg{width:20px;height:20px;color:var(--gold);margin-top:3px}
-.rows b{display:block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);font-weight:500}
-:lang(ta) .rows b{letter-spacing:.02em;text-transform:none;font-size:.85rem}
-.rows span{font-family:var(--serif);font-size:1.25rem;font-weight:600;overflow-wrap:anywhere}
+.list{background:var(--card);border-radius:var(--r);padding:0 16px}
+.list>div{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:center;padding:13px 0}
+.list>div+div{border-top:1px solid var(--line)}
+.list .i{width:40px;height:40px;border-radius:12px;background:var(--bg);display:grid;place-items:center}
+.list .i svg{width:20px;height:20px}
+.list b{display:block;font-size:.82rem;font-weight:600;color:var(--mute)}
+.list span{font-weight:700;overflow-wrap:anywhere}
 .sel{user-select:all}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.req{padding:12px 0;border-top:1px solid var(--rule);display:grid}
-.req b{font-family:var(--serif);font-size:1.15rem}
-.req span{font-size:.85rem;color:var(--mute)}
+.req{padding:12px 0;display:grid}
+.req+.req{border-top:1px solid var(--line)}
+.req b{font-weight:800}
+.req span{font-size:.88rem;color:var(--mute)}
+.small{font-size:.86rem;color:var(--mute)}
 
-/* nav */
-.nav{position:fixed;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);z-index:20;display:flex;justify-content:center;pointer-events:none;padding-inline:max(20px,env(safe-area-inset-left,0px))}
-.nav .bar{pointer-events:auto;width:100%;max-width:420px;background:var(--navy);border-radius:999px;display:grid;grid-template-columns:repeat(4,1fr);padding:6px;box-shadow:0 14px 34px rgba(28,35,51,.28)}
-.nav button{border:0;background:none;height:calc(var(--nav-h) - 12px);border-radius:999px;display:grid;place-items:center;align-content:center;gap:1px;font-size:.66rem;letter-spacing:.06em;color:#9aa0ad}
-.nav button svg{width:21px;height:21px}
-.nav button[aria-current="page"]{background:var(--gold);color:#1c1406}
+/* bottom tab bar */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:20;background:color-mix(in srgb,var(--card) 94%,transparent);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.nav .bar{max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);height:var(--nav-h);align-items:center}
+.nav button,.nav a{border:0;background:none;display:grid;place-items:center;gap:3px;font-size:.72rem;font-weight:600;color:var(--mute);text-decoration:none;height:100%;align-content:center}
+.nav svg{width:24px;height:24px}
+.nav [aria-current="page"]{color:var(--ink)}
+.nav [aria-current="page"] svg{background:var(--yellow);color:var(--on-yellow);border-radius:10px;padding:3px;width:36px;height:28px}
+.nav .bk{position:relative}
+.nav .bk .ring{width:58px;height:58px;border-radius:50%;background:var(--yellow);color:var(--on-yellow);display:grid;place-items:center;margin-top:-30px;box-shadow:0 8px 22px rgba(255,200,58,.45);border:4px solid var(--bg)}
+.nav .bk .ring svg{width:26px;height:26px;background:none!important;padding:0!important}
+.nav .bk[aria-current="page"] .ring{background:var(--ink);color:var(--bg);box-shadow:none}
+.nav .bk[aria-current="page"] .ring svg{color:var(--bg)}
+.nav a.wa{color:#1f9d55}
 
-/* sheet */
-.scrim{position:fixed;inset:0;background:rgba(10,12,18,.5);z-index:40;display:flex;align-items:flex-end;justify-content:center}
-.sheet{background:var(--paper);width:100%;max-width:520px;border-radius:28px 28px 0 0;max-height:88vh;overflow:auto;padding-top:14px;padding-bottom:calc(20px + env(safe-area-inset-bottom,0px));display:grid;gap:14px}
-.sheet .grab{width:44px;height:4px;border-radius:9px;background:var(--rule);justify-self:center}
-.sheet h3{font-size:1.9rem}
-.msg{white-space:pre-wrap;font-size:.85rem;background:var(--paper-2);border-radius:16px;padding:12px;margin:0;max-height:200px;overflow:auto;font-family:var(--sans)}
-@media (prefers-reduced-motion:no-preference){
-  .scrim:not([hidden]) .sheet{animation:up .25s ease-out}
-  @keyframes up{from{transform:translateY(40px);opacity:.6}to{transform:none;opacity:1}}
-  .view:not([hidden]){animation:fade .35s ease-out}
-  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-  .btn:active,.scard:active{transform:scale(.98)}
-}
-
-/* easy mode: bigger text, WhatsApp button, first-open language choice */
-body{font-size:17px}
-.eyebrow{font-size:.8rem}
-.nav button{font-size:.74rem;letter-spacing:.02em}
-.hint,.note{font-size:.92rem}
-.fld>span,.lbl,.rows b{font-size:.8rem}
-.fab{position:fixed;right:max(20px,calc(50% - 240px));bottom:calc(env(safe-area-inset-bottom,0px) + var(--nav-h) + 28px);z-index:19;display:none;align-items:center;gap:8px;background:#1f8f4e;color:#fff;text-decoration:none;border-radius:999px;width:58px;height:58px;justify-content:center;box-shadow:0 10px 26px rgba(31,143,78,.35)}
-.fab svg{width:30px;height:30px}
-.fab span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-body[data-tab=home] .fab,body[data-tab=services] .fab,body[data-tab=shop] .fab{display:flex}
-body.has-cart .fab{display:none!important}
-.welcome{position:fixed;inset:0;z-index:60;background:var(--paper);display:grid;place-items:center;padding:24px}
+/* sheet + welcome */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:40;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--bg);width:100%;max-width:520px;border-radius:26px 26px 0 0;max-height:88vh;overflow:auto;padding-top:12px;padding-bottom:calc(20px + env(safe-area-inset-bottom,0px));display:grid;gap:14px}
+.sheet .grab{width:44px;height:5px;border-radius:9px;background:var(--line);justify-self:center}
+.sheet h3{font-size:1.6rem}
+.msg{white-space:pre-wrap;font-size:.86rem;background:var(--card);border-radius:14px;padding:12px;margin:0;max-height:200px;overflow:auto;font-family:var(--font)}
+.welcome{position:fixed;inset:0;z-index:60;background:#121316;color:#fff;display:grid;place-items:center;padding:24px}
 .wbox{width:100%;max-width:380px;display:grid;gap:14px;text-align:center;justify-items:center}
-.wbox .mark{width:72px;height:72px}
-.wbox .mark svg{width:40px;height:40px}
-.wbox h2{font-size:2.6rem;line-height:1.2}
-.wbox p{color:var(--ink-2)}
-.wbox .q{margin-top:10px;font-weight:500;color:var(--ink)}
-.wbox .btn{font-size:1.15rem;padding:18px 22px}
-.wbox .btn.ta{font-family:"Mukta Malar",sans-serif;font-size:1.3rem;font-weight:600}
+.wbox .logo{width:76px;height:76px;border-radius:22px}
+.wbox .logo svg{width:40px;height:40px}
+.wbox h2{font-size:2.6rem}
+.wbox p{color:#c9ccd3}
+.wbox .q{margin-top:10px;font-weight:700;color:#fff}
+.wbox .btn{font-size:1.2rem;padding:18px}
+.wbox .btn.ta{font-family:"Mukta Malar",sans-serif;font-size:1.35rem}
+.wbox .btn.ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+/* animations: only when the phone allows motion */
+@media (prefers-reduced-motion:no-preference){
+  @keyframes up{from{transform:translateY(30px);opacity:.4}to{transform:none;opacity:1}}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  @keyframes pop{from{opacity:0;transform:scale(.82) translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-18px,22px) scale(1.08)}}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(58,208,122,.6)}100%{box-shadow:0 0 0 10px rgba(58,208,122,0)}}
+  @keyframes ring{0%{box-shadow:0 0 0 0 rgba(255,200,58,.65),0 8px 22px rgba(255,200,58,.45)}100%{box-shadow:0 0 0 16px rgba(255,200,58,0),0 8px 22px rgba(255,200,58,.45)}}
+  @keyframes bolt{0%,86%,100%{opacity:1;transform:none}89%{opacity:.25;transform:scale(.92)}93%{opacity:1;transform:scale(1.08)}}
+  @keyframes drip{0%,55%{transform:translateY(0);opacity:1}100%{transform:translateY(6px);opacity:0}}
+  @keyframes roll{0%,100%{transform:translateX(0)}50%{transform:translateX(-3px)}}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+  @keyframes viewIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @keyframes shine{0%{transform:translateX(-120%) skewX(-20deg)}60%,100%{transform:translateX(320%) skewX(-20deg)}}
+  @keyframes zero{0%{transform:scale(.4) rotate(-12deg);opacity:0}70%{transform:scale(1.12) rotate(3deg);opacity:1}100%{transform:none}}
+
+  .scrim:not([hidden]) .sheet{animation:up .3s cubic-bezier(.2,.8,.3,1)}
+  main.view:not([hidden]){animation:viewIn .4s cubic-bezier(.2,.7,.2,1)}
+  .hero>*:not(.top){opacity:0}
+  .play .hero>*:not(.top){opacity:1;animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .hero .open{animation-delay:.05s}.hero h1{animation-delay:.14s}.hero .lead{animation-delay:.24s}.hero .chips{animation-delay:.32s}.hero .cta{animation-delay:.42s}
+  .hero::after{animation:float 9s ease-in-out infinite}
+  .hero .open i{animation:pulse 1.6s ease-out infinite}
+  .hero .btn.y{position:relative;overflow:hidden}
+  .hero .btn.y::after{content:"";position:absolute;top:0;bottom:0;left:0;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);animation:shine 3.2s ease-in-out 1.2s infinite}
+  .tile{opacity:0}
+  .play .tile{opacity:1;animation:pop .6s cubic-bezier(.2,.8,.3,1.15) backwards;transition:transform .15s}
+  .tile:nth-child(2){animation-delay:.08s}.tile:nth-child(3){animation-delay:.16s}.tile:nth-child(4){animation-delay:.24s}
+  .tile:active,.btn:active,.pick label:active,.seg label:active{transform:scale(.96)}
+  .btn,.pick label,.seg label{transition:transform .12s,background-color .2s,border-color .2s}
+  .tile.kitchen .ic svg,.svc .hd.kitchen .ic svg,.pick .pi.kitchen svg{animation:bob 3s ease-in-out infinite}
+  .tile.electric .ic svg,.svc .hd.electric .ic svg,.pick .pi.electric svg{animation:bolt 3.4s ease-in-out infinite}
+  .tile.plumb .ic svg path:nth-child(3),.svc .hd.plumb .ic svg path:nth-child(3),.pick .pi.plumb svg path:nth-child(3){transform-box:fill-box;animation:drip 1.8s ease-in infinite}
+  .tile.paint .ic svg,.svc .hd.paint .ic svg,.pick .pi.paint svg{animation:roll 2.4s ease-in-out infinite}
+  .tile .go{transition:transform .2s}.tile:hover .go{transform:translateX(3px)}
+  .nav .bk .ring{animation:ring 2.2s ease-out infinite}
+  .nav [aria-current="page"] svg{animation:pop .35s cubic-bezier(.2,.8,.3,1.3)}
+  .offer.in .n{animation:zero .7s cubic-bezier(.2,.8,.3,1.2) .15s both}
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  .steps.rv div,.prom.rv div{opacity:0;transform:translateX(-14px);transition:opacity .5s ease,transform .5s ease}
+  .steps.rv.in div,.prom.rv.in div{opacity:1;transform:none}
+  .steps.rv.in div:nth-child(2),.prom.rv.in div:nth-child(2){transition-delay:.12s}
+  .steps.rv.in div:nth-child(3),.prom.rv.in div:nth-child(3){transition-delay:.24s}
+  .prom.rv.in div:nth-child(4){transition-delay:.36s}
+  .welcome:not([hidden]) .wbox>*{animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+  .welcome:not([hidden]) .logo{animation:pop .6s cubic-bezier(.2,.8,.3,1.3) both}
+  .wbox>*:nth-child(2){animation-delay:.1s}.wbox>*:nth-child(3){animation-delay:.18s}.wbox>*:nth-child(4){animation-delay:.26s}.wbox>*:nth-child(5){animation-delay:.34s}.wbox>*:nth-child(6){animation-delay:.42s}
+}
 </style></head><body>
 
 <div class="app">
-  <header class="top gut">
-    <div class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#d8b47a" stroke-width="1.6" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9H4z"/><path d="M10 20v-5h4v5"/></svg></div>
-    <div class="word"><b>Meenthulli</b><small data-t="wordSub"></small></div>
-    <button class="tbtn" id="lang" type="button" aria-label="Change language">தமிழ்</button>
-    <a class="tbtn" href="tel:+919043232447" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
-  </header>
-
-  <main class="view gut" id="v-home">
-    <section class="hero">
-      <div class="pic" id="heroPic"><div class="badge"><i></i><span data-t="badge"></span></div></div>
-      <div class="eyebrow" data-t="heroK"></div>
+  <!-- HOME -->
+  <main class="view first" id="v-home">
+    <section class="hero gut">
+      <header class="top">
+        <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#121316" stroke-width="2.2" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9H4z"/><path d="M10 20v-5h4v5"/></svg></div>
+        <div class="word"><b>Meenthulli</b><small data-t="wordSub"></small></div>
+        <button class="tbtn" id="lang" type="button" aria-label="Change language">தமிழ்</button>
+        <a class="tbtn" href="tel:+919043232447" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+      </header>
+      <span class="open"><i></i><span data-t="badge"></span></span>
       <h1 id="heroH"></h1>
       <p class="lead" data-t="heroP"></p>
-      <div class="cta"><button class="btn" type="button" data-goto="book"><span data-t="bookNow"></span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button><a class="btn line" href="tel:+919043232447" data-t="callNow"></a></div>
+      <div class="chips"><span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m3 8 3 3 7-7"/></svg><span data-t="c1"></span></span><span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m3 8 3 3 7-7"/></svg><span data-t="c2"></span></span><span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m3 8 3 3 7-7"/></svg><span data-t="c3"></span></span></div>
+      <div class="cta"><button class="btn y" type="button" data-goto="book"><span data-t="bookNow"></span></button><a class="btn ghost" href="tel:+919043232447" data-t="callNow"></a></div>
     </section>
 
-    <div class="offer"><div class="n">₹0</div><div><b id="offerLine"></b><span data-t="offerSub"></span></div></div>
+    <div class="gut view" style="padding-top:0">
+      <section class="sec"><div class="sh"><h2 data-t="what"></h2><button class="more" type="button" data-goto="services"><span data-t="seeP"></span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg></button></div><div class="tiles" id="tiles"></div></section>
 
-    <section class="sec"><div class="sh"><h2 data-t="what"></h2><span class="num">01</span></div><div class="rail" id="rail"></div></section>
+      <section class="sec"><div class="sh"><h2 data-t="workT"></h2></div><div class="works" id="works"></div><div class="dots" id="dots" aria-hidden="true"></div></section>
 
-    <section class="sec"><div class="sh"><h2 data-t="how"></h2><span class="num">02</span></div>
-      <div class="steps"><div><i>i.</i><p><b data-t="h1"></b><span data-t="h1p"></span></p></div><div><i>ii.</i><p><b data-t="h2"></b><span data-t="h2p"></span></p></div><div><i>iii.</i><p><b data-t="h3"></b><span data-t="h3p"></span></p></div></div></section>
+      <div class="offer rv"><div class="n">₹0</div><div><b id="offerLine"></b><span data-t="offerSub"></span></div></div>
 
-    <section class="sec"><div class="sh"><h2 data-t="whyT"></h2><span class="num">03</span></div>
-      <div class="prom">
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><b data-t="w1"></b><span data-t="w1p"></span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h5"/></svg><b data-t="w2"></b><span data-t="w2p"></span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg><b data-t="w3"></b><span data-t="w3p"></span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 20h14M7 20V9l5-5 5 5v11"/><path d="M10 14h4"/></svg><b data-t="w4"></b><span data-t="w4p"></span></div>
-      </div></section>
+      <section class="sec"><div class="sh"><h2 data-t="how"></h2></div>
+        <div class="steps rv"><div><i>1</i><p><b data-t="h1"></b><span data-t="h1p"></span></p></div><div><i>2</i><p><b data-t="h2"></b><span data-t="h2p"></span></p></div><div><i>3</i><p><b data-t="h3"></b><span data-t="h3p"></span></p></div></div></section>
 
-    <section class="band"><div class="eyebrow" style="color:var(--gold-2)" data-t="shareK"></div><h3 id="shareH"></h3><p data-t="shareP"></p><button class="btn gold block" type="button" data-share><span data-t="shareBtn"></span></button></section>
+      <section class="sec"><div class="sh"><h2 data-t="whyT"></h2></div>
+        <div class="prom rv">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="var(--kitchen)" stroke-width="2"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><b data-t="w1"></b><span data-t="w1p"></span></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="var(--plumb)" stroke-width="2"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h5"/></svg><b data-t="w2"></b><span data-t="w2p"></span></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="var(--electric)" stroke-width="2"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg><b data-t="w3"></b><span data-t="w3p"></span></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="var(--paint)" stroke-width="2"><path d="M5 20h14M7 20V9l5-5 5 5v11"/><path d="M10 14h4"/></svg><b data-t="w4"></b><span data-t="w4p"></span></div>
+        </div></section>
 
-    <a class="other" id="promo" target="_blank" rel="noopener"><span class="dot" aria-hidden="true">🥥</span><span><b data-t="promoH"></b><span data-t="promoP"></span></span><span class="arr tbtn" aria-hidden="true">›</span></a>
+      <section class="share rv"><span class="tag" style="color:var(--yellow)" data-t="shareK"></span><h3 id="shareH"></h3><p data-t="shareP"></p><button class="btn y block" type="button" data-share><span data-t="shareBtn"></span></button></section>
+
+      <a class="other rv" id="promo" target="_blank" rel="noopener"><span class="dot" aria-hidden="true">🥥</span><span><b data-t="promoH"></b><span data-t="promoP"></span></span></a>
+    </div>
   </main>
 
+  <!-- SERVICES -->
   <main class="view gut" id="v-services" hidden>
-    <section class="sec"><div class="eyebrow" data-t="priceK"></div><h2 class="ttl" data-t="nSvc"></h2><p class="note" data-t="priceNote"></p></section>
-    <div class="view" style="gap:48px;padding:0" id="svclist"></div>
+    <section class="ph"><div class="row"><span class="tag" data-t="priceK"></span></div><h2 data-t="nSvc"></h2><p data-t="priceNote"></p></section>
+    <div class="sec" id="svclist"></div>
   </main>
 
+  <!-- BOOK -->
   <main class="view gut" id="v-book" hidden>
-    <section class="sec"><div class="eyebrow" data-t="bookK"></div><h2 class="ttl" data-t="bookT"></h2><p class="note" data-t="bookSub"></p></section>
+    <section class="ph"><span class="tag" data-t="bookK"></span><h2 data-t="bookT"></h2><p data-t="bookSub"></p></section>
     <form class="form" id="book" novalidate>
-      <fieldset style="border:0;padding:0;margin:0;display:grid;gap:10px"><legend class="lbl" style="padding:0;margin-bottom:10px" data-t="svcPick"></legend><div class="pick" id="pick"></div></fieldset>
-      <label class="fld" for="b-work"><span data-t="work"></span><select id="b-work"></select></label>
-      <label class="fld" for="b-name"><span data-t="name"></span><input id="b-name" autocomplete="name"></label>
-      <label class="fld" for="b-phone"><span data-t="phone"></span><input id="b-phone" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel"></label>
-      <label class="fld" for="b-area"><span data-t="area"></span><input id="b-area" value="Sankarankovil"></label>
-      <label class="fld" for="b-date"><span data-t="date"></span><input id="b-date" type="date"></label>
-      <div><span class="lbl" data-t="when"></span><div class="seg"><label><input type="radio" name="tm" value="Morning" checked><span data-t="morning"></span></label><label><input type="radio" name="tm" value="Afternoon"><span data-t="noon"></span></label><label><input type="radio" name="tm" value="Evening"><span data-t="evening"></span></label></div></div>
-      <label class="fld" for="b-note"><span data-t="note"></span><textarea id="b-note" rows="2"></textarea></label>
+      <div class="card rv"><span class="lbl" data-t="svcPick"></span><div class="pick" id="pick" role="radiogroup"></div>
+        <label class="fld" for="b-work"><span data-t="work"></span><select id="b-work"></select></label></div>
+      <div class="card rv">
+        <label class="fld" for="b-name"><span data-t="name"></span><input id="b-name" autocomplete="name"></label>
+        <label class="fld" for="b-phone"><span data-t="phone"></span><input id="b-phone" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel"></label>
+        <label class="fld" for="b-area"><span data-t="area"></span><input id="b-area" value="Sankarankovil"></label>
+      </div>
+      <div class="card rv">
+        <label class="fld" for="b-date"><span data-t="date"></span><input id="b-date" type="date"></label>
+        <div><span class="lbl" data-t="when"></span><div class="seg"><label><input type="radio" name="tm" value="Morning" checked><span data-t="morning"></span></label><label><input type="radio" name="tm" value="Afternoon"><span data-t="noon"></span></label><label><input type="radio" name="tm" value="Evening"><span data-t="evening"></span></label></div></div>
+        <label class="fld" for="b-note"><span data-t="note"></span><textarea id="b-note" rows="2"></textarea></label>
+      </div>
       <div class="err" id="b-err" hidden></div>
-      <button class="btn block" type="submit"><span data-t="send"></span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+      <button class="btn wa block" type="submit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg><span data-t="send"></span></button>
     </form>
   </main>
 
+  <!-- ACCOUNT -->
   <main class="view gut" id="v-more" hidden>
-    <section class="sec"><div class="eyebrow" data-t="moreK"></div><h2 class="ttl" data-t="contact"></h2>
-    <div class="rows">
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><p><b data-t="ownerT"></b><span id="ownerLine"></span></p></div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><p><b data-t="callWa"></b><span class="sel" id="phoneLine"></span></p></div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><p><b data-t="emailT"></b><span class="sel" id="emailLine" style="font-size:1.05rem"></span></p></div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><p><b data-t="areaT"></b><span data-t="areaV" style="font-size:1.05rem"></span></p></div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><p><b data-t="timeT"></b><span data-t="time" style="font-size:1.05rem"></span></p></div>
+    <section class="ph"><span class="tag" data-t="moreK"></span><h2 data-t="contact"></h2></section>
+    <div class="list">
+      <div><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></span><p><b data-t="ownerT"></b><span id="ownerLine"></span></p></div>
+      <div><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><p><b data-t="callWa"></b><span class="sel" id="phoneLine"></span></p></div>
+      <div><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><p><b data-t="emailT"></b><span class="sel" id="emailLine"></span></p></div>
+      <div><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><p><b data-t="areaT"></b><span data-t="areaV"></span></p></div>
+      <div><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><p><b data-t="timeT"></b><span data-t="time"></span></p></div>
     </div>
     <div class="two"><a class="btn" href="tel:+919043232447" data-t="callNow"></a><a class="btn wa" id="waHello" target="_blank" rel="noopener">WhatsApp</a></div>
-    <button class="btn line block" type="button" data-share><span data-t="shareBtn"></span></button>
-    <button class="btn line block" id="installBtn" type="button" hidden data-t="install"></button>
-    </section>
-    <section class="sec"><h2 style="font-size:1.7rem" data-t="myReq"></h2><div id="reqs"></div></section>
-    <section class="sec set"><div class="eyebrow" data-t="setK"></div><h2 style="font-size:1.7rem" data-t="setT"></h2>
-      <div class="lbl" data-t="setLang"></div>
-      <div class="seg two-c"><label><input type="radio" name="s-lang" value="en">English</label><label><input type="radio" name="s-lang" value="ta">தமிழ்</label></div>
-      <div class="lbl" data-t="setLook"></div>
-      <div class="seg"><label><input type="radio" name="s-theme" value="auto"><span data-t="lookAuto"></span></label><label><input type="radio" name="s-theme" value="light"><span data-t="lookLight"></span></label><label><input type="radio" name="s-theme" value="dark"><span data-t="lookDark"></span></label></div>
-      <button class="btn line block" type="button" id="clearMe" data-t="clearMe"></button>
-      <p class="small mute" id="clearDone" hidden data-t="cleared"></p>
-      <p class="small mute ver">Meenthulli Home Services · v3</p>
+    <button class="btn ghost block" type="button" data-share><span data-t="shareBtn"></span></button>
+    <button class="btn ghost block" id="installBtn" type="button" hidden data-t="install"></button>
+    <section class="sec"><h2 style="font-size:1.4rem" data-t="myReq"></h2><div class="list" id="reqs"></div></section>
+    <section class="sec"><h2 style="font-size:1.4rem" data-t="setT"></h2>
+      <div class="card rv">
+        <div><span class="lbl" data-t="setLang"></span><div class="seg two-c"><label><input type="radio" name="s-lang" value="en">English</label><label><input type="radio" name="s-lang" value="ta">தமிழ்</label></div></div>
+        <div><span class="lbl" data-t="setLook"></span><div class="seg"><label><input type="radio" name="s-theme" value="auto"><span data-t="lookAuto"></span></label><label><input type="radio" name="s-theme" value="light"><span data-t="lookLight"></span></label><label><input type="radio" name="s-theme" value="dark"><span data-t="lookDark"></span></label></div></div>
+        <button class="btn ghost block" type="button" id="clearMe" data-t="clearMe"></button>
+        <p class="small" id="clearDone" hidden data-t="cleared"></p>
+      </div>
+      <p class="small">Meenthulli Home Services · v4</p>
     </section>
   </main>
 
   <nav class="nav" aria-label="Main"><div class="bar">
-    <button type="button" data-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9H4z"/></svg><span data-t="nHome"></span></button>
-    <button type="button" data-tab="services"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg><span data-t="nSvc"></span></button>
-    <button type="button" data-tab="book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span data-t="nBook"></span></button>
-    <button type="button" data-tab="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><span data-t="nMore"></span></button>
+    <button type="button" data-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9H4z"/></svg><span data-t="nHome"></span></button>
+    <button type="button" data-tab="services"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span data-t="nSvc"></span></button>
+    <button type="button" class="bk" data-tab="book"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg></span><span data-t="nBook"></span></button>
+    <a class="wa" id="fab" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg><span>WhatsApp</span></a>
+    <button type="button" data-tab="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><span data-t="nMore"></span></button>
   </div></nav>
-  <a class="fab" id="fab" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg><span data-t="fabT"></span></a>
-  <div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-label="Choose language" hidden><div class="wbox"><div class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#d8b47a" stroke-width="1.6" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9H4z"/><path d="M10 20v-5h4v5"/></svg></div><h2>வணக்கம்!</h2><p>Welcome to Meenthulli</p><p class="q">உங்கள் மொழியைத் தேர்ந்தெடுக்கவும்<br>Choose your language</p><button class="btn block ta" type="button" data-wl="ta">தமிழ்</button><button class="btn line block" type="button" data-wl="en">English</button></div></div>
+
+  <div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-label="Choose language" hidden><div class="wbox"><div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#121316" stroke-width="2.2" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9H4z"/><path d="M10 20v-5h4v5"/></svg></div><h2>வணக்கம்!</h2><p>Welcome to Meenthulli Home Services</p><p class="q">உங்கள் மொழியைத் தேர்ந்தெடுக்கவும்<br>Choose your language</p><button class="btn y block ta" type="button" data-wl="ta">தமிழ்</button><button class="btn ghost block" type="button" data-wl="en">English</button></div></div>
   <div class="scrim" id="scrim" hidden><div class="sheet gut" id="sheet" role="dialog" aria-modal="true"></div></div>
 </div>
 
@@ -332,8 +392,8 @@ const SHOP={
   offerEn:"Free site visit and written quote", // offer shown on the home screen
   offerTa:"இலவச வருகை, எழுத்து மதிப்பீடு"
 };
-/* Your own photos: put a photo file in the "photos" folder and write its name here, for example kitchen:"photos/kitchen.jpg". Empty means the drawing is shown. */
-const PHOTOS={hero:"",kitchen:"",electric:"",plumb:"",paint:""};
+/* Your own photos: put a photo file in the "photos" folder and write its name here, for example kitchen:"photos/kitchen.jpg". Empty means the colour tile is shown. */
+const PHOTOS={kitchen:"",electric:"",plumb:"",paint:""};
 /* Services and sample "starting from" prices. Edit names and prices here. */
 const SVC=[
  {id:"kitchen",tint:"--t-kitchen",en:"Modular kitchen",ta:"மாடுலர் கிச்சன்",from:"₹1,200 / sq ft",
@@ -350,19 +410,97 @@ const T={
 en:{brand:"Meenthulli Home Services",place:"Sankarankovil, Tenkasi",heroK:"Trusted local team",heroH:"Kitchen, electrical, plumbing and painting work at your home",heroP:"Free site visit and clear quote before we start.",bookNow:"Book free visit",callNow:"Call now",what:"What we do",how:"How it works",h1:"Book a visit",h1p:"Choose the work and a date. It takes one minute.",h2:"We visit and measure",h2p:"Free visit in Sankarankovil and nearby villages.",h3:"Get a clear price",h3p:"Work starts only after you agree to the price.",whyT:"Why Meenthulli",w1:"Local team",w1p:"From Sankarankovil, easy to reach.",w2:"Fair price",w2p:"Written quote, no hidden charges.",w3:"Good material",w3p:"Branded wires, pipes, paints and boards.",w4:"Clean work",w4p:"We clean up after the job.",promoH:"Want fresh foods?",promoP:"Coconuts, onions, greens. Open Meenthulli Fresh.",nHome:"Home",nSvc:"Services",nBook:"Book",nMore:"Account",priceNote:"Prices are samples. Final price after a free site visit.",from:"From",book:"Book this",bookT:"Book a free visit",bookSub:"We will call you to confirm the time.",svcPick:"Service",work:"Type of work",name:"Name",phone:"Phone",area:"Village / area",date:"Preferred date",when:"Preferred time",morning:"Morning",noon:"Afternoon",evening:"Evening",note:"Anything else? (size, problem)",send:"Send booking on WhatsApp",fill:"Please fill name and 10-digit phone.",contact:"Contact",ownerT:"Owner",callWa:"Call or WhatsApp",emailT:"Email",areaT:"Service area",areaV:"Sankarankovil and nearby villages, Tenkasi district",timeT:"Working hours",time:"Mon to Sat, 8 am to 7 pm",install:"Install app on this phone",myReq:"My bookings",noReq:"No bookings yet. Bookings you send from this phone show here.",sentT:"Almost done",sentP:"Tap the button to send your booking on WhatsApp. We will call you back to confirm.",openWa:"Open WhatsApp",close:"Close",other:"Other work",offerSub:"No charge to come and measure.",shareT:"Know someone building or repairing a home?",shareP:"Send them Meenthulli Home Services on WhatsApp.",shareBtn:"Share with friends",shareMsg:"Meenthulli Home Services, Sankarankovil: modular kitchen, electrical, plumbing and painting work. Free site visit. Open the app:"},
 ta:{brand:"மீன்துள்ளி ஹோம் சர்வீசஸ்",place:"சங்கரன்கோவில், தென்காசி",heroK:"நம்பகமான உள்ளூர் குழு",heroH:"கிச்சன், மின் வேலை, பிளம்பிங், பெயிண்டிங் உங்கள் வீட்டில்",heroP:"இலவச வருகை, வேலைக்கு முன் தெளிவான விலை.",bookNow:"இலவச வருகை பதிவு",callNow:"அழைக்க",what:"எங்கள் சேவைகள்",how:"எப்படி வேலை செய்கிறது",h1:"வருகை பதிவு",h1p:"வேலையும் தேதியும் தேர்வு செய்யுங்கள்.",h2:"நாங்கள் வந்து அளவு எடுப்போம்",h2p:"சங்கரன்கோவில் மற்றும் அருகிலுள்ள ஊர்களில் இலவசம்.",h3:"தெளிவான விலை",h3p:"நீங்கள் ஒப்புக்கொண்ட பிறகே வேலை தொடங்கும்.",whyT:"ஏன் மீன்துள்ளி",w1:"உள்ளூர் குழு",w1p:"சங்கரன்கோவிலிலேயே உள்ளோம்.",w2:"நியாய விலை",w2p:"எழுத்து மதிப்பீடு, மறைமுக கட்டணம் இல்லை.",w3:"தரமான பொருள்",w3p:"பிராண்ட் வயர், பைப், பெயிண்ட், பலகை.",w4:"சுத்தமான வேலை",w4p:"வேலை முடிந்ததும் சுத்தம் செய்வோம்.",promoH:"புதிய உணவு வேண்டுமா?",promoP:"தேங்காய், வெங்காயம், கீரை. மீன்துள்ளி ஃப்ரெஷ் திறக்கவும்.",nHome:"முகப்பு",nSvc:"சேவைகள்",nBook:"பதிவு",nMore:"கணக்கு",priceNote:"விலைகள் மாதிரி மட்டுமே. இலவச வருகைக்குப் பின் இறுதி விலை.",from:"தொடக்கம்",book:"பதிவு செய்",bookT:"இலவச வருகை பதிவு",bookSub:"நேரத்தை உறுதிப்படுத்த நாங்கள் அழைப்போம்.",svcPick:"சேவை",work:"வேலை வகை",name:"பெயர்",phone:"தொலைபேசி",area:"ஊர் / பகுதி",date:"விருப்பமான தேதி",when:"விருப்பமான நேரம்",morning:"காலை",noon:"மதியம்",evening:"மாலை",note:"வேறு ஏதாவது? (அளவு, பிரச்சனை)",send:"WhatsApp-ல் பதிவு அனுப்பு",fill:"பெயர் மற்றும் 10 இலக்க எண் நிரப்பவும்.",contact:"தொடர்புக்கு",ownerT:"உரிமையாளர்",callWa:"அழைக்க / WhatsApp",emailT:"மின்னஞ்சல்",areaT:"சேவை பகுதி",areaV:"சங்கரன்கோவில் மற்றும் அருகிலுள்ள ஊர்கள், தென்காசி மாவட்டம்",timeT:"வேலை நேரம்",time:"திங்கள் முதல் சனி, காலை 8 – மாலை 7",install:"இந்த போனில் ஆப் நிறுவவும்",myReq:"என் பதிவுகள்",noReq:"இன்னும் பதிவு இல்லை.",sentT:"கிட்டத்தட்ட முடிந்தது",sentP:"பொத்தானை அழுத்தி WhatsApp-ல் அனுப்புங்கள். உறுதிப்படுத்த அழைப்போம்.",openWa:"WhatsApp திற",close:"மூடு",other:"வேறு வேலை",offerSub:"அளவு எடுக்க வர கட்டணம் இல்லை.",shareT:"வீடு கட்டும் அல்லது பழுது பார்க்கும் நண்பர் இருக்கிறாரா?",shareP:"மீன்துள்ளி ஹோம் சர்வீசஸை WhatsApp-ல் அனுப்புங்கள்.",shareBtn:"நண்பர்களுக்கு பகிர்",shareMsg:"மீன்துள்ளி ஹோம் சர்வீசஸ், சங்கரன்கோவில்: கிச்சன், மின் வேலை, பிளம்பிங், பெயிண்டிங். இலவச வருகை. ஆப் திறக்க:"}
 };
-Object.assign(T.en,{wordSub:"Home Services",badge:"Booking open this week",heroHtml:"Beautiful homes, <em>made by hand.</em>",heroP:"Modular kitchens, electrical, plumbing and painting by one trusted local team in Sankarankovil.",offerSub:"No charge to come, measure and give a written quote.",what:"Our services",how:"How it works",whyT:"Our promise",priceK:"Price list",bookK:"Free site visit",moreK:"Meenthulli Home",shareK:"Tell a friend",shareHtml:"Know someone building <em>a new home?</em>",shareP:"Send them Meenthulli Home Services on WhatsApp.",shareBtn:"Share with friends",shareMsg:"Meenthulli Home Services, Sankarankovil: modular kitchen, electrical, plumbing and painting work. Free site visit. Open the app:",fromL:"From",view:"View",fabT:"Ask on WhatsApp",setK:"Settings",setT:"App settings",setLang:"Language",setLook:"Look",lookAuto:"Auto",lookLight:"Light",lookDark:"Dark",clearMe:"Clear my saved details",cleared:"Done. Your name, phone and bookings are removed from this phone."});
-Object.assign(T.ta,{wordSub:"ஹோம் சர்வீசஸ்",badge:"இந்த வாரம் பதிவு திறந்துள்ளது",heroHtml:"அழகான வீடு, <em>கைவண்ணத்தில்.</em>",heroP:"மாடுலர் கிச்சன், மின் வேலை, பிளம்பிங், பெயிண்டிங். சங்கரன்கோவிலின் நம்பகமான உள்ளூர் குழு.",offerSub:"வந்து அளவு எடுத்து எழுத்து மதிப்பீடு தர கட்டணம் இல்லை.",what:"எங்கள் சேவைகள்",how:"எப்படி வேலை செய்கிறது",whyT:"எங்கள் உறுதி",priceK:"விலை பட்டியல்",bookK:"இலவச வருகை",moreK:"மீன்துள்ளி ஹோம்",shareK:"நண்பருக்கு சொல்லுங்கள்",shareHtml:"புதிய வீடு கட்டும் <em>நண்பர் இருக்கிறாரா?</em>",shareP:"மீன்துள்ளி ஹோம் சர்வீசஸை WhatsApp-ல் அனுப்புங்கள்.",shareBtn:"நண்பர்களுக்கு பகிர்",shareMsg:"மீன்துள்ளி ஹோம் சர்வீசஸ், சங்கரன்கோவில்: கிச்சன், மின் வேலை, பிளம்பிங், பெயிண்டிங். இலவச வருகை. ஆப் திறக்க:",fromL:"தொடக்கம்",view:"பார்க்க",fabT:"WhatsApp-ல் கேளுங்கள்",setK:"அமைப்புகள்",setT:"ஆப் அமைப்புகள்",setLang:"மொழி",setLook:"தோற்றம்",lookAuto:"தானாக",lookLight:"வெளிச்சம்",lookDark:"இருள்",clearMe:"என் சேமித்த விவரங்களை அழி",cleared:"முடிந்தது. உங்கள் பெயர், போன், பதிவுகள் இந்த போனிலிருந்து நீக்கப்பட்டன."});
+Object.assign(T.en,{workT:"See our work",workK:"Our work",wordSub:"Home Services",badge:"Booking open this week",heroHtml:"Your dream home, <em>built by local hands.</em>",heroP:"Modular kitchen, electrical, plumbing and painting. One trusted team for your whole home.",c1:"Free visit",c2:"Written quote",c3:"Local team",seeP:"See prices",offerSub:"We come, measure and give a written price. No charge.",what:"What do you need?",how:"How it works",whyT:"Why choose us",priceK:"Price list",bookK:"Free site visit",moreK:"Meenthulli Home Services",shareK:"Tell a friend",shareHtml:"Know someone building <em>a new home?</em>",shareP:"Send them Meenthulli Home Services on WhatsApp.",shareBtn:"Share with friends",shareMsg:"Meenthulli Home Services, Sankarankovil: modular kitchen, electrical, plumbing and painting work. Free site visit. Open the app:",fromL:"From",setT:"App settings",setLang:"Language",setLook:"Look",lookAuto:"Auto",lookLight:"Light",lookDark:"Dark",clearMe:"Clear my saved details",cleared:"Done. Your name, phone and bookings are removed from this phone."});
+Object.assign(T.ta,{workT:"எங்கள் வேலைகளை பாருங்கள்",workK:"எங்கள் வேலை",wordSub:"ஹோம் சர்வீசஸ்",badge:"இந்த வாரம் பதிவு திறந்துள்ளது",heroHtml:"உங்கள் கனவு வீடு, <em>உள்ளூர் கைகளால்.</em>",heroP:"மாடுலர் கிச்சன், மின் வேலை, பிளம்பிங், பெயிண்டிங். உங்கள் முழு வீட்டுக்கும் ஒரே நம்பகமான குழு.",c1:"இலவச வருகை",c2:"எழுத்து மதிப்பீடு",c3:"உள்ளூர் குழு",seeP:"விலைகள்",offerSub:"வந்து அளவு எடுத்து எழுத்தில் விலை தருவோம். கட்டணம் இல்லை.",what:"உங்களுக்கு என்ன வேண்டும்?",how:"எப்படி வேலை செய்கிறது",whyT:"ஏன் எங்களை தேர்வு செய்ய வேண்டும்",priceK:"விலை பட்டியல்",bookK:"இலவச வருகை",moreK:"மீன்துள்ளி ஹோம் சர்வீசஸ்",shareK:"நண்பருக்கு சொல்லுங்கள்",shareHtml:"புதிய வீடு கட்டும் <em>நண்பர் இருக்கிறாரா?</em>",shareP:"மீன்துள்ளி ஹோம் சர்வீசஸை WhatsApp-ல் அனுப்புங்கள்.",shareBtn:"நண்பர்களுக்கு பகிர்",shareMsg:"மீன்துள்ளி ஹோம் சர்வீசஸ், சங்கரன்கோவில்: கிச்சன், மின் வேலை, பிளம்பிங், பெயிண்டிங். இலவச வருகை. ஆப் திறக்க:",fromL:"தொடக்கம்",setT:"ஆப் அமைப்புகள்",setLang:"மொழி",setLook:"தோற்றம்",lookAuto:"தானாக",lookLight:"வெளிச்சம்",lookDark:"இருள்",clearMe:"என் சேமித்த விவரங்களை அழி",cleared:"முடிந்தது. உங்கள் பெயர், போன், பதிவுகள் இந்த போனிலிருந்து நீக்கப்பட்டன."});
 
-/* Drawings used until real photos are added */
-const SCN={
-hero:`<svg viewBox="0 0 400 430" preserveAspectRatio="xMidYMid slice"><rect width="400" height="430" fill="#efe1cf"/><rect x="0" y="330" width="400" height="100" fill="#e3d2bc"/><rect x="250" y="40" width="110" height="150" rx="55" fill="#f7efe3"/><path d="M250 115h110M305 40v150" stroke="#e3d2bc" stroke-width="3"/><line x1="140" y1="0" x2="140" y2="96" stroke="#1c2333" stroke-width="2"/><path d="M114 120a26 26 0 0 1 52 0z" fill="#1c2333"/><circle cx="140" cy="126" r="34" fill="#fff3cf" opacity=".55"/><circle cx="140" cy="122" r="7" fill="#ffe7a3"/><rect x="40" y="226" width="320" height="12" fill="#b48a4a"/><rect x="52" y="238" width="296" height="100" fill="#fbf7f0" stroke="#1c2333" stroke-width="2.5"/><path d="M151 238v100M250 238v100" stroke="#1c2333" stroke-width="2.5"/><path d="M90 256h24M190 256h24M288 256h24" stroke="#b48a4a" stroke-width="3.5" stroke-linecap="round"/><path d="M268 226v-34h28v12" fill="none" stroke="#1c2333" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M296 214c0 5-4 7-4 11a4 4 0 0 0 8 0c0-4-4-6-4-11z" fill="#4f9fc4"/><rect x="70" y="190" width="30" height="36" rx="6" fill="#8fa596"/><path d="M85 190c-13-18-4-36 0-40 6 9 13 26 0 40z" fill="#5f7d66"/><rect x="200" y="206" width="42" height="20" rx="3" fill="#e0b98a"/><rect x="40" y="140" width="56" height="70" fill="none" stroke="#1c2333" stroke-width="2"/><path d="M40 175h56" stroke="#1c2333" stroke-width="2"/></svg>`,
-kitchen:`<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice"><rect width="400" height="500" fill="#efe1cf"/><rect x="40" y="70" width="320" height="96" fill="#fbf7f0" stroke="#1c2333" stroke-width="2.5"/><path d="M146 70v96M253 70v96" stroke="#1c2333" stroke-width="2.5"/><path d="M130 118v22M162 118v22M270 118v22" stroke="#b48a4a" stroke-width="4" stroke-linecap="round"/><rect x="20" y="290" width="360" height="14" fill="#b48a4a"/><rect x="40" y="304" width="320" height="150" fill="#fbf7f0" stroke="#1c2333" stroke-width="2.5"/><path d="M146 304v150M253 304v150M253 379h107" stroke="#1c2333" stroke-width="2.5"/><path d="M80 326h28M186 326h28M292 326h28M292 400h28" stroke="#b48a4a" stroke-width="4" stroke-linecap="round"/><rect x="70" y="250" width="34" height="40" rx="6" fill="#8fa596"/><path d="M87 250c-14-20-4-40 0-44 6 10 14 28 0 44z" fill="#5f7d66"/><rect x="0" y="454" width="400" height="46" fill="#e3d2bc"/></svg>`,
-electric:`<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice"><rect width="400" height="500" fill="#f3e8c4"/><path d="M110 0v150M200 0v110M290 0v170" stroke="#1c2333" stroke-width="2"/><circle cx="110" cy="190" r="56" fill="#fff6d6" opacity=".7"/><path d="M80 180a30 30 0 0 1 60 0z" fill="#1c2333"/><circle cx="110" cy="186" r="8" fill="#ffd970"/><circle cx="200" cy="146" r="46" fill="#fff6d6" opacity=".7"/><path d="M176 138a24 24 0 0 1 48 0z" fill="#b48a4a"/><circle cx="200" cy="143" r="7" fill="#ffd970"/><circle cx="290" cy="210" r="56" fill="#fff6d6" opacity=".7"/><path d="M260 200a30 30 0 0 1 60 0z" fill="#1c2333"/><circle cx="290" cy="206" r="8" fill="#ffd970"/><rect x="150" y="330" width="100" height="120" rx="10" fill="#fbf7f0" stroke="#1c2333" stroke-width="2.5"/><rect x="168" y="350" width="26" height="40" rx="4" fill="none" stroke="#1c2333" stroke-width="2.5"/><rect x="206" y="350" width="26" height="40" rx="4" fill="none" stroke="#1c2333" stroke-width="2.5"/><rect x="172" y="356" width="18" height="16" rx="2" fill="#b48a4a"/><rect x="210" y="372" width="18" height="16" rx="2" fill="#1c2333"/><circle cx="182" cy="420" r="6" fill="#1c2333"/><circle cx="218" cy="420" r="6" fill="#1c2333"/></svg>`,
-plumb:`<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice"><rect width="400" height="500" fill="#d9e9e5"/><g stroke="#c3dbd5" stroke-width="2"><path d="M0 60h400M0 120h400M0 180h400M0 240h400M0 300h400M80 0v320M160 0v320M240 0v320M320 0v320"/></g><rect x="120" y="50" width="160" height="190" rx="80" fill="#f4faf8" stroke="#1c2333" stroke-width="2.5"/><rect x="70" y="320" width="260" height="22" rx="4" fill="#fbf7f0" stroke="#1c2333" stroke-width="2.5"/><path d="M110 342h180l-20 70H130z" fill="#fbf7f0" stroke="#1c2333" stroke-width="2.5"/><path d="M200 320v-46h44v18" fill="none" stroke="#1c2333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M186 270h28" stroke="#1c2333" stroke-width="8" stroke-linecap="round"/><path d="M244 300c0 6-5 9-5 14a5 5 0 0 0 10 0c0-5-5-8-5-14z" fill="#3f93bf"/><path d="M200 412v60" stroke="#1c2333" stroke-width="5"/><path d="M200 472h80" stroke="#1c2333" stroke-width="5"/><rect x="0" y="472" width="400" height="28" fill="#c3dbd5"/></svg>`,
-paint:`<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice"><rect width="400" height="500" fill="#dfe3ee"/><rect x="0" y="0" width="220" height="430" fill="#c8a98a"/><path d="M220 0c-10 60 10 120 0 180s10 120 0 250" stroke="#c8a98a" stroke-width="14" fill="none"/><g transform="translate(218 210) rotate(-24)"><rect x="0" y="0" width="110" height="34" rx="10" fill="#c8a98a" stroke="#1c2333" stroke-width="2.5"/><path d="M110 17h18v46H60v26" fill="none" stroke="#1c2333" stroke-width="6" stroke-linejoin="round"/><rect x="50" y="88" width="20" height="70" rx="6" fill="#1c2333"/></g><path d="M300 270l40 160M360 270l-20 160" stroke="#1c2333" stroke-width="3"/><path d="M314 320h38M322 360h28M330 400h18" stroke="#1c2333" stroke-width="3"/><rect x="40" y="380" width="70" height="60" rx="6" fill="#fbf7f0" stroke="#1c2333" stroke-width="2.5"/><path d="M40 395h70" stroke="#1c2333" stroke-width="2.5"/><path d="M60 380c0-14 30-14 30 0" fill="none" stroke="#1c2333" stroke-width="2.5"/><rect x="0" y="430" width="400" height="70" fill="#cdd3e2"/></svg>`
+/* Line icons for each service */
+const ICO={
+kitchen:`<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="4" y="13" width="24" height="15" rx="2"/><path d="M16 13v15M4 18h24M10 21v3M22 21v3"/><path d="M8 9h6M18 9h6" stroke-linecap="round"/><circle cx="11" cy="5.5" r="1.5"/><circle cx="21" cy="5.5" r="1.5"/></svg>`,
+electric:`<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M18 3 7 18h8l-2 11 12-16h-8z"/></svg>`,
+plumb:`<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M4 10h12a6 6 0 0 1 6 6v2"/><path d="M4 6v8M10 6v4"/><path d="M22 23c0 2-1.5 3-1.5 4.5a1.5 1.5 0 0 0 3 0C23.5 26 22 25 22 23z" fill="currentColor"/><path d="M19 18h6"/></svg>`,
+paint:`<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="4" y="4" width="20" height="8" rx="2"/><path d="M24 8h3v7H15v4"/><rect x="13" y="19" width="4" height="10" rx="1.5"/></svg>`
 };
-const pic=id=>PHOTOS[id]?`<img src="${PHOTOS[id]}" alt="" loading="lazy">`:SCN[id];
-const ARR=`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg>`;
+/* Animated pictures of each work. They move with CSS; they stay still if the phone asks for less motion. */
+const SCENE={
+kitchen:`<svg viewBox="0 0 400 260" class="scene" role="img" aria-label="Modular kitchen"><rect width="400" height="260" fill="#fbe3d6"/><rect y="222" width="400" height="38" fill="#f3cdb8"/>
+<g class="swing"><line x1="80" y1="0" x2="80" y2="70" stroke="#2b1d16" stroke-width="2"/><path d="M56 92a24 24 0 0 1 48 0z" fill="#2b1d16"/><circle class="glow" cx="80" cy="100" r="30" fill="#ffe7a3" opacity=".55"/><circle cx="80" cy="96" r="6" fill="#ffd970"/></g>
+<rect x="150" y="26" width="220" height="66" rx="4" fill="#fffaf6" stroke="#2b1d16" stroke-width="3"/><path d="M205 26v66M260 26v66M315 26v66" stroke="#2b1d16" stroke-width="3"/><path d="M196 52v14M214 52v14M306 52v14M324 52v14" stroke="#e2734a" stroke-width="4" stroke-linecap="round"/>
+<rect x="16" y="148" width="368" height="12" rx="2" fill="#e2734a"/>
+<rect x="28" y="160" width="344" height="62" fill="#fffaf6" stroke="#2b1d16" stroke-width="3"/><path d="M114 160v62M200 160v62M286 160v62" stroke="#2b1d16" stroke-width="3"/>
+<path d="M60 176h22M146 176h22M318 176h22" stroke="#e2734a" stroke-width="4" stroke-linecap="round"/>
+<rect x="201" y="161" width="84" height="60" fill="#d9a88c"/><path d="M201 191h84" stroke="#b8805f" stroke-width="3"/><rect x="214" y="172" width="16" height="18" rx="3" fill="#8fa596"/><rect x="240" y="198" width="30" height="20" rx="3" fill="#fffaf6"/><g class="door"><rect x="200" y="160" width="86" height="62" fill="#fffaf6" stroke="#2b1d16" stroke-width="3"/><path d="M232 176h22" stroke="#e2734a" stroke-width="4" stroke-linecap="round"/></g>
+<rect x="222" y="140" width="70" height="8" rx="3" fill="#2b1d16"/><path d="M228 128h58v8a6 6 0 0 1-6 6h-46a6 6 0 0 1-6-6z" fill="#3a3f47"/><path d="M286 132h24" stroke="#3a3f47" stroke-width="5" stroke-linecap="round"/>
+<g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity=".9"><path class="steam s1" d="M244 120c-6-8 6-14 0-22"/><path class="steam s2" d="M258 120c-6-8 6-14 0-22"/><path class="steam s3" d="M272 120c-6-8 6-14 0-22"/></g>
+<rect x="120" y="120" width="26" height="28" rx="5" fill="#8fa596"/><path d="M133 120c-12-16-4-32 0-36 5 8 12 22 0 36z" fill="#5f7d66"/></svg>`,
+electric:`<svg viewBox="0 0 400 260" class="scene" role="img" aria-label="Electrical work"><rect width="400" height="260" fill="#fff3cc"/><rect y="0" width="400" height="12" fill="#f6e2a0"/><rect y="226" width="400" height="34" fill="#f6e2a0"/>
+<line x1="120" y1="12" x2="120" y2="40" stroke="#1d1503" stroke-width="4"/>
+<g class="spin"><g fill="#1d1503" opacity=".88"><rect x="126" y="43" width="66" height="11" rx="5.5"/><rect x="126" y="43" width="66" height="11" rx="5.5" transform="rotate(120 120 48)"/><rect x="126" y="43" width="66" height="11" rx="5.5" transform="rotate(240 120 48)"/></g></g><circle cx="120" cy="48" r="11" fill="#f2b417" stroke="#1d1503" stroke-width="3"/>
+<line x1="290" y1="12" x2="290" y2="70" stroke="#1d1503" stroke-width="2"/><circle class="glow" cx="290" cy="94" r="44" fill="#ffe27a"/><path d="M276 76h28v8h-28z" fill="#1d1503"/><circle cx="290" cy="96" r="14" fill="#fff6c9" stroke="#1d1503" stroke-width="3"/><path d="M285 96l5 6 5-6" fill="none" stroke="#f2b417" stroke-width="2"/>
+<path class="flow" d="M300 158V120h-10V110" fill="none" stroke="#f2b417" stroke-width="4" stroke-dasharray="6 8" stroke-linecap="round"/>
+<rect x="270" y="158" width="64" height="48" rx="6" fill="#fffdf3" stroke="#1d1503" stroke-width="3"/><rect x="280" y="168" width="18" height="28" rx="3" fill="#e9dfc0"/><rect x="306" y="168" width="18" height="28" rx="3" fill="#e9dfc0"/><rect class="toggle" x="283" y="171" width="12" height="11" rx="2" fill="#1d1503"/><rect x="309" y="182" width="12" height="11" rx="2" fill="#1d1503"/>
+<g class="spark" transform="translate(170 -40)"><path d="M70 170l14-26-2 18h12l-14 26 2-18z" fill="#f2b417" stroke="#1d1503" stroke-width="2.5" stroke-linejoin="round"/></g>
+<g><rect x="34" y="176" width="170" height="40" rx="12" fill="#e0a514"/><rect x="48" y="156" width="142" height="34" rx="12" fill="#f2b417"/><rect x="24" y="170" width="24" height="48" rx="10" fill="#c98f0e"/><rect x="190" y="170" width="24" height="48" rx="10" fill="#c98f0e"/><path d="M44 216v10M194 216v10" stroke="#1d1503" stroke-width="4"/></g><circle cx="356" cy="182" r="7" fill="#fffdf3" stroke="#1d1503" stroke-width="2.5"/></svg>`,
+plumb:`<svg viewBox="0 0 400 260" class="scene" role="img" aria-label="Plumbing"><rect width="400" height="260" fill="#dbe8fa"/><g stroke="#c7d9f2" stroke-width="2"><path d="M0 50h400M0 100h400M0 150h400M50 0v200M100 0v200M150 0v200M200 0v200M250 0v200M300 0v200M350 0v200"/></g><rect y="200" width="400" height="60" fill="#c7d9f2"/>
+<path d="M0 60h150a20 20 0 0 1 20 20v20" fill="none" stroke="#1b2b44" stroke-width="12" stroke-linejoin="round"/><rect x="156" y="98" width="28" height="12" rx="3" fill="#1b2b44"/><rect x="112" y="46" width="12" height="28" rx="3" fill="#2f74d0"/><path d="M108 40h20" stroke="#1b2b44" stroke-width="6" stroke-linecap="round"/>
+<path class="stream" d="M170 112v62" stroke="#5aa2ff" stroke-width="7" stroke-linecap="round" stroke-dasharray="10 10"/>
+<g fill="#2f74d0"><path class="drop d1" d="M170 112c0 6-5 9-5 13a5 5 0 0 0 10 0c0-4-5-7-5-13z"/><path class="drop d2" d="M170 112c0 6-5 9-5 13a5 5 0 0 0 10 0c0-4-5-7-5-13z"/></g>
+<path d="M90 168h160l-16 40H106z" fill="#ffffff" stroke="#1b2b44" stroke-width="3" stroke-linejoin="round"/><ellipse class="ripple" cx="170" cy="176" rx="20" ry="4" fill="none" stroke="#5aa2ff" stroke-width="3"/>
+<path d="M170 208v20h120v-28" fill="none" stroke="#1b2b44" stroke-width="10" stroke-linejoin="round"/><rect x="278" y="186" width="24" height="16" rx="3" fill="#2f74d0"/>
+<g class="wrench"><path d="M290 194 340 144" stroke="#7d8696" stroke-width="10" stroke-linecap="round"/><path d="M332 130a14 14 0 1 0 22 18l-8-2-4-8z" fill="#7d8696"/></g></svg>`,
+paint:`<svg viewBox="0 0 400 260" class="scene" role="img" aria-label="Painting"><rect width="400" height="260" fill="#e0f2e8"/><rect x="30" y="20" width="250" height="200" fill="#e9e3d6"/>
+<rect x="30" y="20" width="120" height="200" fill="#2a9a68"/><rect class="painted" x="150" y="20" width="60" height="200" fill="#2a9a68"/>
+<g class="roll"><rect x="176" y="40" width="70" height="26" rx="10" fill="#2a9a68" stroke="#14321f" stroke-width="3"/><path d="M246 53h14v40h-52v20" fill="none" stroke="#14321f" stroke-width="5" stroke-linejoin="round"/><rect x="200" y="110" width="16" height="56" rx="5" fill="#14321f"/></g>
+<rect y="220" width="400" height="40" fill="#c6e3d3"/>
+<g><path d="M300 176h70l-6 50h-58z" fill="#ffffff" stroke="#14321f" stroke-width="3" stroke-linejoin="round"/><path d="M300 176c10 8 24 8 35 0s25-8 35 0" fill="#2a9a68" stroke="#14321f" stroke-width="3"/><path class="drip" d="M318 182v10" stroke="#2a9a68" stroke-width="5" stroke-linecap="round"/><path d="M304 176c0-24 62-24 62 0" fill="none" stroke="#14321f" stroke-width="3"/></g>
+<g fill="#14321f" opacity=".25"><circle cx="60" cy="236" r="4"/><circle cx="90" cy="240" r="3"/></g></svg>`
+};
+const SCENE_CSS=`
+.scene{display:block;width:100%;height:100%}
+@media (prefers-reduced-motion:no-preference){
+  .scene .swing{transform-origin:80px 0;animation:sc-swing 3.6s ease-in-out infinite}
+  .scene .glow{animation:sc-glow 2.4s ease-in-out infinite}
+  .scene .door{transform-origin:200px 191px;transform-box:view-box;animation:sc-door 4s ease-in-out infinite}
+  .scene .steam{animation:sc-steam 2.4s ease-out infinite;opacity:0}
+  .scene .s2{animation-delay:.6s}.scene .s3{animation-delay:1.2s}
+  .scene .spin{transform-origin:120px 48px;animation:sc-spin 1.1s linear infinite}
+  .scene .flow{animation:sc-flow .8s linear infinite}
+  .scene .toggle{animation:sc-toggle 4s steps(1) infinite}
+  .scene .spark path{transform-origin:84px 170px;transform-box:view-box;animation:sc-spark 2s ease-in-out infinite}
+  .scene .stream{animation:sc-flow .5s linear infinite}
+  .scene .drop{animation:sc-drop 1.2s ease-in infinite;opacity:0}
+  .scene .d2{animation-delay:.6s}
+  .scene .ripple{transform-origin:170px 176px;animation:sc-ripple 1.2s ease-out infinite}
+  .scene .wrench{transform-origin:290px 194px;animation:sc-wrench 1.6s ease-in-out infinite}
+  .scene .painted{transform-origin:150px 20px;animation:sc-paint 4s ease-in-out infinite}
+  .scene .roll{animation:sc-roll 4s ease-in-out infinite}
+  .scene .drip{animation:sc-drip 1.8s ease-in infinite}
+}
+@keyframes sc-swing{0%,100%{transform:rotate(5deg)}50%{transform:rotate(-5deg)}}
+@keyframes sc-glow{0%,100%{opacity:.35}50%{opacity:.9}}
+@keyframes sc-door{0%,30%,100%{transform:scaleX(1)}50%,80%{transform:scaleX(.18)}}
+@keyframes sc-steam{0%{opacity:0;transform:translateY(8px)}30%{opacity:.9}100%{opacity:0;transform:translateY(-22px)}}
+@keyframes sc-spin{to{transform:rotate(360deg)}}
+@keyframes sc-flow{to{stroke-dashoffset:-28}}
+@keyframes sc-toggle{0%{transform:translateY(0)}50%{transform:translateY(11px)}}
+@keyframes sc-spark{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.2) rotate(-8deg)}}
+@keyframes sc-drop{0%{opacity:0;transform:translateY(0)}15%{opacity:1}100%{opacity:1;transform:translateY(56px)}}
+@keyframes sc-ripple{0%{opacity:1;transform:scale(.4)}100%{opacity:0;transform:scale(1.6)}}
+@keyframes sc-wrench{0%,100%{transform:rotate(0)}50%{transform:rotate(-24deg)}}
+@keyframes sc-paint{0%,10%{transform:scaleY(0)}60%,90%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+@keyframes sc-roll{0%,10%{transform:translateY(0)}35%{transform:translateY(130px)}60%{transform:translateY(20px)}85%,100%{transform:translateY(0)}}
+@keyframes sc-drip{0%{transform:translateY(0);opacity:1}100%{transform:translateY(16px);opacity:0}}
+`;
+
+document.head.insertAdjacentHTML("beforeend","<style>"+SCENE_CSS+"</style>");
+const DESC={
+ kitchen:["Soft-close cabinets, granite top, loft and wardrobe.","மெதுவாக மூடும் அலமாரி, கிரானைட் மேடை, லாஃப்ட், வார்ட்ரோப்."],
+ electric:["Wiring, fans, lights and switch boards. Safe and neat.","வயரிங், ஃபேன், லைட், சுவிட்ச் போர்டு. பாதுகாப்பாக, நேர்த்தியாக."],
+ plumb:["Taps, leaks, water tanks and motor lines fixed fast.","குழாய், கசிவு, தண்ணீர் தொட்டி, மோட்டார் லைன் விரைவாக சரிசெய்வோம்."],
+ paint:["Inside and outside walls, putty and waterproofing.","உள், வெளி சுவர், புட்டி, நீர்ப்புகா பூச்சு."]
+};
+const desc=id=>DESC[id]?DESC[id][lang==="ta"?1:0]:"";
+const bg=id=>PHOTOS[id]?`background-image:linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.55)),url('${PHOTOS[id]}');background-color:var(--${id})`:`background-color:var(--${id})`;
+const ARR=`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>`;
 
 const store={get(k,d){try{const v=localStorage.getItem("ms_"+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem("ms_"+k,JSON.stringify(v))}catch(e){}}};
 let lang=store.get("lang","en"),tab="home",picked="kitchen";
@@ -370,23 +508,26 @@ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const t=k=>T[lang][k],nm=o=>lang==="ta"?o.ta:o.en;
 const wa=m=>"https://wa.me/"+SHOP.phone+"?text="+encodeURIComponent(m);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const two=n=>String(n+1).padStart(2,"0");
 
 function render(){
-  $("#heroPic").insertAdjacentHTML("afterbegin","");
-  const hp=$("#heroPic");[...hp.children].forEach(c=>{if(!c.classList.contains("badge"))c.remove()});hp.insertAdjacentHTML("afterbegin",pic("hero"));
-  $("#rail").innerHTML=SVC.map((s,i)=>`<button class="scard" type="button" data-svc="${s.id}"><div class="pic">${pic(s.id)}<span class="no">${two(i)}</span></div><h3>${nm(s)}</h3><div class="meta"><span>${t("fromL")} <b>${s.from}</b></span><span class="arr">${ARR}</span></div></button>`).join("");
-  $("#svclist").innerHTML=SVC.map((s,i)=>`<article class="svc" id="s-${s.id}"><div class="pic">${pic(s.id)}</div><div class="head"><div><div class="eyebrow">${two(i)}</div><h3>${nm(s)}</h3><div class="ta">${lang==="ta"?s.en:s.ta}</div></div><div class="from">${t("fromL")}<b>${s.from}</b></div></div>
+  $("#tiles").innerHTML=SVC.map(s=>`<button class="tile ${s.id}" type="button" data-svc="${s.id}" style="${bg(s.id)}"><span class="ic">${ICO[s.id]}</span><span class="go">${ARR}</span><span><b>${nm(s)}</b><small>${t("fromL")} ${s.from}</small></span></button>`).join("");
+  $("#works").innerHTML=SVC.map((s,i)=>`<article class="work"><div class="sc">${SCENE[s.id]||""}</div><div class="wb"><span class="tag" style="color:var(--${s.id})">0${i+1} · ${t("workK")}</span><h3>${nm(s)}</h3><p>${desc(s.id)}</p><div class="row"><small>${t("fromL")} ${s.from}</small><button class="btn y" type="button" data-bookfor="${s.id}">${t("book")}</button></div></div></article>`).join("");
+  $("#dots").innerHTML=SVC.map((s,i)=>`<i class="${i?"":"on"}"></i>`).join("");
+  $("#svclist").innerHTML=SVC.map(s=>`<article class="svc rv" id="s-${s.id}"><div class="sc">${SCENE[s.id]||""}</div><div class="hd ${s.id}" style="${bg(s.id)}"><span class="ic">${ICO[s.id]}</span><div><h3>${nm(s)}</h3><small>${t("fromL")} ${s.from}</small></div></div>
    <ul>${s.items.map(x=>`<li><span>${lang==="ta"?x[1]:x[0]}</span><span>${x[2]}</span></li>`).join("")}</ul>
-   <button class="btn block" type="button" data-bookfor="${s.id}"><span>${t("book")}</span>${ARR}</button></article>`).join("");
-  $("#pick").innerHTML=SVC.map(s=>`<label><input type="radio" name="svc" value="${s.id}" ${s.id===picked?"checked":""}><span class="pi">${SCN[s.id]}</span>${nm(s)}</label>`).join("");
+   <div class="ft"><button class="btn y block" type="button" data-bookfor="${s.id}"><span>${t("book")}</span>${ARR}</button></div></article>`).join("");
+  $("#pick").innerHTML=SVC.map(s=>`<label><input type="radio" name="svc" value="${s.id}" ${s.id===picked?"checked":""}><span class="pi ${s.id}" style="background:var(--${s.id})">${ICO[s.id]}</span>${nm(s)}</label>`).join("");
   fillWork();
   const r=store.get("reqs",[]);
-  $("#reqs").innerHTML=r.length?r.slice().reverse().map(x=>`<div class="req"><b>${esc(x.svc)}</b><span>${esc(x.work)} · ${esc(x.when)}</span></div>`).join(""):`<p class="note">${t("noReq")}</p>`;
+  $("#reqs").innerHTML=r.length?r.slice().reverse().map(x=>`<div class="req"><b>${esc(x.svc)}</b><span>${esc(x.work)} · ${esc(x.when)}</span></div>`).join(""):`<p class="note" style="padding:14px 0">${t("noReq")}</p>`;
+  reveal();
   const d=store.get("me",{});
   if(d.name&&!$("#b-name").value)$("#b-name").value=d.name;
   if(d.phone&&!$("#b-phone").value)$("#b-phone").value=d.phone;
 }
+/* show sections with a soft slide when they scroll into view */
+const io="IntersectionObserver" in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12}):null;
+function reveal(){$$(".rv:not(.in)").forEach(el=>io?io.observe(el):el.classList.add("in"))}
 function fillWork(){
   const s=SVC.find(x=>x.id===picked);
   $("#b-work").innerHTML=s.items.map((i,n)=>`<option value="${n}">${lang==="ta"?i[1]:i[0]}</option>`).join("")+`<option value="other">${t("other")}</option>`;
@@ -436,15 +577,20 @@ $("#book").addEventListener("submit",e=>{
   const msg=`Vanakkam Meenthulli Home Services! Free visit booking 🛠️\n\nService: ${s.en} (${s.ta})\nWork: ${work}\nName: ${name}\nPhone: ${phone}\nArea: ${v("b-area")}\nDate: ${date}, ${tm}\nDetails: ${v("b-note")||"-"}`;
   const r=store.get("reqs",[]);r.push({svc:nm(s),work,when:date+", "+tm});store.set("reqs",r.slice(-20));
   render();
-  sheet(`<div class="eyebrow">${t("bookK")}</div><h3>${t("sentT")}</h3><p class="note">${t("sentP")}</p><pre class="msg">${esc(msg)}</pre><a class="btn wa block" href="${wa(msg)}" target="_blank" rel="noopener">${t("openWa")}</a><p class="note" style="text-align:center">${SHOP.phoneShow}</p><button class="btn line block" type="button" data-close>${t("close")}</button>`);
+  sheet(`<span class="tag">${t("bookK")}</span><h3>${t("sentT")}</h3><p class="note">${t("sentP")}</p><pre class="msg">${esc(msg)}</pre><a class="btn wa block" href="${wa(msg)}" target="_blank" rel="noopener">${t("openWa")}</a><p class="note" style="text-align:center">${SHOP.phoneShow}</p><button class="btn ghost block" type="button" data-close>${t("close")}</button>`);
 });
+/* showcase: dots follow the swipe, and it moves on by itself every few seconds until the person touches it */
+const works=$("#works");let wi=0,touched=false;
+works.addEventListener("scroll",()=>{const c=works.children[0];if(!c)return;wi=Math.round(works.scrollLeft/(c.offsetWidth+14));$$("#dots i").forEach((d,i)=>d.classList.toggle("on",i===wi))},{passive:true});
+["pointerdown","touchstart"].forEach(ev=>works.addEventListener(ev,()=>touched=true,{passive:true}));
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches)setInterval(()=>{if(touched||tab!=="home"||document.hidden||!$("#welcome").hidden)return;const n=(wi+1)%works.children.length,c=works.children[n];works.scrollTo({left:c.offsetLeft-works.children[0].offsetLeft,behavior:"smooth"})},4500);
 let deferred;
 window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferred=e;$("#installBtn").hidden=false});
 $("#installBtn").onclick=async()=>{if(!deferred)return;deferred.prompt();await deferred.userChoice;deferred=null;$("#installBtn").hidden=true};
 try{if("serviceWorker" in navigator&&document.querySelector('link[rel="manifest"]'))navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}
 const firstOpen=store.get("lang",null)===null;
-$$("[data-wl]").forEach(b=>b.onclick=()=>{lang=b.dataset.wl;store.set("lang",lang);applyLang();$("#welcome").hidden=true});
+$$("[data-wl]").forEach(b=>b.onclick=()=>{lang=b.dataset.wl;store.set("lang",lang);applyLang();$("#welcome").hidden=true;$("#v-home").classList.add("play")});
 applyLang();go("home");
-if(firstOpen)$("#welcome").hidden=false;
+if(firstOpen)$("#welcome").hidden=false;else $("#v-home").classList.add("play");
 </script>
 </body></html>
