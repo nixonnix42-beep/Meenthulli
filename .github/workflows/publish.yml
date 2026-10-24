@@ -29,7 +29,7 @@ jobs:
 
       - name: Put app pages inside the Android apps
         run: |
-          SITE="https://nixonnix42-beep.github.io/Meenthulli"
+          SITE="https://meenthulli.com"
           for app in fresh services; do
             mkdir -p android/app/src/$app/assets
             rm -rf android/app/src/$app/assets/www
