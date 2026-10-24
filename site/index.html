@@ -9,6 +9,8 @@
 <meta property="og:title" content="Meenthulli · Sankarankovil">
 <meta property="og:description" content="Farm fresh food and trusted home services, from Sankarankovil.">
 <meta property="og:image" content="https://meenthulli.com/services/icons/store-icon-1024.png">
+<meta name="keywords" content="Sankarankovil, Tenkasi, electrician, plumber, painter, modular kitchen, home services, tender coconut, small onion, keerai, சங்கரன்கோவில், எலக்ட்ரீஷியன், பிளம்பர், பெயிண்டர்">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Meenthulli","alternateName":"மீன்துள்ளி","url":"https://meenthulli.com/","telephone":"+91-9043232447","email":"nixon.nix42@gmail.com","image":"https://meenthulli.com/services/icons/store-icon-1024.png","address":{"@type":"PostalAddress","addressLocality":"Sankarankovil","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":["Sankarankovil","Tenkasi"],"openingHours":"Mo-Sa 08:00-19:00","sameAs":["https://instagram.com/meenthulli.homeservices"],"description":"Modular kitchen, electrical, plumbing and painting work, plus farm fresh coconuts, onions and greens, in Sankarankovil and Tenkasi."}</script>
 <link rel="icon" href="services/icons/icon-192.png">
 <link rel="apple-touch-icon" href="services/icons/apple-touch-icon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Mukta+Malar:wght@400;600;700;800&display=swap">
@@ -45,7 +47,7 @@ h1 .y{color:var(--yellow)}h1 .g{color:var(--lime)}
 .lead{color:#c4c6cc;font-size:18px;max-width:520px;margin:18px 0 0}
 .tamil{color:#fff;font-size:20px;font-weight:700;margin:10px 0 0}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 24px;border-radius:18px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .2s}
+.btn{border:0;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 24px;border-radius:18px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .2s}
 .btn:hover{transform:translateY(-2px)}
 .btn.wa{background:#25d366;color:#08240f}
 .btn.ghost{border:1.5px solid #ffffff40;color:#fff}
@@ -134,6 +136,46 @@ footer a{color:var(--yellow);text-decoration:none}
 .stats span{font-size:13px;color:#c4c6cc}
 .fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:50;width:62px;height:62px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px #25d36677;animation:pulse 2.4s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 #25d36699}70%{box-shadow:0 0 0 18px #25d36600}100%{box-shadow:0 0 0 0 #25d36600}}
+/* iconic */
+.logo .m{background:#1c1e23!important;border:1px solid #ffffff1f}
+.logo .m svg{width:34px;height:34px;animation:hop 3s ease-in-out infinite}
+@keyframes hop{0%,60%,100%{transform:none}70%{transform:translateY(-6px) rotate(-12deg)}80%{transform:translateY(0) rotate(4deg)}}
+.mark{position:relative;z-index:2;margin-top:40px;height:clamp(120px,24vw,260px)}
+.mark .word{position:absolute;left:0;right:0;bottom:0;text-align:center;font-weight:800;letter-spacing:-.05em;line-height:.8;font-size:clamp(58px,15.5vw,185px);color:transparent;-webkit-text-stroke:1.5px #ffffff38;white-space:nowrap;user-select:none}
+.mark .word b{position:absolute;inset:0;color:var(--yellow);-webkit-text-stroke:0;clip-path:inset(0 100% 0 0);animation:fill 6s cubic-bezier(.6,0,.2,1) infinite;background:linear-gradient(90deg,var(--yellow),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes fill{0%{clip-path:inset(0 100% 0 0)}35%,80%{clip-path:inset(0 0 0 0)}100%{clip-path:inset(0 0 0 100%)}}
+.jump{position:absolute;left:0;top:0;width:clamp(44px,7vw,80px);offset-path:path('M -60 220 C 120 -140, 520 -140, 760 220');offset-rotate:auto;animation:leap 6s cubic-bezier(.45,.05,.55,.95) infinite}
+.jump svg{width:100%;transform:rotate(28deg)}
+@keyframes leap{0%{offset-distance:0%;opacity:0}6%{opacity:1}55%{offset-distance:100%;opacity:1}58%,100%{offset-distance:100%;opacity:0}}
+.ring{position:absolute;bottom:-6px;margin-left:-30px;width:60px;height:16px;border:2px solid #7cc4ff;border-radius:50%;opacity:0;animation:ring2 6s ease-out infinite}
+/* rings: entry splash at start, exit splash when the fish lands */
+.ring.r2{animation-delay:3.3s}
+@keyframes ring2{0%{opacity:0;transform:scale(.2)}2%{opacity:.9}20%{opacity:0;transform:scale(2.4)}100%{opacity:0}}
+.mean{position:relative;z-index:2;text-align:center;color:#a9abb2;font-size:14px;margin-top:14px}
+.mean b{color:#fff}
+/* booking + price */
+.book{display:grid;gap:18px;margin-top:28px}
+.card{background:#fff;border-radius:30px;padding:26px;box-shadow:0 20px 50px #0000000d}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips button{font:inherit;font-weight:700;font-size:15px;border:1.5px solid #e2ded3;background:#fff;border-radius:99px;padding:10px 16px;cursor:pointer;transition:.2s;color:var(--fg)}
+.chips button.on{background:var(--ink);color:var(--yellow);border-color:var(--ink);transform:scale(1.04)}
+.card label{display:block;font-weight:700;font-size:14px;margin-top:16px;color:var(--muted)}
+.card input[type=text],.card input[type=tel]{width:100%;font:inherit;font-size:17px;padding:14px 16px;border-radius:16px;border:1.5px solid #e2ded3;background:var(--cream);margin-top:6px;color:var(--fg)}
+.card input:focus{outline:none;border-color:var(--yellow);box-shadow:0 0 0 4px #ffc83a40}
+.card .btn{width:100%;margin-top:18px}
+.est{font-size:clamp(40px,9vw,56px);font-weight:800;letter-spacing:-.03em;line-height:1;margin-top:18px}
+.est small{font-size:16px;color:var(--muted);font-weight:600;letter-spacing:0}
+input[type=range]{width:100%;margin-top:18px;accent-color:#e0a800;height:28px}
+.note{color:var(--muted);font-size:13px;margin-top:8px}
+.area{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.area span{background:#fff;border-radius:99px;padding:9px 16px;font-weight:600;font-size:15px}
+.area span:first-child{background:var(--ink);color:var(--yellow)}
+details{background:#fff;border-radius:22px;padding:18px 22px;margin-top:10px}
+summary{font-weight:700;font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;line-height:1;transition:.3s;color:#e0a800}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:10px 0 0;color:var(--muted)}
 /* reveal */
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.on{opacity:1;transform:none}
@@ -158,6 +200,8 @@ footer a{color:var(--yellow);text-decoration:none}
   .phone{width:280px}
   .hgrid{grid-template-columns:1.1fr .9fr}
   .apps{grid-template-columns:1fr 1fr}
+  .book{grid-template-columns:1.2fr 1fr}
+  .faq{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
   .why{grid-template-columns:repeat(4,1fr)}
   .duo{grid-template-columns:1fr 1fr}
   footer .wrap{grid-template-columns:2fr 1fr;align-items:center}
@@ -170,7 +214,7 @@ footer a{color:var(--yellow);text-decoration:none}
   <div class="blob b1"></div><div class="blob b2"></div><div class="spot"></div><i class="spark" style="left:8%;top:22%;animation-delay:0s;background:#ffc83a"></i><i class="spark" style="left:46%;top:12%;animation-delay:1.1s;background:#c4e86b"></i><i class="spark" style="left:88%;top:58%;animation-delay:0.6s;background:#7cc4ff"></i><i class="spark" style="left:62%;top:84%;animation-delay:1.8s;background:#ffc83a"></i><i class="spark" style="left:30%;top:92%;animation-delay:2.4s;background:#ff7aa8"></i><i class="spark" style="left:94%;top:18%;animation-delay:1.4s;background:#c4e86b"></i>
   <div class="wrap">
     <nav>
-      <a class="logo" href="./"><span class="m">M</span><span><b>Meenthulli</b><small class="ta">மீன்துள்ளி · Sankarankovil</small></span></a>
+      <a class="logo" href="./"><span class="m"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="fg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#c4e86b"/><stop offset="1" stop-color="#ffc83a"/></linearGradient></defs><g transform="rotate(-28 32 32)"><path d="M14 32c8-13 26-17 40-6-1 2-1 10 0 12-14 11-32 7-40-6z" fill="url(#fg)"/><path d="M15 32 3 22l3 10-3 10z" fill="url(#fg)"/><circle cx="46" cy="29" r="2.6" fill="#121316"/><path d="M33 22c2 4 2 16 0 20" stroke="#121316" stroke-width="2" fill="none" opacity=".35"/></g></svg></span><span><b>Meenthulli</b><small class="ta">மீன்துள்ளி · Sankarankovil</small></span></a>
       <a class="pill" href="tel:+919043232447" aria-label="Call">📞 <span>Call</span></a>
     </nav>
     <div class="hgrid">
@@ -203,11 +247,43 @@ footer a{color:var(--yellow);text-decoration:none}
         <path d="M300 350c0-10 8-10 8-20M316 350c0-10 8-10 8-20" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" class="steam" opacity=".7"/>
       </svg>
     </div>
+    <div class="mark" aria-hidden="true">
+      <div class="word">MEENTHULLI<b>MEENTHULLI</b></div>
+      <div class="jump"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="fg2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#c4e86b"/><stop offset="1" stop-color="#ffc83a"/></linearGradient></defs><g transform="rotate(-28 32 32)"><path d="M14 32c8-13 26-17 40-6-1 2-1 10 0 12-14 11-32 7-40-6z" fill="url(#fg2)"/><path d="M15 32 3 22l3 10-3 10z" fill="url(#fg2)"/><circle cx="46" cy="29" r="2.6" fill="#121316"/><path d="M33 22c2 4 2 16 0 20" stroke="#121316" stroke-width="2" fill="none" opacity=".35"/></g></svg></div>
+      <i class="ring" style="left:6%"></i><i class="ring r2" style="left:94%"></i>
+    </div>
+    <p class="mean"><b>Meen thulli</b> means "the jumping fish" · <span class="ta">மீன் துள்ளல் போல் வேகம்</span> · quick, lively, always fresh.</p>
   </div>
 </header>
 <div class="marq" aria-hidden="true"><div><span>Modular kitchen</span><span>கிச்சன்</span><span>Electrical</span><span>மின்சாரம்</span><span>Plumbing</span><span>பிளம்பிங்</span><span>Painting</span><span>பெயிண்டிங்</span><span>Free home visit</span><span>Modular kitchen</span><span>கிச்சன்</span><span>Electrical</span><span>மின்சாரம்</span><span>Plumbing</span><span>பிளம்பிங்</span><span>Painting</span><span>பெயிண்டிங்</span><span>Free home visit</span></div></div><div class="marq b" aria-hidden="true"><div><span>Tender coconut</span><span>தேங்காய்</span><span>Small onion</span><span>சின்ன வெங்காயம்</span><span>Keerai</span><span>கீரை</span><span>Healthy foods</span><span>Same day delivery</span><span>Tender coconut</span><span>தேங்காய்</span><span>Small onion</span><span>சின்ன வெங்காயம்</span><span>Keerai</span><span>கீரை</span><span>Healthy foods</span><span>Same day delivery</span></div></div>
 
 <main class="wrap">
+  <section id="book">
+    <div class="rv"><div class="kick">Book in 30 seconds</div><h2>Tell us what you need.</h2><p class="ta" style="color:var(--muted);margin:6px 0 0;font-weight:600">30 வினாடியில் பதிவு செய்யுங்கள்</p></div>
+    <div class="book">
+      <form class="card rv" id="qb">
+        <b style="font-size:18px">1. Pick a service</b>
+        <div class="chips" id="svc">
+          <button type="button" class="on">🍳 Kitchen</button><button type="button">⚡ Electrical</button><button type="button">💧 Plumbing</button><button type="button">🎨 Painting</button><button type="button">🥥 Fresh food order</button>
+        </div>
+        <label for="qn">2. Your name · பெயர்</label><input id="qn" type="text" autocomplete="name" placeholder="Your name">
+        <label for="qv">3. Village / area · ஊர்</label><input id="qv" type="text" placeholder="Sankarankovil">
+        <button class="btn wa" type="submit">Send on WhatsApp →</button>
+        <p class="note">Free home visit. We call you back to fix a time.</p>
+      </form>
+      <div class="card rv" id="pc">
+        <b style="font-size:18px">Quick price check 💰</b>
+        <div class="chips" id="pk">
+          <button type="button" class="on" data-r="12" data-u="sq ft of wall" data-min="200" data-max="5000" data-v="1200">🎨 Painting</button><button type="button" data-r="1200" data-u="sq ft of kitchen" data-min="20" data-max="200" data-v="60">🍳 Kitchen</button><button type="button" data-r="200" data-u="visits" data-min="1" data-max="5" data-v="1">⚡💧 Repair visit</button>
+        </div>
+        <div class="est" id="pe">₹14,400 <small>approx.</small></div>
+        <input type="range" id="pr" min="200" max="5000" step="1" value="1200" aria-label="Size">
+        <p style="margin:4px 0 0;font-weight:700" id="pl">1,200 sq ft of wall</p>
+        <p class="note">Sample rates. Your final written price comes after the free visit.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="apps">
     <div class="rv"><div class="kick">Our two shops</div><h2>Pick what you need today.</h2><p class="ta" style="color:var(--muted);margin:6px 0 0;font-weight:600">இன்று உங்களுக்கு என்ன வேண்டும்?</p></div>
     <div class="apps">
@@ -253,6 +329,21 @@ footer a{color:var(--yellow);text-decoration:none}
       <div class="rv"><span class="ic" style="background:#e7f6cf">🧾</span><b>Clear prices</b><span>Written price first. No hidden charges.</span></div>
       <div class="rv"><span class="ic" style="background:#dceeff">🛵</span><b>Same day</b><span>Fresh food at your door today.</span></div>
       <div class="rv"><span class="ic" style="background:#ffe1d6">💬</span><b>WhatsApp easy</b><span>Order or book with one message.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="rv"><div class="kick">Where we work</div><h2>Sankarankovil, Tenkasi and nearby villages.</h2></div>
+    <div class="area rv"><span>📍 Sankarankovil</span><span>Tenkasi</span><span>Nearby villages</span><span class="ta">சங்கரன்கோவில் சுற்றுவட்டாரம்</span></div>
+  </section>
+
+  <section>
+    <div class="rv"><div class="kick">Questions</div><h2>Good to know.</h2></div>
+    <div class="faq">
+      <details class="rv"><summary>Is the home visit really free?</summary><p>Yes. We come, measure and give a written price. You pay nothing for the visit.</p></details>
+      <details class="rv"><summary>When do I pay?</summary><p>Work starts only after you agree to the price. Pay by cash, GPay, PhonePe or UPI.</p></details>
+      <details class="rv"><summary>How fast is fresh food delivery?</summary><p>Order on WhatsApp and we deliver the same day in Sankarankovil.</p></details>
+      <details class="rv"><summary>Do you use good material?</summary><p>Yes. Branded wires, pipes, paints and boards, and we clean up after the job.</p></details>
     </div>
   </section>
 
@@ -305,6 +396,19 @@ document.querySelectorAll('.app').forEach(c=>{c.addEventListener('pointermove',e
 // count up numbers
 const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,n=+el.dataset.n;let i=0;const t=setInterval(()=>{i++;el.textContent=Math.round(n*i/30);if(i>=30)clearInterval(t)},30);cio.unobserve(el)}),{threshold:.5});
 document.querySelectorAll('[data-n]').forEach(el=>cio.observe(el));
+// fish leap arc sized to the screen
+const mk=document.querySelector('.mark'),jp=document.querySelector('.jump');
+const arc=()=>{const w=mk.clientWidth,h=mk.clientHeight;jp.style.offsetPath=`path('M ${w*.06} ${h} C ${w*.3} ${-h*.9}, ${w*.7} ${-h*.9}, ${w*.94} ${h}')`};arc();addEventListener('resize',arc);
+// quick booking
+const svcB=[...document.querySelectorAll('#svc button')];svcB.forEach(b=>b.onclick=()=>{svcB.forEach(x=>x.classList.remove('on'));b.classList.add('on')});
+document.getElementById('qb').onsubmit=e=>{e.preventDefault();const sv=document.querySelector('#svc .on').textContent.replace(/^\S+\s/,''),n=document.getElementById('qn').value.trim(),v=document.getElementById('qv').value.trim();
+const msg=`Hi Meenthulli! I need: ${sv}`+(n?`\nName: ${n}`:'')+(v?`\nArea: ${v}`:'')+`\n(from meenthulli.com)`;location.href='https://wa.me/919043232447?text='+encodeURIComponent(msg)};
+// price check
+const pk=[...document.querySelectorAll('#pk button')],pr=document.getElementById('pr'),pe=document.getElementById('pe'),pl=document.getElementById('pl');let cur=pk[0];
+const fmt=n=>n.toLocaleString('en-IN');
+const upd=()=>{const v=+pr.value;pe.innerHTML='₹'+fmt(v*cur.dataset.r)+' <small>approx.</small>';pl.textContent=fmt(v)+' '+cur.dataset.u};
+pk.forEach(b=>b.onclick=()=>{pk.forEach(x=>x.classList.remove('on'));b.classList.add('on');cur=b;pr.min=b.dataset.min;pr.max=b.dataset.max;pr.value=b.dataset.v;upd()});
+pr.oninput=upd;
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
 </script>
 </body>
