@@ -188,7 +188,13 @@ details p{margin:10px 0 0;color:var(--muted)}
 .rc .e{font-size:20px;text-align:center}
 .rc .n{font-weight:600;line-height:1.25}
 .rc .n small{display:block;color:#a9abb2;font-size:13px;font-weight:600}
-.rc li b{color:var(--yellow);font-size:18px;white-space:nowrap}
+.rc li b{color:var(--yellow);font-size:18px;white-space:nowrap;text-align:right}
+.rc li b small{display:block;font-size:11px;font-weight:600;color:#a9abb2;letter-spacing:.06em;text-transform:uppercase}
+.howp{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.howp div{background:#fff;border-radius:20px;padding:16px 14px;display:grid;gap:4px}
+.howp i{font-style:normal;width:32px;height:32px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font-weight:800}
+.howp b{font-size:15px;line-height:1.2;margin-top:6px}
+.howp span{color:var(--muted);font-size:12.5px;font-weight:600}
 .rc:nth-child(2) li b{color:#7cc4ff}
 .promise{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .promise span{background:#fff;border-radius:99px;padding:9px 14px;font-weight:600;font-size:14px}
@@ -218,6 +224,7 @@ details p{margin:10px 0 0;color:var(--muted)}
   .apps{grid-template-columns:1fr 1fr}
   .book{grid-template-columns:1.2fr 1fr}
   .rates{grid-template-columns:1fr 1fr;align-items:start}
+  .howp div{padding:20px}
   .faq{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
   .why{grid-template-columns:repeat(4,1fr)}
   .duo{grid-template-columns:1fr 1fr}
@@ -289,26 +296,28 @@ details p{margin:10px 0 0;color:var(--muted)}
         <p class="note">Free home visit. We call you back to fix a time.</p>
       </form>
       <div class="card rv" id="pc">
-        <b style="font-size:18px">Quick price check 💰</b>
+        <b style="font-size:18px">Rough starting estimate 💰</b>
         <div class="chips" id="pk">
           <button type="button" class="on" data-r="12" data-u="sq ft of wall" data-min="200" data-max="5000" data-v="1200">🎨 Painting</button><button type="button" data-r="1200" data-u="sq ft of kitchen" data-min="20" data-max="200" data-v="60">🍳 Kitchen</button><button type="button" data-r="200" data-u="electrical points" data-min="1" data-max="60" data-v="10">⚡ Electrical points</button><button type="button" data-r="20" data-u="ft of 1 inch pipe line" data-min="10" data-max="500" data-v="100">💧 Pipe line</button>
         </div>
-        <div class="est" id="pe">₹14,400 <small>approx.</small></div>
+        <div class="est" id="pe"><small>from </small>₹14,400</div>
         <input type="range" id="pr" min="200" max="5000" step="1" value="1200" aria-label="Size">
         <p style="margin:4px 0 0;font-weight:700" id="pl">1,200 sq ft of wall</p>
-        <p class="note">Electrical and plumbing use our fixed rates. Kitchen and painting are sample rates; the final written price comes after the free visit.</p>
+        <p class="note">Only a rough start. Your final price is fixed at the free site visit.</p>
       </div>
     </div>
   </section>
 
   <section id="rates">
-    <div class="rv"><div class="kick">Our rates · கட்டண விவரம்</div><h2>Clear prices. No surprises.</h2></div>
+    <div class="rv"><div class="kick">Starting prices · தொடக்க விலைகள்</div><h2>Know the start. Final price at your free visit.</h2></div>
+    <div class="howp rv"><div><i>1</i><b>See the starting price</b><span class="ta">தொடக்க விலை</span></div><div><i>2</i><b>Free site visit</b><span class="ta">இலவச வருகை, அளவு</span></div><div><i>3</i><b>Written final price</b><span class="ta">எழுத்து விலை, பிறகு வேலை</span></div></div>
     <div class="rates">
-      <div class="rc rv"><div class="rh y">⚡ Electrical work <span class="ta">எலக்ட்ரிக்கல் வேலைகள்</span></div><ul><li><span class="e">⚡</span><span class="n">Electrical point<small class="ta">எலக்ட்ரிக்கல் பாயிண்ட்</small></span><b>₹200</b></li><li><span class="e">🔌</span><span class="n">Single phase circuit<small class="ta">சிங்கிள் பேஸ் சர்க்யூட்</small></span><b>₹450</b></li><li><span class="e">🔌</span><span class="n">Three phase circuit<small class="ta">த்ரீ பேஸ் சர்க்யூட்</small></span><b>₹850</b></li><li><span class="e">💡</span><span class="n">Tube light fitting<small class="ta">டியூப் லைட் பிட்டிங்</small></span><b>₹100</b></li><li><span class="e">🌀</span><span class="n">Fan fitting<small class="ta">ஃபேன் பிட்டிங்</small></span><b>₹200</b></li><li><span class="e">💡</span><span class="n">Holder fitting<small class="ta">ஹோல்டர் பிட்டிங்</small></span><b>₹60</b></li><li><span class="e">🗼</span><span class="n">Single phase service line<small class="ta">சிங்கிள் பேஸ் சர்வீஸ் லைன்</small></span><b>₹1,500</b></li><li><span class="e">🗼</span><span class="n">Three phase service line<small class="ta">த்ரீ பேஸ் சர்வீஸ் லைன்</small></span><b>₹3,500</b></li><li><span class="e">🔋</span><span class="n">UPS point work<small class="ta">UPS பாயிண்ட் வேலை</small></span><b>₹200</b></li><li><span class="e">🔔</span><span class="n">Bell point work<small class="ta">பெல் பாயிண்ட் வேலை</small></span><b>₹250</b></li><li><span class="e">🏮</span><span class="n">Street light fitting<small class="ta">ஸ்ட்ரீட் லைட் பிட்டிங்</small></span><b>₹300</b></li></ul></div>
-      <div class="rc rv"><div class="rh b">💧 Plumbing work <span class="ta">பிளம்பிங் வேலைகள்</span></div><ul><li><span class="e">🔧</span><span class="n">1 inch pipe line work<small class="ta">1 இஞ்ச் பைப் லைன் வேலை</small></span><b>₹20/ft</b></li><li><span class="e">🔧</span><span class="n">2 to 3 inch pipe line work<small class="ta">2–3 இஞ்ச் பைப் லைன் வேலை</small></span><b>₹30/ft</b></li><li><span class="e">🔧</span><span class="n">4 to 5 inch pipe line work<small class="ta">4–5 இஞ்ச் பைப் லைன் வேலை</small></span><b>₹40/ft</b></li><li><span class="e">🚽</span><span class="n">Indian toilet fitting<small class="ta">இந்தியன் டாய்லெட் பிட்டிங்</small></span><b>₹600</b></li><li><span class="e">🚽</span><span class="n">Western toilet fitting<small class="ta">வெஸ்டர்ன் டாய்லெட் பிட்டிங்</small></span><b>₹800</b></li><li><span class="e">🚽</span><span class="n">Wall mount toilet fitting<small class="ta">வால் மவுண்ட் டாய்லெட் பிட்டிங்</small></span><b>₹2,500</b></li><li><span class="e">🧱</span><span class="n">Wall mount concealed tank<small class="ta">வால் மவுண்ட் கன்சீல்டு டேங்க்</small></span><b>₹2,500</b></li><li><span class="e">🛢️</span><span class="n">Sintex tank fitting<small class="ta">சின்டெக்ஸ் டேங்க் பிட்டிங்</small></span><b>₹1,200</b></li><li><span class="e">⚙️</span><span class="n">Submersible motor fitting<small class="ta">சப்மர்சிபிள் மோட்டார் பிட்டிங்</small></span><b>₹1,000</b></li><li><span class="e">⚙️</span><span class="n">Borewell motor fitting<small class="ta">போர்வெல் மோட்டார் பிட்டிங்</small></span><b>₹4,000</b></li><li><span class="e">🚿</span><span class="n">Mixer wall fitting<small class="ta">மிக்சர் வால் பிட்டிங்</small></span><b>₹800</b></li><li><span class="e">🚿</span><span class="n">Diverter fitting<small class="ta">டைவர்டர் பிட்டிங்</small></span><b>₹800</b></li><li><span class="e">🚰</span><span class="n">Tap fitting<small class="ta">டேப் பிட்டிங்</small></span><b>₹60</b></li><li><span class="e">🚰</span><span class="n">Tap point work<small class="ta">டேப் பாயிண்ட் வேலை</small></span><b>₹60</b></li></ul></div>
+      <div class="rc rv"><div class="rh y">⚡ Electrical work <span class="ta">எலக்ட்ரிக்கல் வேலைகள்</span></div><ul><li><span class="e">⚡</span><span class="n">Electrical point<small class="ta">எலக்ட்ரிக்கல் பாயிண்ட்</small></span><b><small>from</small>₹200</b></li><li><span class="e">🔌</span><span class="n">Single phase circuit<small class="ta">சிங்கிள் பேஸ் சர்க்யூட்</small></span><b><small>from</small>₹450</b></li><li><span class="e">🔌</span><span class="n">Three phase circuit<small class="ta">த்ரீ பேஸ் சர்க்யூட்</small></span><b><small>from</small>₹850</b></li><li><span class="e">💡</span><span class="n">Tube light fitting<small class="ta">டியூப் லைட் பிட்டிங்</small></span><b><small>from</small>₹100</b></li><li><span class="e">🌀</span><span class="n">Fan fitting<small class="ta">ஃபேன் பிட்டிங்</small></span><b><small>from</small>₹200</b></li><li><span class="e">💡</span><span class="n">Holder fitting<small class="ta">ஹோல்டர் பிட்டிங்</small></span><b><small>from</small>₹60</b></li><li><span class="e">🗼</span><span class="n">Single phase service line<small class="ta">சிங்கிள் பேஸ் சர்வீஸ் லைன்</small></span><b><small>from</small>₹1,500</b></li><li><span class="e">🗼</span><span class="n">Three phase service line<small class="ta">த்ரீ பேஸ் சர்வீஸ் லைன்</small></span><b><small>from</small>₹3,500</b></li><li><span class="e">🔋</span><span class="n">UPS point work<small class="ta">UPS பாயிண்ட் வேலை</small></span><b><small>from</small>₹200</b></li><li><span class="e">🔔</span><span class="n">Bell point work<small class="ta">பெல் பாயிண்ட் வேலை</small></span><b><small>from</small>₹250</b></li><li><span class="e">🏮</span><span class="n">Street light fitting<small class="ta">ஸ்ட்ரீட் லைட் பிட்டிங்</small></span><b><small>from</small>₹300</b></li></ul></div>
+      <div class="rc rv"><div class="rh b">💧 Plumbing work <span class="ta">பிளம்பிங் வேலைகள்</span></div><ul><li><span class="e">🔧</span><span class="n">1 inch pipe line work<small class="ta">1 இஞ்ச் பைப் லைன் வேலை</small></span><b><small>from</small>₹20/ft</b></li><li><span class="e">🔧</span><span class="n">2 to 3 inch pipe line work<small class="ta">2–3 இஞ்ச் பைப் லைன் வேலை</small></span><b><small>from</small>₹30/ft</b></li><li><span class="e">🔧</span><span class="n">4 to 5 inch pipe line work<small class="ta">4–5 இஞ்ச் பைப் லைன் வேலை</small></span><b><small>from</small>₹40/ft</b></li><li><span class="e">🚽</span><span class="n">Indian toilet fitting<small class="ta">இந்தியன் டாய்லெட் பிட்டிங்</small></span><b><small>from</small>₹600</b></li><li><span class="e">🚽</span><span class="n">Western toilet fitting<small class="ta">வெஸ்டர்ன் டாய்லெட் பிட்டிங்</small></span><b><small>from</small>₹800</b></li><li><span class="e">🚽</span><span class="n">Wall mount toilet fitting<small class="ta">வால் மவுண்ட் டாய்லெட் பிட்டிங்</small></span><b><small>from</small>₹2,500</b></li><li><span class="e">🧱</span><span class="n">Wall mount concealed tank<small class="ta">வால் மவுண்ட் கன்சீல்டு டேங்க்</small></span><b><small>from</small>₹2,500</b></li><li><span class="e">🛢️</span><span class="n">Sintex tank fitting<small class="ta">சின்டெக்ஸ் டேங்க் பிட்டிங்</small></span><b><small>from</small>₹1,200</b></li><li><span class="e">⚙️</span><span class="n">Submersible motor fitting<small class="ta">சப்மர்சிபிள் மோட்டார் பிட்டிங்</small></span><b><small>from</small>₹1,000</b></li><li><span class="e">⚙️</span><span class="n">Borewell motor fitting<small class="ta">போர்வெல் மோட்டார் பிட்டிங்</small></span><b><small>from</small>₹4,000</b></li><li><span class="e">🚿</span><span class="n">Mixer wall fitting<small class="ta">மிக்சர் வால் பிட்டிங்</small></span><b><small>from</small>₹800</b></li><li><span class="e">🚿</span><span class="n">Diverter fitting<small class="ta">டைவர்டர் பிட்டிங்</small></span><b><small>from</small>₹800</b></li><li><span class="e">🚰</span><span class="n">Tap fitting<small class="ta">டேப் பிட்டிங்</small></span><b><small>from</small>₹60</b></li><li><span class="e">🚰</span><span class="n">Tap point work<small class="ta">டேப் பாயிண்ட் வேலை</small></span><b><small>from</small>₹60</b></li></ul></div>
     </div>
     <div class="promise rv"><span>✅ 100% quality assured</span><span>👷 Skilled workers</span><span>⏱️ Work done on time</span><span>💰 Fair price</span></div>
-    <a class="btn wa rv" style="margin-top:18px" href="#book">Book electrical or plumbing work →</a>
+    <p class="note rv" style="font-size:15px;margin-top:14px">📋 Final price depends on your work, size and material. We fix it with you at the free site visit, in writing, before we start.</p>
+    <a class="btn wa rv" style="margin-top:14px" href="#book">Book a free site visit →</a>
   </section>
 
   <section id="apps">
@@ -368,6 +377,7 @@ details p{margin:10px 0 0;color:var(--muted)}
     <div class="rv"><div class="kick">Questions</div><h2>Good to know.</h2></div>
     <div class="faq">
       <details class="rv"><summary>Is the home visit really free?</summary><p>Yes. We come, measure and give a written price. You pay nothing for the visit.</p></details>
+      <details class="rv"><summary>Are these prices final?</summary><p>No. They are starting prices. We visit free, check your work, and give you a written final price before we start.</p></details>
       <details class="rv"><summary>When do I pay?</summary><p>Work starts only after you agree to the price. Pay by cash, GPay, PhonePe or UPI.</p></details>
       <details class="rv"><summary>How fast is fresh food delivery?</summary><p>Order on WhatsApp and we deliver the same day in Sankarankovil.</p></details>
       <details class="rv"><summary>Do you use good material?</summary><p>Yes. Branded wires, pipes, paints and boards, and we clean up after the job.</p></details>
@@ -433,7 +443,7 @@ const msg=`Hi Meenthulli! I need: ${sv}`+(n?`\nName: ${n}`:'')+(v?`\nArea: ${v}`
 // price check
 const pk=[...document.querySelectorAll('#pk button')],pr=document.getElementById('pr'),pe=document.getElementById('pe'),pl=document.getElementById('pl');let cur=pk[0];
 const fmt=n=>n.toLocaleString('en-IN');
-const upd=()=>{const v=+pr.value;pe.innerHTML='₹'+fmt(v*cur.dataset.r)+' <small>approx.</small>';pl.textContent=fmt(v)+' '+cur.dataset.u};
+const upd=()=>{const v=+pr.value;pe.innerHTML='<small>from </small>₹'+fmt(v*cur.dataset.r);pl.textContent=fmt(v)+' '+cur.dataset.u};
 pk.forEach(b=>b.onclick=()=>{pk.forEach(x=>x.classList.remove('on'));b.classList.add('on');cur=b;pr.min=b.dataset.min;pr.max=b.dataset.max;pr.value=b.dataset.v;upd()});
 pr.oninput=upd;
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
