@@ -3,51 +3,244 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Meenthulli</title>
+<title>Meenthulli · Sankarankovil</title>
 <meta name="description" content="Meenthulli, Sankarankovil: fresh coconuts, onions, greens and healthy foods, plus modular kitchen, electrical, plumbing and painting work.">
-<link rel="icon" href="fresh/icons/icon-192.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Mukta+Malar:wght@400;600&display=swap">
+<meta name="theme-color" content="#121316">
+<meta property="og:title" content="Meenthulli · Sankarankovil">
+<meta property="og:description" content="Farm fresh food and trusted home services, from Sankarankovil.">
+<meta property="og:image" content="https://meenthulli.com/services/icons/store-icon-1024.png">
+<link rel="icon" href="services/icons/icon-192.png">
+<link rel="apple-touch-icon" href="services/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Mukta+Malar:wght@400;600;700;800&display=swap">
 <style>
-:root{--bg:#f7f3ea;--fg:#1b2537;--muted:#6b7385;--leaf:#1f4d27;--blue:#1d2a44;--turmeric:#c8963e;
-  --display:"Playfair Display","Mukta Malar",Georgia,serif;--body:"Mukta Malar",system-ui,sans-serif}
-@media (prefers-color-scheme:dark){:root{--bg:#0f140e;--fg:#e8efe2;--muted:#a2b199;color-scheme:dark}}
+:root{--ink:#121316;--ink2:#1c1e23;--cream:#f6f3ec;--fg:#16171a;--muted:#6c6e75;--yellow:#ffc83a;--green:#14361f;--lime:#c4e86b;
+  --font:"Plus Jakarta Sans","Mukta Malar",system-ui,sans-serif;--ta:"Mukta Malar","Plus Jakarta Sans",sans-serif}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.5}
-main{max-width:640px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px));display:grid;gap:20px}
-h1{font-family:var(--display);font-size:2.4rem;margin:0;line-height:1.1}
-.ta{color:var(--muted);margin:0}
-.card{display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;padding:18px;border-radius:22px;color:#fff;text-decoration:none}
-.card img{width:72px;height:72px;border-radius:18px}
-.card b{font-family:var(--display);font-size:1.4rem;display:block;line-height:1.15}
-.card span{opacity:.9;font-size:.95rem}
-.card i{font-style:normal;font-size:1.8rem}
-.dl{display:grid;gap:10px}
-.dl a{display:block;text-align:center;padding:12px;border-radius:14px;background:var(--turmeric);color:#2a1d00;font-weight:700;text-decoration:none}
-.contact{font-size:.95rem;color:var(--muted)}
-.contact b{color:var(--fg)}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--fg);font-family:var(--font);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.ta{font-family:var(--ta)}
+
+/* hero */
+.hero{background:var(--ink);color:#fff;border-radius:0 0 36px 36px;position:relative;overflow:hidden;padding:max(20px,env(safe-area-inset-top)) 0 56px}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.9}
+.b1{width:340px;height:340px;right:-120px;top:60px;background:radial-gradient(circle,#ffc83a33,transparent 70%);animation:float 9s ease-in-out infinite}
+.b2{width:300px;height:300px;left:-140px;bottom:-80px;background:radial-gradient(circle,#c4e86b2e,transparent 70%);animation:float 11s ease-in-out infinite reverse}
+@keyframes float{50%{transform:translate(-30px,30px) scale(1.08)}}
+nav{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo .m{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--yellow) 50%,var(--lime) 50%);display:grid;place-items:center;font-weight:800;color:var(--ink);font-size:22px}
+.logo b{font-size:20px;letter-spacing:-.01em;display:block;line-height:1.1}
+.logo small{color:#a9abb2;font-size:12px}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #ffffff2e;border-radius:99px;padding:9px 16px;text-decoration:none;font-weight:600;font-size:14px;transition:.2s}
+.pill:hover{background:#ffffff14}
+.hgrid{position:relative;z-index:2;display:grid;gap:36px;margin-top:44px;align-items:center}
+.live{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#d6d7db}
+.live i{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 #3ddc8488;animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px #3ddc8400}}
+h1{font-size:clamp(42px,9vw,76px);line-height:1.02;letter-spacing:-.035em;margin:14px 0 0;font-weight:800}
+h1 .y{color:var(--yellow)}h1 .g{color:var(--lime)}
+.lead{color:#c4c6cc;font-size:18px;max-width:520px;margin:18px 0 0}
+.tamil{color:#fff;font-size:20px;font-weight:700;margin:10px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 24px;border-radius:18px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.wa{background:#25d366;color:#08240f}
+.btn.ghost{border:1.5px solid #ffffff40;color:#fff}
+.scene{width:100%;max-width:460px;justify-self:center}
+
+/* apps */
+section{padding:64px 0 0}
+.kick{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+h2{font-size:clamp(30px,6vw,44px);line-height:1.08;letter-spacing:-.03em;margin:8px 0 0;font-weight:800}
+.apps{display:grid;gap:18px;margin-top:28px}
+.app{position:relative;border-radius:30px;padding:26px;color:#fff;text-decoration:none;overflow:hidden;min-height:330px;display:flex;flex-direction:column;transition:transform .3s}
+.app:hover{transform:translateY(-4px)}
+.app.s{background:var(--ink)}
+.app.f{background:var(--green)}
+.app img{width:64px;height:64px;border-radius:18px}
+.app h3{font-size:30px;line-height:1.05;letter-spacing:-.02em;margin:18px 0 6px}
+.app p{margin:0;color:#ffffffc0;max-width:330px}
+.app .ta{color:#fff;font-weight:600;margin-top:4px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.tags span{font-size:13px;font-weight:600;padding:7px 12px;border-radius:99px;background:#ffffff14}
+.go{margin-top:auto;padding-top:22px;display:flex;align-items:center;justify-content:space-between}
+.go b{font-size:17px}
+.go i{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:22px;color:var(--ink);transition:transform .3s}
+.app:hover .go i{transform:rotate(-45deg)}
+.app.s .go i{background:var(--yellow)}.app.f .go i{background:var(--lime)}
+.app svg.deco{position:absolute;right:-20px;top:-10px;width:190px;opacity:.95}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:26px}
+.why div{background:#fff;border-radius:22px;padding:20px}
+.why .ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:22px}
+.why b{display:block;margin-top:12px;font-size:17px}
+.why span{color:var(--muted);font-size:14px}
+
+/* insta + download */
+.duo{display:grid;gap:18px;margin-top:28px}
+.ig{border-radius:30px;padding:28px;color:#fff;background:linear-gradient(135deg,#f9a03f,#e1306c 50%,#833ab4);text-decoration:none;display:block}
+.ig h3,.dl h3{font-size:26px;margin:14px 0 4px;letter-spacing:-.02em}
+.ig p{margin:0;opacity:.9}
+.ig .btn{background:#fff;color:#c1275f;margin-top:20px}
+.dl{border-radius:30px;padding:28px;background:#fff}
+.dl p{color:var(--muted);margin:0}
+.dl a{display:flex;align-items:center;gap:14px;margin-top:14px;padding:12px;border-radius:18px;background:var(--cream);text-decoration:none;font-weight:700}
+.dl a img{width:44px;height:44px;border-radius:12px}
+.dl a span{margin-left:auto;font-size:20px}
+.dl small{display:block;color:var(--muted);margin-top:12px}
+
+footer{margin-top:64px;background:var(--ink);color:#c4c6cc;padding:40px 0 calc(40px + env(safe-area-inset-bottom))}
+footer .wrap{display:grid;gap:18px}
+footer b{color:#fff}
+footer a{color:var(--yellow);text-decoration:none}
+.fl{display:flex;flex-wrap:wrap;gap:10px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+.hero .in{animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}
+
+/* scene animation */
+.sp{animation:spin 3s linear infinite;transform-origin:center;transform-box:fill-box}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bob{animation:bob 3s ease-in-out infinite;transform-box:fill-box}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.glow{animation:glow 2s ease-in-out infinite}
+@keyframes glow{50%{opacity:.35}}
+.drop{animation:drop 1.6s ease-in infinite}
+@keyframes drop{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(40px);opacity:0}}
+.steam{animation:steam 2.4s ease-in-out infinite;stroke-dasharray:40;}
+@keyframes steam{0%{stroke-dashoffset:40;opacity:0}50%{opacity:1}100%{stroke-dashoffset:-40;opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+@media (min-width:860px){
+  .hgrid{grid-template-columns:1.1fr .9fr}
+  .apps{grid-template-columns:1fr 1fr}
+  .why{grid-template-columns:repeat(4,1fr)}
+  .duo{grid-template-columns:1fr 1fr}
+  footer .wrap{grid-template-columns:2fr 1fr;align-items:center}
+}
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <h1>Meenthulli</h1>
-    <p class="ta">மீன்துள்ளி · Sankarankovil, Tenkasi</p>
-  </header>
-  <a class="card" href="fresh/" style="background:var(--leaf)">
-    <img src="fresh/icons/icon-192.png" alt="">
-    <div><b>Meenthulli Fresh</b><span>Coconuts, onions, greens, healthy foods · தேங்காய், வெங்காயம், கீரை</span></div><i aria-hidden="true">›</i>
-  </a>
-  <a class="card" href="services/" style="background:var(--blue)">
-    <img src="services/icons/icon-192.png" alt="">
-    <div><b>Meenthulli Home Services</b><span>Kitchen, electrical, plumbing, painting · கிச்சன், மின், பிளம்பிங், பெயிண்டிங்</span></div><i aria-hidden="true">›</i>
-  </a>
-  <section class="dl">
-    <h2 style="font-family:var(--display);margin:8px 0 0">Android app download</h2>
-    <a href="apps/meenthulli-fresh.apk">⬇ Meenthulli Fresh app</a>
-    <a href="apps/meenthulli-home-services.apk">⬇ Meenthulli Home Services app</a>
-    <p class="ta" style="font-size:.9rem">After download, tap the file and allow "Install unknown apps" once.</p>
+
+<header class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="./"><span class="m">M</span><span><b>Meenthulli</b><small class="ta">மீன்துள்ளி · Sankarankovil</small></span></a>
+      <a class="pill" href="tel:+919043232447" aria-label="Call">📞 <span>Call</span></a>
+    </nav>
+    <div class="hgrid">
+      <div>
+        <div class="live in"><i></i> Open today in Sankarankovil &amp; Tenkasi</div>
+        <h1 class="in" style="animation-delay:.1s">Fresh food.<br><span class="y">Better homes.</span><br><span class="g">One local name.</span></h1>
+        <p class="tamil ta in" style="animation-delay:.2s">புதிய உணவு. அழகான வீடு. நம்ம ஊர் மீன்துள்ளி.</p>
+        <p class="lead in" style="animation-delay:.3s">Farm fresh coconuts, onions and greens at your door. Kitchens, wiring, plumbing and painting done properly by a local team.</p>
+        <div class="cta in" style="animation-delay:.4s">
+          <a class="btn wa" href="https://wa.me/919043232447?text=Hi%20Meenthulli">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.6 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg>
+            WhatsApp us</a>
+          <a class="btn ghost" href="#apps">See our shops ↓</a>
+        </div>
+      </div>
+      <svg class="scene in" style="animation-delay:.3s" viewBox="0 0 440 400" aria-hidden="true">
+        <circle cx="220" cy="200" r="180" fill="#1c1e23"/>
+        <!-- house -->
+        <g class="bob"><path d="M110 220l90-74 90 74v110H110z" fill="#ffc83a"/><path d="M96 230l104-88 104 88" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="178" y="262" width="44" height="68" rx="6" fill="#121316"/><rect x="128" y="236" width="36" height="32" rx="5" fill="#fff8e1"/><rect x="236" y="236" width="36" height="32" rx="5" fill="#fff8e1" class="glow"/></g>
+        <!-- bulb -->
+        <g><line x1="330" y1="40" x2="330" y2="92" stroke="#c4c6cc" stroke-width="3"/><circle cx="330" cy="110" r="34" fill="#ffc83a" opacity=".25" class="glow"/><circle cx="330" cy="108" r="18" fill="#ffe28a"/><rect x="322" y="88" width="16" height="10" rx="2" fill="#c4c6cc"/></g>
+        <!-- fan -->
+        <g transform="translate(92 92)"><g class="sp"><ellipse cx="0" cy="-22" rx="8" ry="22" fill="#7cc4ff"/><ellipse cx="19" cy="11" rx="8" ry="22" transform="rotate(120 19 11)" fill="#7cc4ff"/><ellipse cx="-19" cy="11" rx="8" ry="22" transform="rotate(240 -19 11)" fill="#7cc4ff"/></g><circle r="8" fill="#fff"/></g>
+        <!-- coconut + leaf -->
+        <g class="bob" style="animation-delay:-1.5s"><circle cx="346" cy="300" r="40" fill="#5a8f2e"/><circle cx="346" cy="300" r="40" fill="none" stroke="#c4e86b" stroke-width="4"/><path d="M332 268l20-26" stroke="#ff7a59" stroke-width="5" stroke-linecap="round"/></g>
+        <g class="bob" style="animation-delay:-.8s"><path d="M64 318c0-44 34-70 70-70 0 44-30 70-70 70z" fill="#c4e86b"/><path d="M68 314c18-20 36-36 60-58" stroke="#14361f" stroke-width="3" fill="none"/></g>
+        <!-- drops -->
+        <circle cx="200" cy="40" r="5" fill="#7cc4ff" class="drop"/><circle cx="240" cy="54" r="4" fill="#7cc4ff" class="drop" style="animation-delay:.6s"/>
+        <path d="M300 350c0-10 8-10 8-20M316 350c0-10 8-10 8-20" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" class="steam" opacity=".7"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="apps">
+    <div class="rv"><div class="kick">Our two shops</div><h2>Pick what you need today.</h2><p class="ta" style="color:var(--muted);margin:6px 0 0;font-weight:600">இன்று உங்களுக்கு என்ன வேண்டும்?</p></div>
+    <div class="apps">
+      <a class="app s rv" href="services/">
+        <svg class="deco" viewBox="0 0 200 200" aria-hidden="true"><circle cx="120" cy="80" r="70" fill="#ffc83a" opacity=".12"/><path d="M118 40 92 92h22l-8 48 36-60h-22z" fill="#ffc83a"/></svg>
+        <img src="services/icons/icon-192.png" alt="">
+        <h3>Meenthulli<br>Home Services</h3>
+        <p>Free home visit, written price first, clean work.</p>
+        <p class="ta">கிச்சன் · மின்சாரம் · பிளம்பிங் · பெயிண்டிங்</p>
+        <div class="tags"><span>🍳 Modular kitchen</span><span>⚡ Electrical</span><span>💧 Plumbing</span><span>🎨 Painting</span></div>
+        <div class="go"><b>Book a free visit</b><i>→</i></div>
+      </a>
+      <a class="app f rv" href="fresh/">
+        <svg class="deco" viewBox="0 0 200 200" aria-hidden="true"><circle cx="120" cy="80" r="70" fill="#c4e86b" opacity=".12"/><path d="M90 130c0-50 40-80 80-80 0 50-34 80-80 80z" fill="#c4e86b"/><path d="M96 124c22-24 42-42 68-68" stroke="#14361f" stroke-width="4" fill="none"/></svg>
+        <img src="fresh/icons/icon-192.png" alt="">
+        <h3>Meenthulli<br>Fresh</h3>
+        <p>Picked this morning, delivered the same day.</p>
+        <p class="ta">தேங்காய் · வெங்காயம் · கீரை · இயற்கை உணவு</p>
+        <div class="tags"><span>🥥 Coconuts</span><span>🧅 Onions</span><span>🥬 Greens</span><span>🍯 Healthy foods</span></div>
+        <div class="go"><b>Shop fresh</b><i>→</i></div>
+      </a>
+    </div>
   </section>
-  <p class="contact">Owner: <b>Nixon</b> · Call / WhatsApp <b>+91 90432 32447</b> · <b>nixon.nix42@gmail.com</b></p>
+
+  <section>
+    <div class="rv"><div class="kick">Why Meenthulli</div><h2>Local people. Honest work.</h2></div>
+    <div class="why">
+      <div class="rv"><span class="ic" style="background:#fff3cf">📍</span><b>From Sankarankovil</b><span>We live here. We are easy to reach.</span></div>
+      <div class="rv"><span class="ic" style="background:#e7f6cf">🧾</span><b>Clear prices</b><span>Written price first. No hidden charges.</span></div>
+      <div class="rv"><span class="ic" style="background:#dceeff">🛵</span><b>Same day</b><span>Fresh food at your door today.</span></div>
+      <div class="rv"><span class="ic" style="background:#ffe1d6">💬</span><b>WhatsApp easy</b><span>Order or book with one message.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="duo">
+      <a class="ig rv" href="https://instagram.com/meenthulli.homeservices">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff"/></svg>
+        <h3>Follow us on Instagram</h3>
+        <p>See our latest work, tips and offers.</p>
+        <span class="btn">@meenthulli.homeservices</span>
+      </a>
+      <div class="dl rv">
+        <div class="kick">Android apps</div>
+        <h3>Get the app</h3>
+        <p>Order faster from your phone.</p>
+        <a href="apps/meenthulli-home-services.apk"><img src="services/icons/icon-192.png" alt="">Home Services app<span>⬇</span></a>
+        <a href="apps/meenthulli-fresh.apk"><img src="fresh/icons/icon-192.png" alt="">Fresh app<span>⬇</span></a>
+        <small>After download, tap the file and allow "Install unknown apps" once.</small>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <b style="font-size:22px">Meenthulli</b> <span class="ta">· மீன்துள்ளி</span><br>
+      Owner: <b>Nixon</b> · Sankarankovil, Tenkasi, Tamil Nadu<br>
+      <a href="tel:+919043232447">+91 90432 32447</a> · <a href="mailto:nixon.nix42@gmail.com">nixon.nix42@gmail.com</a>
+    </div>
+    <div class="fl">
+      <a class="pill" href="https://wa.me/919043232447?text=Hi%20Meenthulli">WhatsApp</a>
+      <a class="pill" href="https://instagram.com/meenthulli.homeservices">Instagram</a>
+      <a class="pill" href="services/privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+</script>
 </body>
 </html>
