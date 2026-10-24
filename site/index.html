@@ -17,6 +17,7 @@
   --font:"Plus Jakarta Sans","Mukta Malar",system-ui,sans-serif;--ta:"Mukta Malar","Plus Jakarta Sans",sans-serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
 body{margin:0;background:var(--cream);color:var(--fg);font-family:var(--font);line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
@@ -98,6 +99,41 @@ footer b{color:#fff}
 footer a{color:var(--yellow);text-decoration:none}
 .fl{display:flex;flex-wrap:wrap;gap:10px}
 
+/* cool extras */
+.shine{background:linear-gradient(100deg,var(--yellow) 0%,#fff3b0 25%,var(--yellow) 50%,#ffa63a 75%,var(--yellow) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:shine 4s linear infinite}
+.shine.g{background-image:linear-gradient(100deg,var(--lime) 0%,#f2ffd0 25%,var(--lime) 50%,#7fd36b 75%,var(--lime) 100%)}
+@keyframes shine{to{background-position:-200% center}}
+.rot{display:inline-grid;vertical-align:bottom}
+.rot span{grid-area:1/1;opacity:0;transform:translateY(60%);transition:.6s cubic-bezier(.2,.7,.2,1)}
+.rot span.on{opacity:1;transform:none}.rot span.off{opacity:0;transform:translateY(-60%)}
+.spot{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(500px circle at var(--mx,70%) var(--my,30%),#ffc83a1f,transparent 60%)}
+.spark{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--yellow);z-index:1;animation:tw 3s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:0;transform:scale(.3)}50%{opacity:1;transform:scale(1)}}
+.marq{background:var(--yellow);color:var(--ink);overflow:hidden;margin-top:-18px;transform:rotate(-2deg);position:relative;z-index:3;padding:14px 0;box-shadow:0 10px 30px #0002}
+.marq.b{background:var(--lime);transform:rotate(1.5deg);margin-top:-6px;z-index:2}
+.marq div{display:flex;gap:36px;width:max-content;animation:mq 26s linear infinite;font-weight:800;font-size:20px;white-space:nowrap}
+.marq.b div{animation-direction:reverse}
+.marq div span{display:flex;align-items:center;gap:36px}
+.marq div span::after{content:"✦"}
+@keyframes mq{to{transform:translateX(-50%)}}
+.app{transform-style:preserve-3d;will-change:transform}
+.app::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,#ffffff26 45%,transparent 60%);transform:translateX(-120%);transition:transform .9s;pointer-events:none;z-index:1}
+.app:hover::before{transform:translateX(120%)}
+.app::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;background:conic-gradient(from var(--a,0deg),transparent 70%,var(--c) 85%,transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:ring 5s linear infinite;pointer-events:none}
+.app.s{--c:var(--yellow)}.app.f{--c:var(--lime)}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes ring{to{--a:360deg}}
+.thulli{display:grid;gap:30px;align-items:center;margin-top:28px;background:var(--ink);color:#fff;border-radius:34px;padding:30px;position:relative;overflow:hidden}
+.thulli::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#ff7aa855,transparent 65%);right:-120px;top:-120px;animation:float 10s ease-in-out infinite}
+.phone{position:relative;justify-self:center;width:250px;aspect-ratio:9/16;border-radius:34px;padding:8px;background:linear-gradient(145deg,#3a3c44,#111);box-shadow:0 30px 60px #0008,0 0 0 1px #ffffff22;animation:bob 5s ease-in-out infinite}
+.phone video,.phone img{width:100%;height:100%;object-fit:cover;border-radius:27px;display:block;background:#222}
+.thulli h2{color:#fff}.thulli p{color:#c4c6cc;margin:10px 0 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.stats div{background:#ffffff10;border-radius:18px;padding:14px;text-align:center}
+.stats b{display:block;font-size:30px;font-weight:800;color:var(--yellow);line-height:1.1}
+.stats span{font-size:13px;color:#c4c6cc}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:50;width:62px;height:62px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px #25d36677;animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #25d36699}70%{box-shadow:0 0 0 18px #25d36600}100%{box-shadow:0 0 0 0 #25d36600}}
 /* reveal */
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.on{opacity:1;transform:none}
@@ -118,6 +154,8 @@ footer a{color:var(--yellow);text-decoration:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 
 @media (min-width:860px){
+  .thulli{grid-template-columns:auto 1fr;padding:44px 56px;gap:56px}
+  .phone{width:280px}
   .hgrid{grid-template-columns:1.1fr .9fr}
   .apps{grid-template-columns:1fr 1fr}
   .why{grid-template-columns:repeat(4,1fr)}
@@ -129,7 +167,7 @@ footer a{color:var(--yellow);text-decoration:none}
 <body>
 
 <header class="hero">
-  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="spot"></div><i class="spark" style="left:8%;top:22%;animation-delay:0s;background:#ffc83a"></i><i class="spark" style="left:46%;top:12%;animation-delay:1.1s;background:#c4e86b"></i><i class="spark" style="left:88%;top:58%;animation-delay:0.6s;background:#7cc4ff"></i><i class="spark" style="left:62%;top:84%;animation-delay:1.8s;background:#ffc83a"></i><i class="spark" style="left:30%;top:92%;animation-delay:2.4s;background:#ff7aa8"></i><i class="spark" style="left:94%;top:18%;animation-delay:1.4s;background:#c4e86b"></i>
   <div class="wrap">
     <nav>
       <a class="logo" href="./"><span class="m">M</span><span><b>Meenthulli</b><small class="ta">மீன்துள்ளி · Sankarankovil</small></span></a>
@@ -138,7 +176,7 @@ footer a{color:var(--yellow);text-decoration:none}
     <div class="hgrid">
       <div>
         <div class="live in"><i></i> Open today in Sankarankovil &amp; Tenkasi</div>
-        <h1 class="in" style="animation-delay:.1s">Fresh food.<br><span class="y">Better homes.</span><br><span class="g">One local name.</span></h1>
+        <h1 class="in" style="animation-delay:.1s">Fresh food.<br><span class="rot"><span class="y shine on">Better homes.</span><span class="y shine">Bright walls.</span><span class="y shine">Safe wiring.</span><span class="y shine">Dream kitchens.</span></span><br><span class="g shine">One local name.</span></h1>
         <p class="tamil ta in" style="animation-delay:.2s">புதிய உணவு. அழகான வீடு. நம்ம ஊர் மீன்துள்ளி.</p>
         <p class="lead in" style="animation-delay:.3s">Farm fresh coconuts, onions and greens at your door. Kitchens, wiring, plumbing and painting done properly by a local team.</p>
         <div class="cta in" style="animation-delay:.4s">
@@ -167,6 +205,7 @@ footer a{color:var(--yellow);text-decoration:none}
     </div>
   </div>
 </header>
+<div class="marq" aria-hidden="true"><div><span>Modular kitchen</span><span>கிச்சன்</span><span>Electrical</span><span>மின்சாரம்</span><span>Plumbing</span><span>பிளம்பிங்</span><span>Painting</span><span>பெயிண்டிங்</span><span>Free home visit</span><span>Modular kitchen</span><span>கிச்சன்</span><span>Electrical</span><span>மின்சாரம்</span><span>Plumbing</span><span>பிளம்பிங்</span><span>Painting</span><span>பெயிண்டிங்</span><span>Free home visit</span></div></div><div class="marq b" aria-hidden="true"><div><span>Tender coconut</span><span>தேங்காய்</span><span>Small onion</span><span>சின்ன வெங்காயம்</span><span>Keerai</span><span>கீரை</span><span>Healthy foods</span><span>Same day delivery</span><span>Tender coconut</span><span>தேங்காய்</span><span>Small onion</span><span>சின்ன வெங்காயம்</span><span>Keerai</span><span>கீரை</span><span>Healthy foods</span><span>Same day delivery</span></div></div>
 
 <main class="wrap">
   <section id="apps">
@@ -190,6 +229,20 @@ footer a{color:var(--yellow);text-decoration:none}
         <div class="tags"><span>🥥 Coconuts</span><span>🧅 Onions</span><span>🥬 Greens</span><span>🍯 Healthy foods</span></div>
         <div class="go"><b>Shop fresh</b><i>→</i></div>
       </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="thulli rv">
+      <div class="phone"><video src="media/thulli.mp4" poster="media/thulli.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+      <div style="position:relative">
+        <div class="kick" style="color:#ffc83a">Meet our mascot</div>
+        <h2>Say hi to Thulli 🐼</h2>
+        <p class="ta" style="color:#fff;font-weight:700">வணக்கம்! நான் துள்ளி</p>
+        <p>Thulli fixes lights, stops leaks, paints walls and builds kitchens. One call, all done.</p>
+        <div class="stats"><div><b data-n="4">0</b><span>home services</span></div><div><b data-n="15">0</b><span>fresh items</span></div><div><b>₹0</b><span>home visit</span></div></div>
+        <div class="cta"><a class="btn wa" href="https://wa.me/919043232447?text=Hi%20Meenthulli">Book with Thulli</a><a class="btn ghost" href="https://instagram.com/meenthulli.homeservices">Watch on Instagram</a></div>
+      </div>
     </div>
   </section>
 
@@ -227,7 +280,7 @@ footer a{color:var(--yellow);text-decoration:none}
   <div class="wrap">
     <div>
       <b style="font-size:22px">Meenthulli</b> <span class="ta">· மீன்துள்ளி</span><br>
-      Owner: <b>Nixon</b> · Sankarankovil, Tenkasi, Tamil Nadu<br>
+      Sankarankovil, Tenkasi, Tamil Nadu<br>
       <a href="tel:+919043232447">+91 90432 32447</a> · <a href="mailto:nixon.nix42@gmail.com">nixon.nix42@gmail.com</a>
     </div>
     <div class="fl">
@@ -238,8 +291,20 @@ footer a{color:var(--yellow);text-decoration:none}
   </div>
 </footer>
 
+<a class="fab" href="https://wa.me/919043232447?text=Hi%20Meenthulli" aria-label="WhatsApp"><svg width="32" height="32" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.6 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg></a>
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
+// rotating words
+const rw=[...document.querySelectorAll('.rot span')];let ri=0;
+setInterval(()=>{rw[ri].classList.replace('on','off');const o=rw[ri];setTimeout(()=>o.classList.remove('off'),600);ri=(ri+1)%rw.length;rw[ri].classList.add('on')},2200);
+// spotlight follows finger or mouse
+const hero=document.querySelector('.hero');
+hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();hero.style.setProperty('--mx',(e.clientX-r.left)+'px');hero.style.setProperty('--my',(e.clientY-r.top)+'px')});
+// 3D tilt on shop cards
+document.querySelectorAll('.app').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(900px) rotateY(${x*10}deg) rotateX(${-y*10}deg) translateY(-4px)`});c.addEventListener('pointerleave',()=>c.style.transform='')});
+// count up numbers
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,n=+el.dataset.n;let i=0;const t=setInterval(()=>{i++;el.textContent=Math.round(n*i/30);if(i>=30)clearInterval(t)},30);cio.unobserve(el)}),{threshold:.5});
+document.querySelectorAll('[data-n]').forEach(el=>cio.observe(el));
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
 </script>
 </body>
