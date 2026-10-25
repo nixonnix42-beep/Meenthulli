@@ -1,5 +1,5 @@
 // Keeps the app opening even with weak network. Change VERSION after you edit files.
-const VERSION = "meenthulli-home-services-v10";
+const VERSION = "meenthulli-home-services-v11";
 const FILES = ["./", "index.html", "manifest.json", "icons/icon-192.png", "icons/icon-512.png"];
 self.addEventListener("install", e => { self.skipWaiting(); e.waitUntil(caches.open(VERSION).then(c => c.addAll(FILES))); });
 self.addEventListener("activate", e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== VERSION).map(k => caches.delete(k))))));
